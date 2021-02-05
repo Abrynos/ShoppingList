@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appName">ShoppingList</string>
+
+    <string name="optionsUseDarkThemeText">Use dark theme</string>
+    <string name="optionsTitleBarText">Options</string>
+
+    <string name="mainMenuOptionsLinkText">Options</string>
+    <string name="mainMenuAddItemLinkText">Add item</string>
+    <string name="mainListIsEmptyText">List is empty</string>
+
+    <string name="addSaveButtonText">Save</string>
+    <string name="addNameHint">Item</string>
+    <string name="addAmountHint">Amount (optional)</string>
+    <string name="addTitleBarText">Add Item</string>
+    <string name="addNameIsEmptyMessage">The name must not be empty</string>
+    <string name="addAmountNotANumberMessage">The amount must be a valid number</string>
+    <string name="addAmountTooSmallMessage">The amount must be higher than 0</string>
+    <string name="addItemAlreadyExistsMessage">An item with this name already exists</string>
+</resources>
