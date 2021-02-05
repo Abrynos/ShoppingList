@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:textSize="@dimen/listItemTextSize" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        tools:ignore="RelativeOverlap">
+
+        <TextView
+            android:id="@+id/amountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:textSize="@dimen/listItemTextSize" />
+
+        <ImageButton
+            android:id="@+id/subtractButton"
+            android:layout_width="@dimen/listItemButtonSize"
+            android:layout_height="@dimen/listItemButtonSize"
+            android:layout_margin="@dimen/listItemButtonMargin"
+            android:background="@drawable/ic_minus"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/addButton"
+            android:layout_width="@dimen/listItemButtonSize"
+            android:layout_height="@dimen/listItemButtonSize"
+            android:layout_margin="@dimen/listItemButtonMargin"
+            android:background="@drawable/ic_plus"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="@dimen/listItemButtonSize"
+            android:layout_height="@dimen/listItemButtonSize"
+            android:layout_margin="@dimen/listItemButtonMargin"
+            android:background="@drawable/ic_trash"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+</RelativeLayout>

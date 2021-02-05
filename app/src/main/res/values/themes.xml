@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="Theme.ShoppingList" parent="Theme.ShoppingList.Base">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.ShoppingList.MainActivity" parent="Theme.ShoppingList.Base.MainActivity" />
+
+</resources>
