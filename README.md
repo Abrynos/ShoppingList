@@ -11,3 +11,6 @@ This is the a simple Android application serving the purpose of a shopping list.
 # Installation
 Sadly I am too lazy to set everything up for the official app store. You can download an .apk file from the releases page.
 
+# Translation
+I am open to translating the app to any known language. You can find the original english strings [here](https://github.com/Abrynos/ShoppingList/blob/main/app/src/main/res/values/strings.xml) and can send a merge request translating them to any other language at any point in time. You can also open an issue and post your translations in there if you do not have any experience using git.
+
