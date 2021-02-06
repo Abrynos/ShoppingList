@@ -1,5 +1,6 @@
 package pl.edu.pjwstk.s999844.shoppinglist
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -12,6 +13,8 @@ import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 
 
 class AddItemActivity : AppCompatActivity() {
+    private val inputMethodManager: InputMethodManager by lazy { getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)
@@ -21,10 +24,14 @@ class AddItemActivity : AppCompatActivity() {
         super.onStart()
 
         title = getString(R.string.addTitleBarText)
+
+        addItemNameInput.requestFocus()
     }
 
     @Suppress("UNUSED_PARAMETER")
     fun addItem(view: View) {
+        inputMethodManager.hideSoftInputFromWindow(addItemNameInput.windowToken, 0)
+
         val name: String = addItemNameInput.text.toString().trim()
         if (name.isEmpty()) {
             warnError(getString(R.string.addNameIsEmptyMessage))

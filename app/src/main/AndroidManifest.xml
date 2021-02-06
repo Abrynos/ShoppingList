@@ -12,7 +12,8 @@
         android:theme="@style/Theme.ShoppingList">
         <activity
             android:name=".AddItemActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
             android:name=".OptionsActivity"
             android:parentActivityName=".MainActivity" />
