@@ -16,78 +16,74 @@ import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 import pl.edu.pjwstk.s999844.shoppinglist.recyclerviewadapters.ShoppingListAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
-
 class MainActivity : AppCompatActivity() {
-    private val settings: Settings by lazy { Settings(this) }
+	private val settings: Settings by lazy { Settings(this) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+	private val shoppingListDao: ShoppingListDao by lazy { ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao() }
 
-        initItemList()
-    }
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(R.layout.activity_main)
 
-    private fun initItemList() {
-        mainListRecyclerView.layoutManager = LinearLayoutManager(this)
-        mainListRecyclerView.addItemDecoration(
-            DividerItemDecoration(
-                this,
-                DividerItemDecoration.VERTICAL
-            )
-        )
+		mainListRecyclerView.layoutManager = LinearLayoutManager(this)
+		mainListRecyclerView.addItemDecoration(
+				DividerItemDecoration(
+						this,
+						DividerItemDecoration.VERTICAL
+				)
+		)
 
-        val shoppingListDao: ShoppingListDao =
-            ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao();
-        shoppingListDao.findAllItems().observe(this, {
-            it.let {
-                (mainListRecyclerView.adapter as ShoppingListAdapter).setItems(it)
-                if (it.isEmpty()) {
-                    mainListRecyclerView.visibility = View.GONE
-                    mainEmptyTextView.visibility = View.VISIBLE
-                } else {
-                    mainListRecyclerView.visibility = View.VISIBLE
-                    mainEmptyTextView.visibility = View.GONE
-                }
-            }
-        })
-        mainListRecyclerView.adapter = ShoppingListAdapter { item, change ->
-            val dbItem: RequiredItem = shoppingListDao.findById(item.id)
-                ?: return@ShoppingListAdapter
+		shoppingListDao.findAllItems().observe(this, this::observeDatabaseChange)
+		mainListRecyclerView.adapter = ShoppingListAdapter(this::changeItemCallback)
+	}
 
-            val newAmount: Int = dbItem.amount + change
-            if (newAmount <= 0) {
-                shoppingListDao.delete(item)
-            } else {
-                item.amount = newAmount
-                shoppingListDao.update(item)
-            }
-        }
-    }
+	override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+		menuInflater.inflate(R.menu.menu_main, menu)
+		return true
+	}
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
+	override fun onStart() {
+		super.onStart()
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.actionBarMenuOptionsEntry -> {
-                openActivity(OptionsActivity::class.java)
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
+		ThemeManager.setDark(settings.darkThemeActive)
+	}
 
-    @Suppress("UNUSED_PARAMETER")
-    fun onClickFloatingButton(view: View) = openActivity(AddItemActivity::class.java)
+	override fun onOptionsItemSelected(item: MenuItem): Boolean {
+		when (item.itemId) {
+			R.id.actionBarMenuOptionsEntry -> {
+				openActivity(OptionsActivity::class.java)
+				return true
+			}
+		}
+		return super.onOptionsItemSelected(item)
+	}
 
-    private fun <T : Activity> openActivity(clazz: Class<T>) =
-        startActivity(Intent(baseContext, clazz))
+	@Suppress("UNUSED_PARAMETER")
+	fun onClickFloatingButton(view: View) = openActivity(AddItemActivity::class.java)
 
-    override fun onStart() {
-        super.onStart()
+	private fun <T : Activity> openActivity(clazz: Class<T>) = startActivity(Intent(baseContext, clazz))
 
-        ThemeManager.set(settings.darkThemeActive)
-    }
+	private fun changeItemCallback(item: RequiredItem, change: Int) {
+		val dbItem: RequiredItem = shoppingListDao.findById(item.id)
+				?: return
+
+		val newAmount: Int = dbItem.amount + change
+		if (newAmount <= 0) {
+			shoppingListDao.delete(dbItem)
+		} else {
+			dbItem.amount = newAmount
+			shoppingListDao.update(dbItem)
+		}
+	}
+
+	private fun observeDatabaseChange(items: List<RequiredItem>) {
+		(mainListRecyclerView.adapter as ShoppingListAdapter).setItems(items)
+		if (items.isEmpty()) {
+			mainListRecyclerView.visibility = View.GONE
+			mainEmptyTextView.visibility = View.VISIBLE
+		} else {
+			mainListRecyclerView.visibility = View.VISIBLE
+			mainEmptyTextView.visibility = View.GONE
+		}
+	}
 }

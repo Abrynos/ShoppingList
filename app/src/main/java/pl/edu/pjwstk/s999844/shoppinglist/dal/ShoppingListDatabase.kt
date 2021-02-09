@@ -8,26 +8,26 @@ import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 
 @Database(entities = [RequiredItem::class], version = 1)
 abstract class ShoppingListDatabase : RoomDatabase() {
-    abstract fun getShoppingListDao(): ShoppingListDao
+	abstract fun getShoppingListDao(): ShoppingListDao
 
-    companion object {
-        private var INSTANCE: ShoppingListDatabase? = null
+	companion object {
+		private var INSTANCE: ShoppingListDatabase? = null
 
-        fun getInstance(context: Context): ShoppingListDatabase {
-            var instance = INSTANCE
-            if (instance != null) {
-                return instance
-            }
+		fun getInstance(context: Context): ShoppingListDatabase {
+			var instance = INSTANCE
+			if (instance != null) {
+				return instance
+			}
 
-            instance = Room.databaseBuilder(
-                context.applicationContext,
-                ShoppingListDatabase::class.java,
-                ShoppingListDatabase::class.java.name
+			instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    ShoppingListDatabase::class.java,
+                    ShoppingListDatabase::class.java.name
             )
-                .allowMainThreadQueries()
-                .build()
-            INSTANCE = instance
-            return instance
-        }
-    }
+					.allowMainThreadQueries()
+					.build()
+			INSTANCE = instance
+			return instance
+		}
+	}
 }

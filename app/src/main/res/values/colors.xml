@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#303F9F</color>
-    <color name="black">#000000</color>
-    <color name="darkGrey">#161618</color>
-    <color name="white">#FFFFFF</color>
-    <color name="onPrimary">@color/white</color>
+	<color name="primary">#303F9F</color>
+	<color name="black">#000000</color>
+	<color name="darkGrey">#161618</color>
+	<color name="white">#FFFFFF</color>
+	<color name="onPrimary">@color/white</color>
 </resources>

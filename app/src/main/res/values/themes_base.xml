@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.ShoppingList.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primary</item>
+	<style name="Theme.ShoppingList.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+		<item name="colorPrimary">@color/primary</item>
+		<item name="colorPrimaryVariant">@color/primary</item>
 
-        <item name="colorSecondary">@color/primary</item>
-        <item name="colorSecondaryVariant">@color/primary</item>
+		<item name="colorSecondary">@color/primary</item>
+		<item name="colorSecondaryVariant">@color/primary</item>
 
-        <item name="colorOnPrimary">@color/onPrimary</item>
-        <item name="colorOnSecondary">@color/onPrimary</item>
+		<item name="colorOnPrimary">@color/onPrimary</item>
+		<item name="colorOnSecondary">@color/onPrimary</item>
 
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
-        <item name="actionBarStyle">@style/Theme.ShoppingList.Base.ActionBar</item>
-    </style>
+		<item name="actionBarStyle">@style/Theme.ShoppingList.Base.ActionBar</item>
+		<!--
+			We could set the styles for Buttons, EditTexts and such here
+			Sadly this would have no effect, because layout_* has to be set for each and every view explicitly
+		-->
+	</style>
 
-    <style name="Theme.ShoppingList.Base.ActionBar" parent="Widget.MaterialComponents.Light.ActionBar.Solid">
-        <item name="colorPrimary">@color/primary</item>
-    </style>
+	<style name="Theme.ShoppingList.Base.ActionBar" parent="Widget.MaterialComponents.Light.ActionBar.Solid">
+		<item name="colorPrimary">@color/primary</item>
+	</style>
 
-    <style name="Theme.ShoppingList.Base.MainActivity" parent="Theme.ShoppingList">
-        <item name="actionBarStyle">@style/Theme.ShoppingList.Base.MainActivity.ActionBar</item>
-    </style>
+	<style name="Theme.ShoppingList.Base.MainActivity" parent="Theme.ShoppingList">
+		<item name="actionBarStyle">@style/Theme.ShoppingList.Base.MainActivity.ActionBar</item>
+	</style>
 
-    <style name="Theme.ShoppingList.Base.MainActivity.ActionBar" parent="Theme.ShoppingList.Base.ActionBar">
-        <item name="logo">@drawable/ic_shopping_cart</item>
-        <item name="displayOptions">useLogo|showHome|showTitle</item>
-    </style>
+	<style name="Theme.ShoppingList.Base.MainActivity.ActionBar" parent="Theme.ShoppingList.Base.ActionBar">
+		<item name="logo">@drawable/ic_shopping_cart</item>
+		<item name="displayOptions">useLogo|showHome|showTitle</item>
+	</style>
+
+	<style name="Theme.ShoppingList.EditText" parent="Widget.AppCompat.EditText">
+		<item name="android:layout_margin">@dimen/formDefaultMargin</item>
+		<item name="android:layout_marginBottom">@dimen/formDefaultBottomMargin</item>
+		<item name="android:ems">10</item>
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="layout_constraintEnd_toEndOf">parent</item>
+		<item name="layout_constraintStart_toStartOf">parent</item>
+	</style>
+
+	<style name="Theme.ShoppingList.Button" parent="Widget.AppCompat.Button">
+		<item name="android:layout_margin">@dimen/formDefaultMargin</item>
+		<item name="android:layout_marginBottom">@dimen/formDefaultBottomMargin</item>
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="layout_constraintEnd_toEndOf">parent</item>
+		<item name="layout_constraintStart_toStartOf">parent</item>
+	</style>
+
+	<style name="Theme.ShoppingList.SwitchCompat" parent="Widget.AppCompat.CompoundButton.Switch">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">0dp</item>
+		<item name="android:layout_margin">@dimen/formDefaultMargin</item>
+		<item name="android:layout_marginBottom">@dimen/formDefaultBottomMargin</item>
+		<item name="layout_constraintEnd_toEndOf">parent</item>
+		<item name="layout_constraintStart_toStartOf">parent</item>
+	</style>
+
+	<style name="Theme.ShoppingList.ImageButton" parent="Widget.AppCompat.ImageButton">
+		<item name="android:layout_width">@dimen/imageButtonDefaultSize</item>
+		<item name="android:layout_height">@dimen/imageButtonDefaultSize</item>
+		<item name="android:layout_margin">@dimen/imageButtonDefaultMargin</item>
+	</style>
 
 </resources>

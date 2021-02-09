@@ -9,43 +9,42 @@ import pl.edu.pjwstk.s999844.shoppinglist.databinding.ShoppingListItemBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 import java.util.function.BiConsumer
 
-class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredItem, Int>) :
-    RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
+class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredItem, Int>) : RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
 
-    private var items: List<RequiredItem> = listOf()
+	private var items: List<RequiredItem> = listOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater: LayoutInflater = LayoutInflater.from(parent.context)
-        val binding: ShoppingListItemBinding = ShoppingListItemBinding.inflate(inflater)
-        return ViewHolder(binding)
-    }
+	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+		val inflater: LayoutInflater = LayoutInflater.from(parent.context)
+		val binding: ShoppingListItemBinding = ShoppingListItemBinding.inflate(inflater)
+		return ViewHolder(binding)
+	}
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item: RequiredItem = items[position]
-        holder.shoppingListItem.amountTextView.text = item.amount.toString()
-        holder.shoppingListItem.amountTextView.isVisible = item.amount > 1
-        holder.shoppingListItem.nameTextView.text = item.name
+	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+		val item: RequiredItem = items[position]
 
-        holder.shoppingListItem.buttonLayout.addButton.setOnClickListener {
-            changeAmountCallback.accept(item, 1)
-        }
-        holder.shoppingListItem.buttonLayout.subtractButton.setOnClickListener {
-            changeAmountCallback.accept(item, -1)
-        }
-        holder.shoppingListItem.buttonLayout.deleteButton.setOnClickListener {
-            changeAmountCallback.accept(item, -item.amount)
-        }
-    }
+		val binding = holder.shoppingListItem
+		binding.amountTextView.text = item.amount.toString()
+		binding.amountTextView.isVisible = item.amount > 1
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+		binding.nameTextView.text = item.name
 
-    fun setItems(items: List<RequiredItem>) {
-        this.items = items
-        notifyDataSetChanged()
-    }
+		binding.buttonLayout.addButton.setOnClickListener {
+			changeAmountCallback.accept(item, 1)
+		}
+		binding.buttonLayout.subtractButton.setOnClickListener {
+			changeAmountCallback.accept(item, -1)
+		}
+		binding.buttonLayout.deleteButton.setOnClickListener {
+			changeAmountCallback.accept(item, -item.amount)
+		}
+	}
 
-    class ViewHolder(val shoppingListItem: ShoppingListItemBinding) :
-        RecyclerView.ViewHolder(shoppingListItem.root)
+	override fun getItemCount(): Int = items.size
+
+	fun setItems(items: List<RequiredItem>) {
+		this.items = items
+		notifyDataSetChanged()
+	}
+
+	class ViewHolder(val shoppingListItem: ShoppingListItemBinding) : RecyclerView.ViewHolder(shoppingListItem.root)
 }

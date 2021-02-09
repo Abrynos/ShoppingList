@@ -1,13 +1,15 @@
 <?xml25dp version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="listItemButtonSize">30dp</dimen>
-    <dimen name="listItemButtonMargin">10dp</dimen>
-    <dimen name="listItemTextSize">20sp</dimen>
+	<dimen name="formDefaultMargin">30dp</dimen>
+	<dimen name="formDefaultBottomMargin">0dp</dimen>
+	<dimen name="formFirstInputTopMargin">40dp</dimen>
 
-    <dimen name="optionsMargin">32dp</dimen>
+	<dimen name="imageButtonDefaultSize">30dp</dimen>
+	<dimen name="imageButtonDefaultMargin">10dp</dimen>
 
-    <dimen name="addMargin">24dp</dimen>
+	<dimen name="mainActionButtonMargin">25dp</dimen>
+	<dimen name="mainEmptyTextViewMargin">25dp</dimen>
+	<dimen name="mainEmptyTextViewTextSize">@dimen/listItemTextSize</dimen>
 
-    <dimen name="mainActionButtonMargin">25dp</dimen>
-    <dimen name="mainEmptyTextViewMargin">25dp</dimen>
+	<dimen name="listItemTextSize">20sp</dimen>
 </resources>

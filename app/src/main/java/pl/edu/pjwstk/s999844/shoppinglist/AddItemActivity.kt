@@ -11,64 +11,62 @@ import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 
-
 class AddItemActivity : AppCompatActivity() {
-    private val inputMethodManager: InputMethodManager by lazy { getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
+	private val inputMethodManager: InputMethodManager by lazy { getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_item)
-    }
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(R.layout.activity_add_item)
+	}
 
-    override fun onStart() {
-        super.onStart()
+	override fun onStart() {
+		super.onStart()
 
-        title = getString(R.string.addTitleBarText)
+		addItemNameInput.requestFocus()
 
-        addItemNameInput.requestFocus()
-    }
+		title = getString(R.string.addTitleBarText)
+	}
 
-    @Suppress("UNUSED_PARAMETER")
-    fun addItem(view: View) {
-        inputMethodManager.hideSoftInputFromWindow(addItemNameInput.windowToken, 0)
+	@Suppress("UNUSED_PARAMETER")
+	fun addItem(view: View) {
+		inputMethodManager.hideSoftInputFromWindow(addItemNameInput.windowToken, 0)
 
-        val name: String = addItemNameInput.text.toString().trim()
-        if (name.isEmpty()) {
-            warnError(getString(R.string.addNameIsEmptyMessage))
-            return
-        }
+		val name: String = addItemNameInput.text.toString().trim()
+		if (name.isEmpty()) {
+			warnError(getString(R.string.addNameIsEmptyMessage))
+			return
+		}
 
-        val amountString = addItemAmountInput.text.toString().trim()
-        val amount: Int = if (amountString.isEmpty() || amountString.isBlank()) {
-            1
-        } else {
-            try {
-                amountString.toInt()
-            } catch (e: NumberFormatException) {
-                warnError(getString(R.string.addAmountNotANumberMessage))
-                return
-            }
-        }
+		val amountString = addItemAmountInput.text.toString().trim()
+		val amount: Int = if (amountString.isEmpty() || amountString.isBlank()) {
+			1
+		} else {
+			try {
+				amountString.toInt()
+			} catch (e: NumberFormatException) {
+				warnError(getString(R.string.addAmountNotANumberMessage))
+				return
+			}
+		}
 
-        if (amount <= 0) {
-            warnError(getString(R.string.addAmountTooSmallMessage))
-            return
-        }
+		if (amount <= 0) {
+			warnError(getString(R.string.addAmountTooSmallMessage))
+			return
+		}
 
-        val shoppingListDao: ShoppingListDao =
-            ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao();
+		val shoppingListDao: ShoppingListDao =
+				ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao();
 
-        if (shoppingListDao.findByNameLike(name).isNotEmpty()) {
-            warnError(getString(R.string.addItemAlreadyExistsMessage))
-            return
-        }
+		if (shoppingListDao.findByNameLike(name).isNotEmpty()) {
+			warnError(getString(R.string.addItemAlreadyExistsMessage))
+			return
+		}
 
-        val item = RequiredItem(name, amount)
-        shoppingListDao.add(item)
+		val item = RequiredItem(name, amount)
+		shoppingListDao.add(item)
 
-        finish()
-    }
+		finish()
+	}
 
-    private fun warnError(message: String) =
-        Snackbar.make(saveButton, message, Snackbar.LENGTH_SHORT).show()
+	private fun warnError(message: String) = Snackbar.make(saveButton, message, Snackbar.LENGTH_SHORT).show()
 }
