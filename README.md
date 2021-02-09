@@ -7,6 +7,7 @@ This is the a simple Android application serving the purpose of a shopping list.
 - Localized in German and English
 - No permissions required
 - No tracking or sharing any data
+- No ads
 
 # Installation
 Sadly I am too lazy to set everything up for the official app store. You can download an .apk file from the [releases page](https://github.com/Abrynos/ShoppingList/releases/latest).
