@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pl.edu.pjwstk.s999844.shoppinglist">
+	package="pl.edu.pjwstk.s999844.shoppinglist">
 
-    <application
-        android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/appName"
-        android:logo="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.ShoppingList">
-        <activity
-            android:name=".AddItemActivity"
-            android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="stateAlwaysVisible" />
-        <activity
-            android:name=".OptionsActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:logo="@drawable/ic_trash"
-            android:theme="@style/Theme.ShoppingList.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+	<application
+		android:allowBackup="false"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/appName"
+		android:logo="@mipmap/ic_launcher"
+		android:roundIcon="@mipmap/ic_launcher_round"
+		android:supportsRtl="true"
+		android:theme="@style/Theme.ShoppingList">
+		<activity
+			android:name=".AddItemActivity"
+			android:parentActivityName=".MainActivity"
+			android:windowSoftInputMode="stateAlwaysVisible" />
+		<activity
+			android:name=".OptionsActivity"
+			android:parentActivityName=".MainActivity" />
+		<activity
+			android:name=".MainActivity"
+			android:logo="@drawable/ic_trash"
+			android:theme="@style/Theme.ShoppingList.MainActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+	</application>
 
 </manifest>
