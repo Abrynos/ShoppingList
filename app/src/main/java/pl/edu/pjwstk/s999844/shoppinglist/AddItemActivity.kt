@@ -54,8 +54,7 @@ class AddItemActivity : AppCompatActivity() {
 			return
 		}
 
-		val shoppingListDao: ShoppingListDao =
-				ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao();
+		val shoppingListDao: ShoppingListDao = ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao();
 
 		if (shoppingListDao.findByNameLike(name).isNotEmpty()) {
 			warnError(getString(R.string.addItemAlreadyExistsMessage))

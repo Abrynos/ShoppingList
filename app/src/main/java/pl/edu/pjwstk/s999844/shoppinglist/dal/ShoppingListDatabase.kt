@@ -19,13 +19,9 @@ abstract class ShoppingListDatabase : RoomDatabase() {
 				return instance
 			}
 
-			instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    ShoppingListDatabase::class.java,
-                    ShoppingListDatabase::class.java.name
-            )
-					.allowMainThreadQueries()
-					.build()
+			instance = Room.databaseBuilder(context.applicationContext, ShoppingListDatabase::class.java, ShoppingListDatabase::class.java.name)
+				.allowMainThreadQueries()
+				.build()
 			INSTANCE = instance
 			return instance
 		}

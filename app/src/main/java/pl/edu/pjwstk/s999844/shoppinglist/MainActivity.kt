@@ -26,12 +26,7 @@ class MainActivity : AppCompatActivity() {
 		setContentView(R.layout.activity_main)
 
 		mainListRecyclerView.layoutManager = LinearLayoutManager(this)
-		mainListRecyclerView.addItemDecoration(
-				DividerItemDecoration(
-						this,
-						DividerItemDecoration.VERTICAL
-				)
-		)
+		mainListRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
 		shoppingListDao.findAllItems().observe(this, this::observeDatabaseChange)
 		mainListRecyclerView.adapter = ShoppingListAdapter(this::changeItemCallback)
@@ -65,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
 	private fun changeItemCallback(item: RequiredItem, change: Int) {
 		val dbItem: RequiredItem = shoppingListDao.findById(item.id)
-				?: return
+			?: return
 
 		val newAmount: Int = dbItem.amount + change
 		if (newAmount <= 0) {
