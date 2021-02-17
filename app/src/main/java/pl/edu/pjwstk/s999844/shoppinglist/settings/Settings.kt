@@ -6,8 +6,8 @@ import android.content.SharedPreferences
 
 class Settings(context: Context) {
 	companion object {
-		private const val isDarkThemeName = "darkTheme"
-		private const val isDarkThemeDefault = true
+		private const val IS_DARK_THEME_NAME = "darkTheme"
+		private const val IS_DARK_THEME_DEFAULT = true
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
@@ -15,6 +15,6 @@ class Settings(context: Context) {
 	private fun edit(): SharedPreferences.Editor = sharedPreferences.edit()
 
 	var darkThemeActive: Boolean
-		get() = sharedPreferences.getBoolean(isDarkThemeName, isDarkThemeDefault)
-		set(value) = edit().putBoolean(isDarkThemeName, value).apply()
+		get() = sharedPreferences.getBoolean(IS_DARK_THEME_NAME, IS_DARK_THEME_DEFAULT)
+		set(value) = edit().putBoolean(IS_DARK_THEME_NAME, value).apply()
 }
