@@ -14,9 +14,12 @@ android {
 		minSdkVersion 24
 		targetSdkVersion 30
 		versionCode 3
-		versionName "1.2.0"
+		versionName "v1.2.0"
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	}
+	applicationVariants.all {
+		variant -> variant.resValue "string", "versionName", variant.versionName
 	}
 	buildTypes {
 		release {

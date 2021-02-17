@@ -4,6 +4,7 @@
 
 	<string name="optionsUseDarkThemeText">Dunkles Design verwenden</string>
 	<string name="optionsTitleBarText">Optionen</string>
+	<string name="optionsLatestReleaseText">aktuelle Version</string>
 
 	<string name="mainMenuOptionsLinkText">Optionen</string>
 	<string name="mainMenuAddItemLinkText">Ding hinzufügen</string>

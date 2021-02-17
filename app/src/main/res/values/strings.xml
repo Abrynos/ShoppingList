@@ -4,6 +4,7 @@
 
 	<string name="optionsUseDarkThemeText">Use dark theme</string>
 	<string name="optionsTitleBarText">Options</string>
+	<string name="optionsLatestReleaseText">latest release</string>
 
 	<string name="mainMenuOptionsLinkText">Options</string>
 	<string name="mainMenuAddItemLinkText">Add item</string>
