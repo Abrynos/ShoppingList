@@ -2,6 +2,7 @@ package pl.edu.pjwstk.s999844.shoppinglist
 
 import android.content.Context
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +11,13 @@ import kotlinx.android.synthetic.main.activity_add_item.*
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
+import java.util.*
 
 class AddItemActivity : AppCompatActivity() {
 	private val inputMethodManager: InputMethodManager by lazy { getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
+
+	private val currentLocale: Locale
+		get() = baseContext.resources.configuration.locales.get(0)
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -22,6 +27,10 @@ class AddItemActivity : AppCompatActivity() {
 	override fun onStart() {
 		super.onStart()
 
+		// german-speaking people capitalize nouns - as a shopping list usually contains nouns we capitalize the first letter automatically. They can still use lowercase manually if they need a pronoun
+		when (currentLocale.language) {
+			Locale.GERMAN.language -> addItemNameInput.inputType = InputType.TYPE_TEXT_FLAG_CAP_SENTENCES or addItemNameInput.inputType
+		}
 		addItemNameInput.requestFocus()
 
 		title = getString(R.string.addTitleBarText)
