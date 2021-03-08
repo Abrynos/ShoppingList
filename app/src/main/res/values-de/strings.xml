@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="appName">Einkaufsliste</string>
-
 	<string name="optionsUseDarkThemeText">Dunkles Design verwenden</string>
 	<string name="optionsTitleBarText">Optionen</string>
 	<string name="optionsLatestReleaseText">aktuelle Version</string>
-
 	<string name="mainMenuOptionsLinkText">Optionen</string>
 	<string name="mainListIsEmptyText">Keine Einträge vorhanden</string>
-
 	<string name="addSaveButtonText">Speichern</string>
 	<string name="addNameHint">Ding</string>
 	<string name="addAmountHint">Anzahl (optional)</string>
 	<string name="addTitleBarText">Ding hinzufügen</string>
 	<string name="addNameIsEmptyMessage">Der Name des Dings darf nicht leer sein</string>
+	<string name="addAmountNotANumberMessage">Die Anzahl muss eine gültige Zahl sein</string>
 	<string name="addAmountTooSmallMessage">Die Anzahl muss höher als 0 sein</string>
 	<string name="addItemAlreadyExistsMessage">Ein Ding mit diesem Namen ist bereits auf der Einkaufsliste</string>
-	<string name="addAmountNotANumberMessage">Die Anzahl muss eine gültige Zahl sein</string>
 </resources>
