@@ -5,6 +5,10 @@ plugins {
 	id 'kotlin-kapt'
 }
 
+def keystorePropertiesFile = rootProject.file("keystore.properties");
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
 	compileSdkVersion 30
 	buildToolsVersion "30.0.2"
@@ -18,12 +22,22 @@ android {
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 	}
+	signingConfigs {
+		release {
+			storeFile file(keystoreProperties['storeFile'])
+			storePassword keystoreProperties['storePassword']
+			keyAlias keystoreProperties['keyAlias']
+			keyPassword keystoreProperties['keyPassword']
+			v2SigningEnabled true
+		}
+	}
 	applicationVariants.all {
 		variant -> variant.resValue "string", "versionName", variant.versionName
 	}
 	buildTypes {
 		release {
-			minifyEnabled false
+			minifyEnabled true
+			signingConfig signingConfigs.release
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}
