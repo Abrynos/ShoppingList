@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - id: set-env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - id: checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ env.RELEASE_VERSION }}
+      - id: setup-jdk
+        uses: actions/setup-java@v1
+        with:
+          java-version: 13
+      - id: prepare-secrets
+        run: |
+          echo "${{ secrets.KEYSTORE }}" > keystore.jks.asc
+          gpg -d --passphrase "${{ secrets.KEYSTORE_PASSPHRASE }}" --batch keystore.jks.asc > app/keystore.jks
+          echo "${{ secrets.KEYSTORE_PROPERTIES }}" > keystore.properties.asc
+          gpg -d --passphrase "${{ secrets.KEYSTORE_PROPERTIES_PASSPHRASE }}" --batch keystore.properties.asc > keystore.properties
+          rm keystore.jks.asc
+          rm keystore.properties.asc
+      - id: prepare-build
+        run: chmod +x ./gradlew
+      - id: build
+        run: ./gradlew build
+      - id: prepare-empty-changelog
+        run: |
+          echo "# Changes" > CHANGELOG.txt
+          echo "- " >> CHANGELOG.txt
+      - id: create-release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: app/build/outputs/apk/release/app-release.apk
+          body_path: CHANGELOG.txt
+          tag_name: ${{ env.RELEASE_VERSION }}
+
