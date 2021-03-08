@@ -1,0 +1,33 @@
+name: CI
+
+on: [ push, pull_request ]
+
+jobs:
+  build:
+    name: CI-build
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        uses: actions/checkout@v2
+      - id: setup-jdk
+        uses: actions/setup-java@v1
+        with:
+          java-version: 13
+      - id: prepare-secrets
+        run: |
+          echo "${{ secrets.KEYSTORE }}" > keystore.jks.asc
+          gpg -d --passphrase "${{ secrets.KEYSTORE_PASSPHRASE }}" --batch keystore.jks.asc > app/keystore.jks
+          echo "${{ secrets.KEYSTORE_PROPERTIES }}" > keystore.properties.asc
+          gpg -d --passphrase "${{ secrets.KEYSTORE_PROPERTIES_PASSPHRASE }}" --batch keystore.properties.asc > keystore.properties
+          rm keystore.jks.asc
+          rm keystore.properties.asc
+      - id: build
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
+      - id: upload-artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-release.apk
+          path: app/build/outputs/apk/release/app-release.apk
+
