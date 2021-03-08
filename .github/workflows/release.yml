@@ -36,6 +36,7 @@ jobs:
         run: |
           echo "# Changes" > CHANGELOG.txt
           echo "- " >> CHANGELOG.txt
+          echo "- The usual amount of miscellaneous code improvements and optimizations" >> CHANGELOG.txt
       - id: create-release
         uses: softprops/action-gh-release@v1
         env:
