@@ -21,10 +21,10 @@ jobs:
           gpg -d --passphrase "${{ secrets.KEYSTORE_PROPERTIES_PASSPHRASE }}" --batch keystore.properties.asc > keystore.properties
           rm keystore.jks.asc
           rm keystore.properties.asc
+      - id: prepare-build
+        run: chmod +x ./gradlew
       - id: build
-        run: |
-          chmod +x ./gradlew
-          ./gradlew build
+        run: ./gradlew build
       - id: upload-artifact
         uses: actions/upload-artifact@v2
         with:
