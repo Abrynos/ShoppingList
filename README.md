@@ -1,3 +1,9 @@
+# Shopping list
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Abrynos/ShoppingList/CI/main?label=Build&logo=github)
+![GitHub release version](https://img.shields.io/github/v/release/Abrynos/ShoppingList?label=Stable&logo=github)
+[![Localization](https://badges.crowdin.net/abrynosshoppinglist/localized.svg)](https://crowdin.com/project/abrynosshoppinglist)
+![GitHub](https://img.shields.io/github/license/Abrynos/ShoppingList)
+
 # Description
 This is the a simple Android application serving the purpose of a shopping list. It was originally done during my semester abroad in Poland at the [Polish-Japanese Academy of Information Technology](https://www.pja.edu.pl/en/). I modelled it after how I would use a piece of paper and kept it as simple as possible.
 
