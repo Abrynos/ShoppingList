@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 
-@Database(entities = [RequiredItem::class], version = 1)
+@Database(entities = [RequiredItem::class], version = 1, exportSchema = false)
 abstract class ShoppingListDatabase : RoomDatabase() {
 	abstract fun getShoppingListDao(): ShoppingListDao
 

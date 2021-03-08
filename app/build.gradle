@@ -21,6 +21,12 @@ android {
 		versionName "v1.3.0"
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+		javaCompileOptions {
+			annotationProcessorOptions {
+				arguments["room.incremental"] = "true"
+			}
+		}
 	}
 	signingConfigs {
 		release {
