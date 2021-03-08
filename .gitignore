@@ -13,5 +13,7 @@
 .cxx
 local.properties
 keystore.properties
+keystore.properties.asc
 app/keystore.jks
+app/keystore.jks.asc
 
