@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="appName">Список покупок</string>
+	<string name="optionsUseDarkThemeText">Використовувати темну тему</string>
+	<string name="optionsTitleBarText">Налаштування</string>
+	<string name="optionsLatestReleaseText">остання версія</string>
+	<string name="mainMenuOptionsLinkText">Налаштування</string>
+	<string name="mainListIsEmptyText">Список порожній</string>
+	<string name="addSaveButtonText">Зберегти</string>
+	<string name="addNameHint">Товар</string>
+	<string name="addAmountHint">Кількість (необов\'язково)</string>
+	<string name="addTitleBarText">Додати товар</string>
+	<string name="addNameIsEmptyMessage">Назва не може бути порожня</string>
+	<string name="addAmountNotANumberMessage">Кількість має бути числом</string>
+	<string name="addAmountTooSmallMessage">Кількість має бути більше за 0</string>
+	<string name="addItemAlreadyExistsMessage">Товар з такою назвою вже існує</string>
+</resources>
