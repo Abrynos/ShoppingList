@@ -10,6 +10,7 @@ import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 abstract class ShoppingListDatabase : RoomDatabase() {
 	abstract fun getShoppingListDao(): ShoppingListDao
 
+	@Suppress("SyntheticAccessor")
 	companion object {
 		private var INSTANCE: ShoppingListDatabase? = null
 

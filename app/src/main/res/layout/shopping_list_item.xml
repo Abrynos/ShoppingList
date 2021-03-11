@@ -11,14 +11,16 @@
 		android:layout_height="wrap_content"
 		android:layout_centerVertical="true"
 		android:layout_marginStart="10dp"
-		android:textSize="@dimen/listItemTextSize" />
+		android:textIsSelectable="false"
+		android:textSize="@dimen/listItemTextSize"
+		tools:ignore="UnusedIds" />
 
 	<LinearLayout
 		android:id="@+id/buttonLayout"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentEnd="true"
-		tools:ignore="RelativeOverlap">
+		tools:ignore="RelativeOverlap,UnusedIds">
 
 		<TextView
 			android:id="@+id/amountTextView"
@@ -26,6 +28,7 @@
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_vertical"
 			android:layout_marginEnd="8dp"
+			android:textIsSelectable="false"
 			android:textSize="@dimen/listItemTextSize" />
 
 		<ImageButton
