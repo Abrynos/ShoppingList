@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="appName">Lista zakupów</string>
+	<string name="optionsUseDarkThemeText">Użyj ciemnego tematu</string>
+	<string name="optionsTitleBarText">Opcje</string>
+	<string name="optionsLatestReleaseText">ostatnie wydanie</string>
+	<string name="mainMenuOptionsLinkText">Opcje</string>
+	<string name="mainListIsEmptyText">Lista pusta</string>
+	<string name="addSaveButtonText">Zapisz</string>
+	<string name="addNameHint">Pozycja</string>
+	<string name="addAmountHint">Kwota (opcjonalnie)</string>
+	<string name="addTitleBarText">Dodaj pozycję</string>
+	<string name="addNameIsEmptyMessage">Nazwa nie może być pusta</string>
+	<string name="addAmountNotANumberMessage">Kwota musi być ważną liczbą</string>
+	<string name="addAmountTooSmallMessage">Kwota musi być wyższa niż 0</string>
+	<string name="addItemAlreadyExistsMessage">Element o tej nazwie już istnieje</string>
+</resources>
