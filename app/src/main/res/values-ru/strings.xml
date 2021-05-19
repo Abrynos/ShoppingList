@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="appName">Список покупок</string>
+	<string name="optionsUseDarkThemeText">Использовать темную тему</string>
+	<string name="optionsTitleBarText">Опции</string>
+	<string name="optionsLatestReleaseText">последний релиз</string>
+	<string name="mainMenuOptionsLinkText">Опции</string>
+	<string name="mainListIsEmptyText">Список пуст</string>
+	<string name="addSaveButtonText">Спасти</string>
+	<string name="addNameHint">Элемент</string>
+	<string name="addAmountHint">Сумма (опционально)</string>
+	<string name="addTitleBarText">Добавить элемент</string>
+	<string name="addNameIsEmptyMessage">Имя не должно быть пустым</string>
+	<string name="addAmountNotANumberMessage">Сумма должна быть действительным числом</string>
+	<string name="addAmountTooSmallMessage">Сумма должна быть выше 0</string>
+	<string name="addItemAlreadyExistsMessage">Элемент с таким именем уже существует</string>
+</resources>
