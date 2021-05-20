@@ -36,7 +36,6 @@
 		tools:ignore="MissingConstraints" />
 
 	<Button
-		android:id="@+id/shareButton"
 		style="@style/Theme.ShoppingList.Button"
 		android:onClick="share"
 		android:text="@string/addShareButtonText"
