@@ -28,6 +28,6 @@ jobs:
       - id: upload-artifact
         uses: actions/upload-artifact@v2
         with:
-          name: app-release.apk
+          name: artifacts.zip
           path: app/build/outputs/apk/release/app-release.apk
 
