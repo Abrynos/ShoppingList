@@ -62,7 +62,7 @@ android {
 		warningsAsErrors true
 		checkAllWarnings true
 		showAll true
-		disable "GradleDependency", "NewerVersionAvailable", "DuplicateStrings", "MissingTranslation"
+		disable "GradleDependency", "NewerVersionAvailable", "DuplicateStrings", "GoogleAppIndexingApiWarning", "MissingTranslation"
 	}
 }
 
