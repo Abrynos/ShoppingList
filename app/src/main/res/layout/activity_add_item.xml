@@ -34,4 +34,12 @@
 		android:text="@string/addSaveButtonText"
 		app:layout_constraintTop_toBottomOf="@+id/addItemAmountInput"
 		tools:ignore="MissingConstraints" />
+
+	<Button
+		android:id="@+id/shareButton"
+		style="@style/Theme.ShoppingList.Button"
+		android:onClick="share"
+		android:text="@string/addShareButtonText"
+		app:layout_constraintTop_toBottomOf="@+id/saveButton"
+		tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

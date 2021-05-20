@@ -13,7 +13,19 @@
 		<activity
 			android:name=".AddItemActivity"
 			android:parentActivityName=".MainActivity"
-			android:windowSoftInputMode="stateAlwaysVisible" />
+			android:windowSoftInputMode="stateAlwaysVisible">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:host="@string/shareHost"
+					android:pathPrefix="@string/sharePath"
+					android:scheme="@string/shareScheme" />
+			</intent-filter>
+		</activity>
 		<activity
 			android:name=".OptionsActivity"
 			android:parentActivityName=".MainActivity" />

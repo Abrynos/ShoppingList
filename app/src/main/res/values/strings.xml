@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="shareHost" translatable="false">a.sl</string>
+	<string name="sharePath" translatable="false">/add</string>
+	<string name="shareScheme" translatable="false">https</string>
+
 	<string name="appName">ShoppingList</string>
 
 	<string name="optionsUseDarkThemeText">Use dark theme</string>
@@ -17,4 +21,6 @@
 	<string name="addAmountNotANumberMessage">The amount must be a valid number</string>
 	<string name="addAmountTooSmallMessage">The amount must be higher than 0</string>
 	<string name="addItemAlreadyExistsMessage">An item with this name already exists</string>
+	<string name="addShareButtonText">Send</string>
+	<string name="addShareText">Please add an item to your shopping list:</string>
 </resources>

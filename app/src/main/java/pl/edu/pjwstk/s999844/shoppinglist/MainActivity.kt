@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,11 +13,8 @@ import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 import pl.edu.pjwstk.s999844.shoppinglist.recyclerviewadapters.ShoppingListAdapter
-import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
-class MainActivity : AppCompatActivity() {
-	private val settings: Settings by lazy { Settings(this) }
-
+class MainActivity : AbstractShoppingActivity() {
 	private val shoppingListDao: ShoppingListDao by lazy { ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao() }
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,12 +31,6 @@ class MainActivity : AppCompatActivity() {
 	override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 		menuInflater.inflate(R.menu.menu_main, menu)
 		return true
-	}
-
-	override fun onStart() {
-		super.onStart()
-
-		ThemeManager.setDark(settings.darkThemeActive)
 	}
 
 	override fun onOptionsItemSelected(item: MenuItem): Boolean {
