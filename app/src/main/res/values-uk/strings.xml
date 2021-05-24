@@ -14,4 +14,6 @@
 	<string name="addAmountNotANumberMessage">Кількість має бути числом</string>
 	<string name="addAmountTooSmallMessage">Кількість має бути більше за 0</string>
 	<string name="addItemAlreadyExistsMessage">Товар з такою назвою вже існує</string>
+	<string name="addShareButtonText">Надіслати</string>
+	<string name="addShareText">Будь ласка, додайте товар до вашого списку покупок:</string>
 </resources>
