@@ -1,9 +1,0 @@
-{
-  "extends": [
-	"config:base",
-	":assignee(Abrynos)",
-	":automergeBranch",
-	":automergeDigest",
-	":automergeMinor"
-  ]
-}
