@@ -14,4 +14,6 @@
 	<string name="addAmountNotANumberMessage">A quantidade tem de ser um número válido</string>
 	<string name="addAmountTooSmallMessage">A quantidade deve ser superior a 0</string>
 	<string name="addItemAlreadyExistsMessage">Já existe um item com o mesmo nome</string>
+	<string name="addShareButtonText">Enviar</string>
+	<string name="addShareText">Por favor, adicione um item à sua lista de compras:</string>
 </resources>
