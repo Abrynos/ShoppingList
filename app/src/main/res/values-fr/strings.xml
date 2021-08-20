@@ -14,4 +14,6 @@
 	<string name="addAmountNotANumberMessage">Le montant doit être un nombre valide</string>
 	<string name="addAmountTooSmallMessage">Le montant doit être supérieur à 0</string>
 	<string name="addItemAlreadyExistsMessage">Un élément portant ce nom existe déjà</string>
+	<string name="addShareButtonText">Envoyer</string>
+	<string name="addShareText">Veuillez ajouter un article à votre liste de courses :</string>
 </resources>
