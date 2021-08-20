@@ -12,6 +12,7 @@
 		android:theme="@style/Theme.ShoppingList">
 		<activity
 			android:name=".AddItemActivity"
+			android:exported="true"
 			android:parentActivityName=".MainActivity"
 			android:windowSoftInputMode="stateAlwaysVisible">
 			<intent-filter>
@@ -31,7 +32,7 @@
 			android:parentActivityName=".MainActivity" />
 		<activity
 			android:name=".MainActivity"
-			android:logo="@drawable/ic_trash"
+			android:exported="true"
 			android:theme="@style/Theme.ShoppingList.MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
