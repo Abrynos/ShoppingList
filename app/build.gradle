@@ -10,13 +10,13 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-	compileSdkVersion 30
+	compileSdkVersion 31
 	buildToolsVersion "30.0.3"
 
 	defaultConfig {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
 		minSdkVersion 24
-		targetSdkVersion 30
+		targetSdkVersion 31
 		versionCode 7
 		versionName "v1.6.0"
 
