@@ -1,0 +1,101 @@
+name: "🐛 Bug report"
+description: "Unexpected program behaviour that needs code correction"
+labels: [ "🐛 bug", "👀 evaluation" ]
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Ensure that our bug report form is appropriate for you.
+      options:
+        - label: I read and understood the **[Contributing Guidelines](https://github.com/Abrynos/ShoppingList/blob/main/.github/CONTRIBUTING.md)**.
+          required: true
+        - label: This is not a **[question](https://github.com/Abrynos/ShoppingList/discussions)**.
+          required: true
+        - label: This is not a **[technical issue](https://github.com/Abrynos/ShoppingList/discussions)**.
+          required: true
+        - label: This is not a **[duplicate](https://github.com/Abrynos/ShoppingList/issues)** of an existing issue.
+          required: true
+
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: If you are using a version that is different from the current **[stable](https://github.com/Abrynos/ShoppingList/releases/latest)** or **[pre-release](https://github.com/Abrynos/ShoppingList/releases)**, please ensure that your bug is reproducible on at least one of them.
+      options:
+        - Latest stable release
+        - Latest pre-release
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Description
+      description: Short explanation of what you were going to do, what did you want to accomplish?
+      placeholder: |
+        I tried to brew a coffee using the app, but upon trying the app crashed with a message spelling `CookieException thrown in CoffeeFactory`.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen?
+      placeholder: |
+        I expected my favourite latte macchiato in a cup put below the machine hosting my instance of the app.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behaviour
+    attributes:
+      label: Current behaviour
+      description: What happened instead?
+      placeholder: |
+        No coffee was brewed and I was forced to use a water dispenser instead :(
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Everything required for someone to reproduce your bug.
+      placeholder: |
+        Anything that is necessary to reproduce the bug goes in here. You can use markdown formatting to make it more easy to read.
+    validations:
+      required: true
+
+  - type: textarea
+    id: possible-solution
+    attributes:
+      label: Possible reason/solution
+      description: Not mandatory, but you can suggest a fix/reason for the bug, if known to you.
+      placeholder: |
+        If you observed something peculiar about your issue that could help us locate and fix the culprit, this is the right place.
+
+  - type: dropdown
+    id: help
+    attributes:
+      label: Can you help us with this bug report?
+      description: This app is offered for free and our resources are limited. Helping us increases the chance of fixing the problem.
+      options:
+        - Yes, I can code the solution myself and send a merge request.
+        - Somehow, I can test and offer feedback, but I can't code the solution.
+        - No, I don't have time, skills or willings for any of that.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional information
+      description: Everything else you consider note-worthy that we didn't ask for.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        #### Thank you for taking the time to fill out this bug report.
