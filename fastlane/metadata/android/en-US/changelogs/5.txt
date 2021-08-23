@@ -1,0 +1,2 @@
+* Added translations for Ukrainian and Portuguese.
+* The usual amount of miscellaneous code improvements and optimizations.

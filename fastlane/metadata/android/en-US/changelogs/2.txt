@@ -1,0 +1,1 @@
+* Opening the activity to add a new item now automatically opens the keyboard and focuses on the name input field.

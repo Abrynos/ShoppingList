@@ -1,0 +1,2 @@
+* Added version number to the bottom of options screen. Clicking it opens the corresponding GitHub release page in the default browser.
+* Added link to latest release to bottom of options activity. It has similar functionality to the above change.

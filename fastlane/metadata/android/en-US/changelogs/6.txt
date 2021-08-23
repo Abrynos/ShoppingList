@@ -1,0 +1,3 @@
+* Added translations for French, Italian, Polish and Russian.
+* Added sharing feature. Instead of saving an item in your local shopping list, you can send it to the person of your household, that does the shopping.
+* The usual amount of miscellaneous code improvements and optimizations.

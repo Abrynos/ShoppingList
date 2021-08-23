@@ -1,0 +1,2 @@
+* The first letter when adding a new item is now capitalized for Germans. If your language capitalizes nouns, please let us know!
+* The usual amount of miscellaneous code improvements and optimizations.
