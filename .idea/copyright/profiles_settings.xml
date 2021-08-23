@@ -1,0 +1,8 @@
+<component name="CopyrightManager">
+  <settings>
+    <module2copyright>
+      <element module="xml" copyright="xml" />
+      <element module="default_copyright_scope" copyright="Default" />
+    </module2copyright>
+  </settings>
+</component>

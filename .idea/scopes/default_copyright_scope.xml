@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="default_copyright_scope" pattern="!src[ShoppingList.app]:drawable.*" />
+</component>
