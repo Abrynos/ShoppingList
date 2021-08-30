@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2021  Sebastian Göls
+ * Copyright (C) 2021-2021 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -88,10 +88,14 @@ android {
 		warningsAsErrors true
 		checkAllWarnings true
 		showAll true
-		disable "DuplicateStrings",// sometimes we use the same string for similuar but non-equal purposes
-			"MissingTranslation",// This is an open source project and we don't have a person of each language sitting around translating stuff for us
-			"ConvertToWebp",// the launcher icons are the only ones affected by this and they have transparency in them - no point in converting
-			"UsingOnClickInXml"// easier to read if in xml and not in a bunch of lambdas within the setup method for the activity
+		// sometimes we use the same string for similuar but non-equal purposes
+		disable "DuplicateStrings"
+		// This is an open source project and we don't have a person of each language sitting around translating stuff for us
+		disable "MissingTranslation"
+		// the launcher icons are the only ones affected by this and they have transparency in them - no point in converting
+		disable "ConvertToWebp"
+		// easier to read if in xml and not in a bunch of lambdas within the setup method for the activity
+		disable "UsingOnClickInXml"
 	}
 }
 
