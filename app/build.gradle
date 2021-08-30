@@ -88,7 +88,11 @@ android {
 		warningsAsErrors true
 		checkAllWarnings true
 		showAll true
-		disable "GradleDependency", "NewerVersionAvailable", "DuplicateStrings", "GoogleAppIndexingApiWarning", "MissingTranslation"
+		disable "GradleDependency",
+			"DuplicateStrings",// sometimes we use the same string for similuar but non-equal purposes
+			"MissingTranslation",// This is an open source project and we don't have a person of each language sitting around translating stuff for us
+			"ConvertToWebp",// the launcher icons are the only ones affected by this and they have transparency in them - no point in converting
+			"UsingOnClickInXml"// easier to read if in xml and not in a bunch of lambdas within the setup method for the activity
 	}
 }
 
