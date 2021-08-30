@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2021  Sebastian Göls
+ * Copyright (C) 2021-2021 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_options.*
+import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityOptionsBinding
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
 class OptionsActivity : AbstractShoppingActivity() {
@@ -44,24 +44,26 @@ class OptionsActivity : AbstractShoppingActivity() {
 		private val LATEST_RELEASE_URI: Uri = Uri.parse(LATEST_RELEASE_LINK)
 	}
 
+	private val binding by viewBinding(ActivityOptionsBinding::inflate)
+
 	private val settings: Settings by lazy { Settings(this) }
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_options)
+		setContentView(binding.root)
 	}
 
 	override fun onStart() {
 		super.onStart()
 
-		optionsThemeSwitch.isChecked = settings.darkThemeActive
+		binding.optionsThemeSwitch.isChecked = settings.darkThemeActive
 
 		title = getString(R.string.optionsTitleBarText)
 	}
 
 	@Suppress("UNUSED_PARAMETER")
 	fun onClickThemeSwitch(view: View) {
-		val isDark = optionsThemeSwitch.isChecked
+		val isDark = binding.optionsThemeSwitch.isChecked
 		settings.darkThemeActive = isDark
 		ThemeManager.setDark(isDark)
 	}

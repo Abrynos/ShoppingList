@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2021  Sebastian Göls
+ * Copyright (C) 2021-2021 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,24 +35,26 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_main.*
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
+import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityMainBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 import pl.edu.pjwstk.s999844.shoppinglist.recyclerviewadapters.ShoppingListAdapter
 
 class MainActivity : AbstractShoppingActivity() {
+	private val binding by viewBinding(ActivityMainBinding::inflate)
+
 	private val shoppingListDao: ShoppingListDao by lazy { ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao() }
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_main)
+		setContentView(binding.root)
 
-		mainListRecyclerView.layoutManager = LinearLayoutManager(this)
-		mainListRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+		binding.mainListRecyclerView.layoutManager = LinearLayoutManager(this)
+		binding.mainListRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
 		shoppingListDao.findAllItems().observe(this, this::observeDatabaseChange)
-		mainListRecyclerView.adapter = ShoppingListAdapter(this::changeItemCallback)
+		binding.mainListRecyclerView.adapter = ShoppingListAdapter(this::changeItemCallback)
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -89,8 +91,9 @@ class MainActivity : AbstractShoppingActivity() {
 	}
 
 	private fun observeDatabaseChange(items: List<RequiredItem>) {
-		(mainListRecyclerView.adapter as ShoppingListAdapter).setItems(items)
-		mainEmptyTextView.isVisible = items.isEmpty()
-		mainListRecyclerView.isVisible = items.isNotEmpty()
+		(binding.mainListRecyclerView.adapter as ShoppingListAdapter).setItems(items)
+
+		binding.mainEmptyTextView.isVisible = items.isEmpty()
+		binding.mainListRecyclerView.isVisible = items.isNotEmpty()
 	}
 }

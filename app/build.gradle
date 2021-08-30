@@ -27,7 +27,6 @@
 plugins {
 	id "com.android.application"
 	id "kotlin-android"
-	id "kotlin-android-extensions"
 	id "kotlin-kapt"
 }
 
@@ -96,6 +95,8 @@ android {
 		disable "ConvertToWebp"
 		// easier to read if in xml and not in a bunch of lambdas within the setup method for the activity
 		disable "UsingOnClickInXml"
+		// TODO - remove when android linting is smart enough to detect the usage of these IDs in our view bindings
+		disable "UnusedIds"
 	}
 }
 
