@@ -26,6 +26,7 @@
 
 package pl.edu.pjwstk.s999844.shoppinglist.recyclerviewadapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
@@ -67,6 +68,7 @@ class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredI
 
 	override fun getItemCount(): Int = items.size
 
+	@SuppressLint("NotifyDataSetChanged")
 	fun setItems(items: List<RequiredItem>) {
 		this.items = items
 		notifyDataSetChanged()
