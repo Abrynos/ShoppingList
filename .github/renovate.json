@@ -4,6 +4,8 @@
 	":assignee(Abrynos)",
 	":automergeBranch",
 	":automergeDigest",
-	":automergeMinor"
+	":automergeMinor",
+	":disableDependencyDashboard",
+	":disableRateLimiting"
   ]
 }
