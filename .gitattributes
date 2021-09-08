@@ -1,0 +1,5 @@
+*	text=auto eol=lf
+
+*.md	working-tree-encoding=UTF-8
+*.txt	working-tree-encoding=UTF-8
+
