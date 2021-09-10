@@ -31,8 +31,6 @@ plugins {
 }
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
 	compileSdkVersion 31
@@ -55,11 +53,17 @@ android {
 	}
 	signingConfigs {
 		release {
-			storeFile file(keystoreProperties["storeFile"])
-			storePassword keystoreProperties["storePassword"]
-			keyAlias keystoreProperties["keyAlias"]
-			keyPassword keystoreProperties["keyPassword"]
-			v2SigningEnabled true
+			if(keystorePropertiesFile.exists()) {
+				def keystoreProperties = new Properties()
+				keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+				storeFile file(keystoreProperties.getProperty("storeFile"))
+				storePassword keystoreProperties.getProperty("storePassword")
+				keyAlias keystoreProperties.getProperty("keyAlias")
+				keyPassword keystoreProperties.getProperty("keyPassword")
+				v2SigningEnabled true
+			}
+
 		}
 	}
 	applicationVariants.all {
@@ -68,7 +72,7 @@ android {
 	buildTypes {
 		release {
 			minifyEnabled true
-			signingConfig signingConfigs.release
+			signingConfig keystorePropertiesFile.exists() ? signingConfigs.release : null
 			proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
 		}
 	}
