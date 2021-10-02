@@ -1,9 +1,11 @@
 {
-  "extends": [
-	"config:base",
-	":assignee(Abrynos)",
-	":automergeBranch",
-	":automergeDigest",
-	":automergeMinor"
-  ]
+	"extends": [
+		"config:base",
+		":assignee(Abrynos)",
+		":automergeBranch",
+		":automergeDigest",
+		":automergeMinor",
+		":disableDependencyDashboard",
+		":disableRateLimiting"
+	]
 }

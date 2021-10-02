@@ -32,6 +32,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -89,12 +90,7 @@ class MainActivity : AbstractShoppingActivity() {
 
 	private fun observeDatabaseChange(items: List<RequiredItem>) {
 		(mainListRecyclerView.adapter as ShoppingListAdapter).setItems(items)
-		if (items.isEmpty()) {
-			mainListRecyclerView.visibility = View.GONE
-			mainEmptyTextView.visibility = View.VISIBLE
-		} else {
-			mainListRecyclerView.visibility = View.VISIBLE
-			mainEmptyTextView.visibility = View.GONE
-		}
+		mainEmptyTextView.isVisible = items.isEmpty()
+		mainListRecyclerView.isVisible = items.isNotEmpty()
 	}
 }

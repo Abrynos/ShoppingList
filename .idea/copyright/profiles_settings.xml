@@ -4,5 +4,6 @@
       <element module="xml" copyright="xml" />
       <element module="default_copyright_scope" copyright="Default" />
     </module2copyright>
+    <LanguageOptions name="XML" />
   </settings>
 </component>

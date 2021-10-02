@@ -21,6 +21,7 @@
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="Groovy">
+      <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
       <indentOptions>
         <option name="USE_TAB_CHARACTER" value="true" />
       </indentOptions>

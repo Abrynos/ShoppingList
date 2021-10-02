@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2021  Sebastian Göls
+ * Copyright (C) 2021-2021 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,19 +32,17 @@ plugins {
 }
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
 	compileSdkVersion 31
-	buildToolsVersion "30.0.3"
+	buildToolsVersion "31.0.0"
 
 	defaultConfig {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
 		minSdkVersion 24
 		targetSdkVersion 31
-		versionCode 8
-		versionName "v1.7.0"
+		versionCode 9
+		versionName "v1.8.0"
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -56,11 +54,17 @@ android {
 	}
 	signingConfigs {
 		release {
-			storeFile file(keystoreProperties["storeFile"])
-			storePassword keystoreProperties["storePassword"]
-			keyAlias keystoreProperties["keyAlias"]
-			keyPassword keystoreProperties["keyPassword"]
-			v2SigningEnabled true
+			if(keystorePropertiesFile.exists()) {
+				def keystoreProperties = new Properties()
+				keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+				storeFile file(keystoreProperties.getProperty("storeFile"))
+				storePassword keystoreProperties.getProperty("storePassword")
+				keyAlias keystoreProperties.getProperty("keyAlias")
+				keyPassword keystoreProperties.getProperty("keyPassword")
+				v2SigningEnabled true
+			}
+
 		}
 	}
 	applicationVariants.all {
@@ -69,7 +73,7 @@ android {
 	buildTypes {
 		release {
 			minifyEnabled true
-			signingConfig signingConfigs.release
+			signingConfig keystorePropertiesFile.exists() ? signingConfigs.release : null
 			proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
 		}
 	}
@@ -81,37 +85,44 @@ android {
 		jvmTarget = "1.8"
 	}
 	buildFeatures {
-		viewBinding = true
+		viewBinding true
 	}
 	lintOptions {
 		abortOnError true
 		warningsAsErrors true
 		checkAllWarnings true
 		showAll true
-		disable "GradleDependency", "NewerVersionAvailable", "DuplicateStrings", "GoogleAppIndexingApiWarning", "MissingTranslation"
+		// sometimes we use the same string for similuar but non-equal purposes
+		disable "DuplicateStrings"
+		// This is an open source project and we don't have a person of each language sitting around translating stuff for us
+		disable "MissingTranslation"
+		// the launcher icons are the only ones affected by this and they have transparency in them - no point in converting
+		disable "ConvertToWebp"
+		// easier to read if in xml and not in a bunch of lambdas within the setup method for the activity
+		disable "UsingOnClickInXml"
 	}
 }
 
 dependencies {
-	implementation "androidx.lifecycle:lifecycle-process:2.3.0"
+	implementation "androidx.lifecycle:lifecycle-process:2.3.1"
 
-	def androidx_navigation_version = "2.3.3"
+	def androidx_navigation_version = "2.3.5"
 	implementation "androidx.navigation:navigation-fragment-ktx:$androidx_navigation_version"
 	implementation "androidx.navigation:navigation-ui-ktx:$androidx_navigation_version"
 
-	def room_version = "2.2.6"
+	def room_version = "2.3.0"
 	implementation "androidx.room:room-runtime:$room_version"
 	kapt "androidx.room:room-compiler:$room_version"
 	implementation fileTree(include: ["*.jar"], dir: "libs")
 
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-	implementation "androidx.core:core-ktx:1.3.2"
-	implementation "androidx.appcompat:appcompat:1.2.0"
-	implementation "com.google.android.material:material:1.3.0"
-	implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+	implementation "androidx.core:core-ktx:1.6.0"
+	implementation "androidx.appcompat:appcompat:1.3.1"
+	implementation "com.google.android.material:material:1.4.0"
+	implementation "androidx.constraintlayout:constraintlayout:2.1.1"
 
-	testImplementation "junit:junit:4.13.1"
-	androidTestImplementation "androidx.test.ext:junit:1.1.2"
-	androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
+	testImplementation "junit:junit:4.13.2"
+	androidTestImplementation "androidx.test.ext:junit:1.1.3"
+	androidTestImplementation "androidx.test.espresso:espresso-core:3.4.0"
 }
 
