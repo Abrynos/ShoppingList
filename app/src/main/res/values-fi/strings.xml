@@ -17,19 +17,12 @@
   -->
 
 <resources>
-	<string name="shareHost" translatable="false">a.sl</string>
-	<string name="sharePath" translatable="false">/add</string>
-	<string name="shareScheme" translatable="false">https</string>
-
 	<string name="appName">Ostoslista</string>
-
 	<string name="optionsUseDarkThemeText">Käytä tummaa teemaa</string>
 	<string name="optionsTitleBarText">Asetukset</string>
 	<string name="optionsLatestReleaseText">uusin versio</string>
-
 	<string name="mainMenuOptionsLinkText">Asetukset</string>
 	<string name="mainListIsEmptyText">Lista on tyhjä</string>
-
 	<string name="addSaveButtonText">Tallenna</string>
 	<string name="addNameHint">Tuote</string>
 	<string name="addAmountHint">Määrä (valinnainen)</string>
