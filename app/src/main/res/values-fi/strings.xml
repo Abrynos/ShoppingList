@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021-2021 Sebastian Göls
+  ~
+  ~ This program is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; version 2 of the License only
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along
+  ~ with this program; if not, write to the Free Software Foundation, Inc.,
+  ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  -->
+<resources>
+	<string name="appName">Ostoslista</string>
+	<string name="optionsUseDarkThemeText">Käytä tummaa teemaa</string>
+	<string name="optionsTitleBarText">Asetukset</string>
+	<string name="optionsLatestReleaseText">uusin versio</string>
+	<string name="mainMenuOptionsLinkText">Asetukset</string>
+	<string name="mainListIsEmptyText">Lista on tyhjä</string>
+	<string name="addSaveButtonText">Tallenna</string>
+	<string name="addNameHint">Tuote</string>
+	<string name="addAmountHint">Määrä (valinnainen)</string>
+	<string name="addTitleBarText">Lisää tuote</string>
+	<string name="addNameIsEmptyMessage">Anna tuotteelle nimi</string>
+	<string name="addAmountNotANumberMessage">Määrän on oltava kelvollinen luku</string>
+	<string name="addAmountTooSmallMessage">Määrän on oltava suurempi kuin 0</string>
+	<string name="addItemAlreadyExistsMessage">Samanniminen tuote on lisätty aiemmin</string>
+	<string name="addShareButtonText">Lähetä</string>
+	<string name="addShareText">Lisää ostoslistaasi tuote:</string>
+</resources>
