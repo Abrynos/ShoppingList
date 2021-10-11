@@ -22,7 +22,7 @@
 	<string name="optionsLatestReleaseText">последний релиз</string>
 	<string name="mainMenuOptionsLinkText">Опции</string>
 	<string name="mainListIsEmptyText">Список пуст</string>
-	<string name="addSaveButtonText">Спасти</string>
+	<string name="addSaveButtonText">Сохранить</string>
 	<string name="addNameHint">Элемент</string>
 	<string name="addAmountHint">Сумма (опционально)</string>
 	<string name="addTitleBarText">Добавить элемент</string>
