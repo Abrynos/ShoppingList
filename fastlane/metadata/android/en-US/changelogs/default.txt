@@ -1,1 +1,1 @@
-* A huge amount of miscellaneous code improvements and optimizations.
+* The usual amount of miscellaneous code improvements and optimizations

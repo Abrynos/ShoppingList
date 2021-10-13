@@ -1,4 +1,4 @@
 * Fixed long item names overlapping with control buttons
 * Added Finnish translations. Thanks to GitHub/minna-xD
 * Added Lithuanian translations. Thanks to GitHub/estim
-* The usual amount of miscellaneous code improvements and optimizations.
+* The usual amount of miscellaneous code improvements and optimizations
