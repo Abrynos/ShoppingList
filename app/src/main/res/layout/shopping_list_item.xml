@@ -27,6 +27,8 @@
 		android:layout_height="wrap_content"
 		android:layout_centerVertical="true"
 		android:layout_marginStart="10dp"
+		android:layout_marginTop="12dp"
+		android:layout_marginEnd="160dp"
 		android:textIsSelectable="false"
 		android:textSize="@dimen/listItemTextSize"
 		tools:ignore="UnusedIds" />
@@ -51,18 +53,18 @@
 			android:id="@+id/subtractButton"
 			style="@style/Theme.ShoppingList.ImageButton"
 			android:background="@drawable/ic_minus"
-			tools:ignore="ContentDescription" />
+			android:contentDescription="@string/mainSubtractButtonDescription" />
 
 		<ImageButton
 			android:id="@+id/addButton"
 			style="@style/Theme.ShoppingList.ImageButton"
 			android:background="@drawable/ic_plus"
-			tools:ignore="ContentDescription" />
+			android:contentDescription="@string/mainAddButtonDescription" />
 
 		<ImageButton
 			android:id="@+id/deleteButton"
 			style="@style/Theme.ShoppingList.ImageButton"
 			android:background="@drawable/ic_trash"
-			tools:ignore="ContentDescription" />
+			android:contentDescription="@string/mainDeleteButtonDescription" />
 	</LinearLayout>
 </RelativeLayout>
