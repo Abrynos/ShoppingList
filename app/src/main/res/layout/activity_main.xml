@@ -38,7 +38,7 @@
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:srcCompat="@drawable/ic_plus"
-		tools:ignore="ContentDescription" />
+		android:contentDescription="@string/mainFloatingAddButtonDescription" />
 
 	<TextView
 		android:id="@+id/mainEmptyTextView"

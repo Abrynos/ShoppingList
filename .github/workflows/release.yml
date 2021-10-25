@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*.*.*'
 
+env:
+  CHANGELOG_FILE: CHANGELOG.txt
+
 jobs:
   build:
     name: Release
@@ -33,17 +36,16 @@ jobs:
         run: chmod +x ./gradlew
       - id: build
         run: ./gradlew build
-      - id: prepare-empty-changelog
+      - id: prepare-changelog
         run: |
-          echo "# Changes" > CHANGELOG.txt
-          echo "- " >> CHANGELOG.txt
-          echo "- The usual amount of miscellaneous code improvements and optimizations" >> CHANGELOG.txt
+          echo "# Changes" > "${{ env.CHANGELOG_FILE }}"
+          sed "s/^* /- /g" "fastlane/metadata/android/en-US/changelogs/$(grep versionCode app/build.gradle | grep -E '[0-9]+' --only-matching).txt" >> "${{ env.CHANGELOG_FILE }}"
       - id: create-release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: app/build/outputs/apk/release/app-release.apk
-          body_path: CHANGELOG.txt
+          body_path: "${{ env.CHANGELOG_FILE }}"
           tag_name: ${{ env.RELEASE_VERSION }}
 

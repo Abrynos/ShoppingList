@@ -28,6 +28,10 @@
 
 	<string name="mainMenuOptionsLinkText">Options</string>
 	<string name="mainListIsEmptyText">List is empty</string>
+	<string name="mainSubtractButtonDescription">Decreases the items amount by one</string>
+	<string name="mainAddButtonDescription">Increases the items amount by one</string>
+	<string name="mainDeleteButtonDescription">Deletes the item from the shopping list</string>
+	<string name="mainFloatingAddButtonDescription">Adds a new item to the shopping list</string>
 
 	<string name="addSaveButtonText">Save</string>
 	<string name="addNameHint">Item</string>
