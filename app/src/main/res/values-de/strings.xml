@@ -22,6 +22,10 @@
 	<string name="optionsLatestReleaseText">aktuelle Version</string>
 	<string name="mainMenuOptionsLinkText">Optionen</string>
 	<string name="mainListIsEmptyText">Keine Einträge vorhanden</string>
+	<string name="mainSubtractButtonDescription">Vermindert die Anzahl des Dings um eins</string>
+	<string name="mainAddButtonDescription">Erhöht die Anzahl des Dings um eins</string>
+	<string name="mainDeleteButtonDescription">Löscht das Ding von der Einkaufsliste</string>
+	<string name="mainFloatingAddButtonDescription">Fügt ein neues Ding zur Einkaufliste hinzu</string>
 	<string name="addSaveButtonText">Speichern</string>
 	<string name="addNameHint">Ding</string>
 	<string name="addAmountHint">Anzahl (optional)</string>
