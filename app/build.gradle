@@ -104,7 +104,7 @@ android {
 }
 
 dependencies {
-	implementation "androidx.lifecycle:lifecycle-process:2.3.1"
+	implementation "androidx.lifecycle:lifecycle-process:2.4.0"
 
 	def androidx_navigation_version = "2.3.5"
 	implementation "androidx.navigation:navigation-fragment-ktx:$androidx_navigation_version"
