@@ -31,5 +31,5 @@
 	<string name="addAmountTooSmallMessage">Кількість має бути більше за 0</string>
 	<string name="addItemAlreadyExistsMessage">Товар з такою назвою вже існує</string>
 	<string name="addShareButtonText">Надіслати</string>
-	<string name="addShareText">Будь ласка, додайте товар до вашого списку покупок:</string>
+	<string name="addShareText" formatted="true">Будь ласка, додайте товар до вашого списку покупок: %1$s</string>
 </resources>

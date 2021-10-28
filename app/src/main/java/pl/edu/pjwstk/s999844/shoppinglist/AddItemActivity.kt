@@ -139,7 +139,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 
 		val sendIntent: Intent = Intent().apply {
 			action = Intent.ACTION_SEND
-			putExtra(Intent.EXTRA_TEXT, getString(R.string.addShareText) + ' ' + createShareUri(item))
+			putExtra(Intent.EXTRA_TEXT, getString(R.string.addShareText, createShareUri(item)))
 			type = "text/plain"
 		}
 
