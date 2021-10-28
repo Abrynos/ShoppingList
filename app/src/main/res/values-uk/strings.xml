@@ -35,5 +35,5 @@
 	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Кількість має бути більше за 0</string>
 	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Товар з такою назвою вже існує</string>
 	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Надіслати</string>
-	<string name="addShareText" formatted="true" comment="This text will be sent to your contact when sharing a new item with them">Будь ласка, додайте до вашого списку покупок товар: %1$s</string>
+	<string name="addShareText" formatted="true" comment="This text will be sent to your contact when sharing a new item with them">Будь ласка, додайте товар до вашого списку покупок: %1$s</string>
 </resources>
