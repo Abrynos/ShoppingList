@@ -34,6 +34,6 @@
 	<string name="addAmountNotANumberMessage">Počet musí být platné číslo</string>
 	<string name="addItemAlreadyExistsMessage">Položka s tímto jménem již existuje</string>
 	<string name="addShareButtonText">Sdílet</string>
-	<string name="addShareText">Přidejte si položku do nákupniho seznamu: %1$s</string>
+	<string name="addShareText" formatted="true">Přidejte si položku do nákupniho seznamu: %1$s</string>
 	<string name="optionsUseDarkThemeText">Tmavý režim</string>
 </resources>
