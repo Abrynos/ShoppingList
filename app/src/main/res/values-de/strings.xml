@@ -16,24 +16,24 @@
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
 <resources>
-	<string name="appName">Einkaufsliste</string>
-	<string name="optionsUseDarkThemeText">Dunkles Design verwenden</string>
-	<string name="optionsTitleBarText">Optionen</string>
-	<string name="optionsLatestReleaseText">aktuelle Version</string>
-	<string name="mainMenuOptionsLinkText">Optionen</string>
-	<string name="mainListIsEmptyText">Keine Einträge vorhanden</string>
-	<string name="mainSubtractButtonDescription">Vermindert die Anzahl des Dings um eins</string>
-	<string name="mainAddButtonDescription">Erhöht die Anzahl des Dings um eins</string>
-	<string name="mainDeleteButtonDescription">Löscht das Ding von der Einkaufsliste</string>
-	<string name="mainFloatingAddButtonDescription">Fügt ein neues Ding zur Einkaufliste hinzu</string>
-	<string name="addSaveButtonText">Speichern</string>
-	<string name="addNameHint">Ding</string>
-	<string name="addAmountHint">Anzahl (optional)</string>
-	<string name="addTitleBarText">Ding hinzufügen</string>
-	<string name="addNameIsEmptyMessage">Der Name des Dings darf nicht leer sein</string>
-	<string name="addAmountNotANumberMessage">Die Anzahl muss eine gültige Zahl sein</string>
-	<string name="addAmountTooSmallMessage">Die Anzahl muss höher als 0 sein</string>
-	<string name="addItemAlreadyExistsMessage">Ein Ding mit diesem Namen ist bereits auf der Einkaufsliste</string>
-	<string name="addShareButtonText">Verschicken</string>
-	<string name="addShareText" formatted="true">Füge bitte folgendes zu deiner Einkaufsliste hinzu: %1$s</string>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Einkaufsliste</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Dunkles Design verwenden</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Optionen</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">aktuelle Version</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Optionen</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Keine Einträge vorhanden</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Vermindert die Anzahl des Dings um eins</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Erhöht die Anzahl des Dings um eins</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Löscht das Ding von der Einkaufsliste</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Fügt ein neues Ding zur Einkaufliste hinzu</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Speichern</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Ding</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Anzahl (optional)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Ding hinzufügen</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">Der Name des Dings darf nicht leer sein</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">Die Anzahl muss eine gültige Zahl sein</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Die Anzahl muss höher als 0 sein</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Ein Ding mit diesem Namen ist bereits auf der Einkaufsliste</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Verschicken</string>
+	<string name="addShareText" formatted="true" comment="This text will be sent to your contact when sharing a new item with them">Füge bitte folgendes zu deiner Einkaufsliste hinzu: %1$s</string>
 </resources>
