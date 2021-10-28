@@ -16,20 +16,24 @@
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
 <resources>
-	<string name="appName">Список покупок</string>
-	<string name="optionsUseDarkThemeText">Использовать темную тему</string>
-	<string name="optionsTitleBarText">Опции</string>
-	<string name="optionsLatestReleaseText">последний релиз</string>
-	<string name="mainMenuOptionsLinkText">Опции</string>
-	<string name="mainListIsEmptyText">Список пуст</string>
-	<string name="addSaveButtonText">Сохранить</string>
-	<string name="addNameHint">Элемент</string>
-	<string name="addAmountHint">Сумма (опционально)</string>
-	<string name="addTitleBarText">Добавить элемент</string>
-	<string name="addNameIsEmptyMessage">Имя не должно быть пустым</string>
-	<string name="addAmountNotANumberMessage">Сумма должна быть действительным числом</string>
-	<string name="addAmountTooSmallMessage">Сумма должна быть выше 0</string>
-	<string name="addItemAlreadyExistsMessage">Элемент с таким именем уже существует</string>
-	<string name="addShareButtonText">Отправить</string>
-	<string name="addShareText" formatted="true">Пожалуйста, добавьте элемент в список покупок: %1$s</string>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">СписокПокупок</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Использовать темную тему</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Опции</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">последний релиз</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Опции</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Список пуст</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Уменьшает количество товаров на один</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Увеличивает количество товаров на один</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Удаляет товар из списка покупок</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Добавляет новый предмет в список покупок</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Сохранить</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Элемент</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Сумма (опционально)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Добавить элемент</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">Имя не должно быть пустым</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">Сумма должна быть действительным числом</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Сумма должна быть выше 0</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Товар с таким именем уже существует</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Отправить</string>
+	<string name="addShareText" formatted="true" comment="This text will be sent to your contact when sharing a new item with them">Добавьте новый товар в список покупок: %1$s</string>
 </resources>
