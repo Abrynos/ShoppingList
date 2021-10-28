@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021-2021 Sebastian Göls
+  ~
+  ~ This program is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; version 2 of the License only
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along
+  ~ with this program; if not, write to the Free Software Foundation, Inc.,
+  ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  -->
+
+<resources>
+	<string name="appName">Nákupní seznam</string>
+	<string name="optionsTitleBarText">Nastavení</string>
+	<string name="optionsLatestReleaseText">nejnovější verze</string>
+	<string name="mainMenuOptionsLinkText">Nastavení</string>
+	<string name="mainListIsEmptyText">Seznam je prázdný</string>
+	<string name="mainSubtractButtonDescription">Sníží počet položek o 1</string>
+	<string name="mainAddButtonDescription">Zvýší počet položek o 1</string>
+	<string name="mainDeleteButtonDescription">Smaže položku z nákupního seznamu</string>
+	<string name="mainFloatingAddButtonDescription">Přidá novou položku na nákupní seznam</string>
+	<string name="addSaveButtonText">Uložit</string>
+	<string name="addNameHint">Položka</string>
+	<string name="addAmountHint">Počet (volitelné)</string>
+	<string name="addTitleBarText">Přidat položku</string>
+	<string name="addNameIsEmptyMessage">Jméno nesmí být prázdné</string>
+	<string name="addAmountTooSmallMessage">Počet musí být větší než 0</string>
+	<string name="addAmountNotANumberMessage">Počet musí být platné číslo</string>
+	<string name="addItemAlreadyExistsMessage">Položka s tímto jménem již existuje</string>
+	<string name="addShareButtonText">Sdílet</string>
+	<string name="addShareText">"Přidejte si položku do nákupniho seznamu: "</string>
+	<string name="optionsUseDarkThemeText">Tmavý režim</string>
+</resources>
