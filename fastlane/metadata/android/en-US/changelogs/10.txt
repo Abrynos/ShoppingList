@@ -1,1 +1,2 @@
+* Added Czech translations. Thanks to GitHub/3ncy
 * The usual amount of miscellaneous code improvements and optimizations
