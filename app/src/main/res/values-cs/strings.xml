@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ Copyright (C) 2021-2021 Sebastian Göls
   ~
   ~ This program is free software; you can redistribute it and/or modify
@@ -14,26 +15,25 @@
   ~ with this program; if not, write to the Free Software Foundation, Inc.,
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
-
 <resources>
-	<string name="appName">Nákupní seznam</string>
-	<string name="optionsTitleBarText">Nastavení</string>
-	<string name="optionsLatestReleaseText">nejnovější verze</string>
-	<string name="mainMenuOptionsLinkText">Nastavení</string>
-	<string name="mainListIsEmptyText">Seznam je prázdný</string>
-	<string name="mainSubtractButtonDescription">Sníží počet položek o 1</string>
-	<string name="mainAddButtonDescription">Zvýší počet položek o 1</string>
-	<string name="mainDeleteButtonDescription">Smaže položku z nákupního seznamu</string>
-	<string name="mainFloatingAddButtonDescription">Přidá novou položku na nákupní seznam</string>
-	<string name="addSaveButtonText">Uložit</string>
-	<string name="addNameHint">Položka</string>
-	<string name="addAmountHint">Počet (volitelné)</string>
-	<string name="addTitleBarText">Přidat položku</string>
-	<string name="addNameIsEmptyMessage">Jméno nesmí být prázdné</string>
-	<string name="addAmountTooSmallMessage">Počet musí být větší než 0</string>
-	<string name="addAmountNotANumberMessage">Počet musí být platné číslo</string>
-	<string name="addItemAlreadyExistsMessage">Položka s tímto jménem již existuje</string>
-	<string name="addShareButtonText">Sdílet</string>
-	<string name="addShareText" formatted="true">Přidejte si položku do nákupniho seznamu: %1$s</string>
-	<string name="optionsUseDarkThemeText">Tmavý režim</string>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Nákupní seznam</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Tmavý režim</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Nastavení</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">nejnovější verze</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Nastavení</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Seznam je prázdný</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Sníží počet položek o 1</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Zvýší počet položek o 1</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Smaže položku z nákupního seznamu</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Přidá novou položku na nákupní seznam</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Uložit</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Položka</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Počet (volitelné)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Přidat položku</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">Jméno nesmí být prázdné</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">Počet musí být platné číslo</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Počet musí být větší než 0</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Položka s tímto jménem již existuje</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Sdílet</string>
+	<string name="addShareText" formatted="true" comment="This text will be sent to your contact when sharing a new item with them">Přidejte si položku do nákupniho seznamu: %1$s</string>
 </resources>
