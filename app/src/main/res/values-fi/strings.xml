@@ -31,5 +31,5 @@
 	<string name="addAmountTooSmallMessage">Määrän on oltava suurempi kuin 0</string>
 	<string name="addItemAlreadyExistsMessage">Samanniminen tuote on lisätty aiemmin</string>
 	<string name="addShareButtonText">Lähetä</string>
-	<string name="addShareText">Lisää ostoslistaasi tuote:</string>
+	<string name="addShareText" formatted="true">Lisää ostoslistaasi tuote: %1$s</string>
 </resources>

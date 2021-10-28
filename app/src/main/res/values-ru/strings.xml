@@ -31,5 +31,5 @@
 	<string name="addAmountTooSmallMessage">Сумма должна быть выше 0</string>
 	<string name="addItemAlreadyExistsMessage">Элемент с таким именем уже существует</string>
 	<string name="addShareButtonText">Отправить</string>
-	<string name="addShareText">Пожалуйста, добавьте элемент в список покупок:</string>
+	<string name="addShareText" formatted="true">Пожалуйста, добавьте элемент в список покупок: %1$s</string>
 </resources>

@@ -31,5 +31,5 @@
 	<string name="addAmountTooSmallMessage">Le montant doit être supérieur à 0</string>
 	<string name="addItemAlreadyExistsMessage">Un élément portant ce nom existe déjà</string>
 	<string name="addShareButtonText">Envoyer</string>
-	<string name="addShareText">Veuillez ajouter un article à votre liste de courses :</string>
+	<string name="addShareText" formatted="true">Veuillez ajouter un article à votre liste de courses: %1$s</string>
 </resources>

@@ -20,27 +20,27 @@
 	<string name="sharePath" translatable="false">/add</string>
 	<string name="shareScheme" translatable="false">https</string>
 
-	<string name="appName">ShoppingList</string>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">ShoppingList</string>
 
-	<string name="optionsUseDarkThemeText">Use dark theme</string>
-	<string name="optionsTitleBarText">Options</string>
-	<string name="optionsLatestReleaseText">latest release</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Use dark theme</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Options</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">latest release</string>
 
-	<string name="mainMenuOptionsLinkText">Options</string>
-	<string name="mainListIsEmptyText">List is empty</string>
-	<string name="mainSubtractButtonDescription">Decreases the items amount by one</string>
-	<string name="mainAddButtonDescription">Increases the items amount by one</string>
-	<string name="mainDeleteButtonDescription">Deletes the item from the shopping list</string>
-	<string name="mainFloatingAddButtonDescription">Adds a new item to the shopping list</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Options</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">List is empty</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Decreases the items amount by one</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Increases the items amount by one</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Deletes the item from the shopping list</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Adds a new item to the shopping list</string>
 
-	<string name="addSaveButtonText">Save</string>
-	<string name="addNameHint">Item</string>
-	<string name="addAmountHint">Amount (optional)</string>
-	<string name="addTitleBarText">Add Item</string>
-	<string name="addNameIsEmptyMessage">The name must not be empty</string>
-	<string name="addAmountNotANumberMessage">The amount must be a valid number</string>
-	<string name="addAmountTooSmallMessage">The amount must be higher than 0</string>
-	<string name="addItemAlreadyExistsMessage">An item with this name already exists</string>
-	<string name="addShareButtonText">Send</string>
-	<string name="addShareText">Please add an item to your shopping list:</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Save</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Item</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Amount (optional)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Add Item</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">The name must not be empty</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">The amount must be a valid number</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">The amount must be higher than 0</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">An item with this name already exists</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Send</string>
+	<string name="addShareText" formatted="true" comment="This text will be sent to your contact when sharing a new item with them">Please add an item to your shopping list: %1$s</string>
 </resources>

@@ -31,5 +31,5 @@
 	<string name="addAmountTooSmallMessage">Suma turi būti didesnė, nei 0</string>
 	<string name="addItemAlreadyExistsMessage">Elementas su šiuo pavadinimu jau yra</string>
 	<string name="addShareButtonText">Siųsti</string>
-	<string name="addShareText">Prašome įtraukti prekę į pirkinių sąrašą:</string>
+	<string name="addShareText" formatted="true">Prašome įtraukti prekę į pirkinių sąrašą: %1$s</string>
 </resources>

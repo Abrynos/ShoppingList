@@ -31,5 +31,5 @@
 	<string name="addAmountTooSmallMessage">A quantidade deve ser superior a 0</string>
 	<string name="addItemAlreadyExistsMessage">Já existe um item com o mesmo nome</string>
 	<string name="addShareButtonText">Enviar</string>
-	<string name="addShareText">Por favor, adicione um item à sua lista de compras:</string>
+	<string name="addShareText" formatted="true">Por favor, adicione um item à sua lista de compras: %1$s</string>
 </resources>
