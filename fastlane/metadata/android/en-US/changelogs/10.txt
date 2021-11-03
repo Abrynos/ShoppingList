@@ -1,2 +1,3 @@
 * Added Czech translations. Thanks to GitHub/3ncy
+* Added Norwegian Bokmal translations. Thanks to GitHub/JarlavGrenland
 * The usual amount of miscellaneous code improvements and optimizations
