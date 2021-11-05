@@ -3,8 +3,21 @@ This is the a simple Android application serving the purpose of a shopping list.
 <b>Core features:</b>
 
 * Simple and intuitive to use
-* Dark and Light user interface
-* Localized in German and English
+* Dark and Light user interface mode
 * No permissions required
 * No tracking or sharing any data
 * No ads
+
+<b>Languages:</b>
+* English
+* German
+* Finnish
+* Czech
+* French
+* Italian
+* Lithuanian
+* Norwegian Bokmal
+* Polish
+* Portuguese
+* Russian
+* Ukrainian
