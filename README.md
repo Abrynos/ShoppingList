@@ -1,6 +1,7 @@
 # Shopping list
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Abrynos/ShoppingList/CI/main?label=Build&logo=github)
 ![GitHub release version](https://img.shields.io/github/v/release/Abrynos/ShoppingList?label=Stable&logo=github)
+[![F-Droid release version](https://img.shields.io/f-droid/v/pl.edu.pjwstk.s999844.shoppinglist?label=F-Droid&logo=fdroid)](https://f-droid.org/packages/pl.edu.pjwstk.s999844.shoppinglist/)
 [![Localization](https://badges.crowdin.net/abrynosshoppinglist/localized.svg)](https://crowdin.com/project/abrynosshoppinglist)
 ![GitHub](https://img.shields.io/github/license/Abrynos/ShoppingList)
 
@@ -16,7 +17,12 @@ This is the a simple Android application serving the purpose of a shopping list.
 - No ads
 
 # Installation
-Sadly I am too lazy to set everything up for the official app store. You can download an .apk file from the [releases page](https://github.com/Abrynos/ShoppingList/releases/latest).
+Sadly I am too lazy to set everything up for the official app store. You can either
+- install [the app](https://f-droid.org/packages/pl.edu.pjwstk.s999844.shoppinglist/) via the [F-Droid app registry](https://f-droid.org/)
+
+or
+
+- download the .apk file directly from the [releases page](https://github.com/Abrynos/ShoppingList/releases/latest) here on GitHub.
 
 # Translation
 I am open to translating the app to any known language. There is several ways of submitting your translation to the project:
