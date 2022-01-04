@@ -24,7 +24,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package pl.edu.pjwstk.s999844.shoppinglist.recyclerviewadapters
+package pl.edu.pjwstk.s999844.shoppinglist.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

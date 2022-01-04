@@ -30,7 +30,10 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.Spinner
 import kotlinx.android.synthetic.main.activity_options.*
+import pl.edu.pjwstk.s999844.shoppinglist.adapters.OrderSpinnerAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
 class OptionsActivity : AbstractShoppingActivity() {
@@ -44,17 +47,38 @@ class OptionsActivity : AbstractShoppingActivity() {
 		private val LATEST_RELEASE_URI: Uri = Uri.parse(LATEST_RELEASE_LINK)
 	}
 
-	private val settings: Settings by lazy { Settings(this) }
-
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_options)
+
+		listOrderDropdown.adapter = OrderSpinnerAdapter(this)
+		listOrderDropdown.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+			override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+				settings.order = listOrderDropdown.getItemAtPosition(position) as Settings.Order
+			}
+
+			override fun onNothingSelected(p0: AdapterView<*>?) {
+				throw IllegalStateException()
+			}
+		}
+	}
+
+	private fun getIndex(spinner: Spinner, order: Settings.Order): Int {
+		for (i in 0..spinner.count) {
+			val valueAtPosition: Settings.Order = spinner.getItemAtPosition(i) as Settings.Order
+			if (valueAtPosition == order) {
+				return i
+			}
+		}
+
+		return -1
 	}
 
 	override fun onStart() {
 		super.onStart()
 
 		optionsThemeSwitch.isChecked = settings.darkThemeActive
+		listOrderDropdown.setSelection(getIndex(listOrderDropdown, settings.order))
 
 		title = getString(R.string.optionsTitleBarText)
 	}

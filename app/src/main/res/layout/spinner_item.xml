@@ -1,4 +1,6 @@
-<?xml25dp version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
   ~ Copyright (C) 2021-2022 Sebastian Göls
   ~
   ~ This program is free software; you can redistribute it and/or modify
@@ -15,19 +17,9 @@
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
 
-<resources>
-	<dimen name="formDefaultMargin">30dp</dimen>
-	<dimen name="formDefaultBottomMargin">0dp</dimen>
-	<dimen name="formFirstInputTopMargin">40dp</dimen>
-
-	<dimen name="imageButtonDefaultSize">30dp</dimen>
-	<dimen name="imageButtonDefaultMargin">10dp</dimen>
-
-	<dimen name="mainActionButtonMargin">25dp</dimen>
-	<dimen name="mainEmptyTextViewMargin">25dp</dimen>
-	<dimen name="mainEmptyTextViewTextSize">@dimen/listItemTextSize</dimen>
-
-	<dimen name="listItemTextSize">20sp</dimen>
-
-	<dimen name="optionTextSize">15sp</dimen>
-</resources>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/spinnerItemText"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:textSize="@dimen/optionTextSize"
+	android:padding="5dip" />

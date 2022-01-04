@@ -36,10 +36,11 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import pl.edu.pjwstk.s999844.shoppinglist.adapters.ShoppingListAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
-import pl.edu.pjwstk.s999844.shoppinglist.recyclerviewadapters.ShoppingListAdapter
+import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
 class MainActivity : AbstractShoppingActivity() {
 	private val shoppingListDao: ShoppingListDao by lazy { ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao() }
@@ -89,7 +90,13 @@ class MainActivity : AbstractShoppingActivity() {
 	}
 
 	private fun observeDatabaseChange(items: List<RequiredItem>) {
-		(mainListRecyclerView.adapter as ShoppingListAdapter).setItems(items)
+		val orderedItems = when (settings.order) {
+			Settings.Order.Alphabetical -> items.sortedBy { it.name.lowercase() }
+			Settings.Order.AmountAscending -> items.sortedBy { it.amount }
+			Settings.Order.AmountDescending -> items.sortedByDescending { it.amount }
+			else -> items
+		}
+		(mainListRecyclerView.adapter as ShoppingListAdapter).setItems(orderedItems)
 		mainEmptyTextView.isVisible = items.isEmpty()
 		mainListRecyclerView.isVisible = items.isNotEmpty()
 	}
