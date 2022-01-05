@@ -28,6 +28,8 @@
 	<dimen name="mainEmptyTextViewTextSize">@dimen/listItemTextSize</dimen>
 
 	<dimen name="listItemTextSize">20sp</dimen>
+	<dimen name="listItemTopBottomMargin">12dp</dimen>
+	<dimen name="listItemLeftRightMargin">10dp</dimen>
 
 	<dimen name="optionTextSize">15sp</dimen>
 </resources>
