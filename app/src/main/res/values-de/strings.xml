@@ -20,6 +20,11 @@
 	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Dunkles Design verwenden</string>
 	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Optionen</string>
 	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">aktuelle Version</string>
+	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">Reihenfolge</string>
+	<string name="optionsUnorderedOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents no ordering">Unsortiert</string>
+	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">Alphabetisch</string>
+	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">Menge aufsteigend</string>
+	<string name="optionsAmountDecendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">Menge absteigend</string>
 	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Optionen</string>
 	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Keine Einträge vorhanden</string>
 	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Vermindert die Anzahl des Dings um eins</string>
