@@ -36,7 +36,7 @@ class Settings(context: Context) {
 		private const val IS_DARK_THEME_NAME = "darkTheme"
 		private const val IS_DARK_THEME_DEFAULT = true
 		private const val ORDER_NAME = "listOrder"
-		private val ORDER_DEFAULT: Int = Order.Unordered.descriptionResourceId
+		private val ORDER_DEFAULT: Order = Order.Unordered
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
@@ -49,18 +49,18 @@ class Settings(context: Context) {
 
 	var order: Order
 		get() {
-			val value: Int = sharedPreferences.getInt(ORDER_NAME, ORDER_DEFAULT)
-			return Order.values().first {
-				it.descriptionResourceId == value
-			}
+			val value: Int = sharedPreferences.getInt(ORDER_NAME, ORDER_DEFAULT.value)
+			return Order.values().firstOrNull {
+				it.value == value
+			}?: ORDER_DEFAULT
 		}
-		set(value) = edit().putInt(ORDER_NAME, value.descriptionResourceId).apply()
+		set(value) = edit().putInt(ORDER_NAME, value.value).apply()
 
 
-	enum class Order(val descriptionResourceId: Int) {
-		Unordered(R.string.optionsUnorderedOrdering),
-		Alphabetical(R.string.optionsAlphabeticalOrdering),
-		AmountAscending(R.string.optionsAmountAscendingOrdering),
-		AmountDescending(R.string.optionsAmountDecendingOrdering)
+	enum class Order(val value: Int, val descriptionResourceId: Int) {
+		Unordered(0, R.string.optionsUnorderedOrdering),
+		Alphabetical(1, R.string.optionsAlphabeticalOrdering),
+		AmountAscending(2, R.string.optionsAmountAscendingOrdering),
+		AmountDescending(3, R.string.optionsAmountDecendingOrdering)
 	}
 }
