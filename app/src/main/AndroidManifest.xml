@@ -19,7 +19,6 @@
 	package="pl.edu.pjwstk.s999844.shoppinglist">
 
 	<application
-		android:allowBackup="false"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/appName"
 		android:logo="@mipmap/ic_launcher"
