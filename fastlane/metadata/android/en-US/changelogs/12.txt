@@ -1,1 +1,2 @@
+* Fixed a bug where the app crashes upon opening the options menu
 * The usual amount of miscellaneous code improvements and optimizations
