@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2021 Sebastian Göls
+ * Copyright (C) 2021-2022 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,6 +30,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.Spinner
+import pl.edu.pjwstk.s999844.shoppinglist.adapters.OrderSpinnerAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityOptionsBinding
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
@@ -44,19 +47,29 @@ class OptionsActivity : AbstractShoppingActivity() {
 		private val LATEST_RELEASE_URI: Uri = Uri.parse(LATEST_RELEASE_LINK)
 	}
 
-	private val binding by viewBinding(ActivityOptionsBinding::inflate)
-
-	private val settings: Settings by lazy { Settings(this) }
+	internal val binding by viewBinding(ActivityOptionsBinding::inflate)
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(binding.root)
+
+		binding.listOrderDropdown.adapter = OrderSpinnerAdapter(this)
+		binding.listOrderDropdown.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+			override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+				settings.order = binding.listOrderDropdown.getItemAtPosition(position) as Settings.Order
+			}
+
+			override fun onNothingSelected(p0: AdapterView<*>?) {
+				throw IllegalStateException()
+			}
+		}
 	}
 
 	override fun onStart() {
 		super.onStart()
 
 		binding.optionsThemeSwitch.isChecked = settings.darkThemeActive
+		binding.listOrderDropdown.setSelection(getIndex(binding.listOrderDropdown, settings.order))
 
 		title = getString(R.string.optionsTitleBarText)
 	}
@@ -75,4 +88,15 @@ class OptionsActivity : AbstractShoppingActivity() {
 	fun onClickLatestRelease(view: View) = openUriInBrowser(LATEST_RELEASE_URI)
 
 	private fun openUriInBrowser(uri: Uri) = startActivity(Intent(Intent.ACTION_VIEW, uri))
+
+	private fun getIndex(spinner: Spinner, order: Settings.Order): Int {
+		for (i in 0..spinner.count) {
+			val valueAtPosition: Settings.Order = spinner.getItemAtPosition(i) as Settings.Order
+			if (valueAtPosition == order) {
+				return i
+			}
+		}
+
+		return -1
+	}
 }

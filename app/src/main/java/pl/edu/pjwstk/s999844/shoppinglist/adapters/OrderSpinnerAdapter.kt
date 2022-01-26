@@ -24,17 +24,26 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package pl.edu.pjwstk.s999844.shoppinglist
+package pl.edu.pjwstk.s999844.shoppinglist.adapters
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.TextView
+import pl.edu.pjwstk.s999844.shoppinglist.R
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
-abstract class AbstractShoppingActivity : AppCompatActivity() {
-	protected val settings: Settings by lazy { Settings(this) }
+class OrderSpinnerAdapter(context: Context) : ArrayAdapter<Settings.Order>(context, R.layout.spinner_item, Settings.Order.values()) {
+	override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+		val text: TextView = (convertView ?: LayoutInflater.from(context).inflate(R.layout.spinner_item, parent, false)) as TextView
 
-	override fun onStart() {
-		super.onStart()
+		text.setText(getItem(position)!!.descriptionResourceId)
 
-		ThemeManager.setDark(settings.darkThemeActive)
+		return text
 	}
+
+	override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View = getView(position, convertView, parent)
 }
+

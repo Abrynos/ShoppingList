@@ -1,5 +1,5 @@
 <?xml25dp version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (C) 2021-2021 Sebastian Göls
+  ~ Copyright (C) 2021-2022 Sebastian Göls
   ~
   ~ This program is free software; you can redistribute it and/or modify
   ~ it under the terms of the GNU General Public License as published by
@@ -28,4 +28,8 @@
 	<dimen name="mainEmptyTextViewTextSize">@dimen/listItemTextSize</dimen>
 
 	<dimen name="listItemTextSize">20sp</dimen>
+	<dimen name="listItemTopBottomMargin">12dp</dimen>
+	<dimen name="listItemLeftRightMargin">10dp</dimen>
+
+	<dimen name="optionTextSize">15sp</dimen>
 </resources>

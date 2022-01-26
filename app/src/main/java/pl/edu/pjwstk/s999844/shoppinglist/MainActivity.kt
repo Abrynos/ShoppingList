@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2021 Sebastian Göls
+ * Copyright (C) 2021-2022 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,11 +35,11 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import pl.edu.pjwstk.s999844.shoppinglist.adapters.ShoppingListAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityMainBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
-import pl.edu.pjwstk.s999844.shoppinglist.recyclerviewadapters.ShoppingListAdapter
 
 class MainActivity : AbstractShoppingActivity() {
 	private val binding by viewBinding(ActivityMainBinding::inflate)

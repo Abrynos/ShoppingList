@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (C) 2021-2021 Sebastian Göls
+  ~ Copyright (C) 2021-2022 Sebastian Göls
   ~
   ~ This program is free software; you can redistribute it and/or modify
   ~ it under the terms of the GNU General Public License as published by
@@ -19,7 +19,6 @@
 	package="pl.edu.pjwstk.s999844.shoppinglist">
 
 	<application
-		android:allowBackup="false"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/appName"
 		android:logo="@mipmap/ic_launcher"

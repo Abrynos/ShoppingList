@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
   ~ Copyright (C) 2021-2022 Sebastian Göls
   ~
   ~ This program is free software; you can redistribute it and/or modify
@@ -15,11 +17,8 @@
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto">
-	<item
-		android:id="@+id/actionBarMenuOptionsEntry"
-		android:icon="@drawable/ic_settings"
-		android:title="@string/mainMenuOptionsLinkText"
-		app:showAsAction="always" />
-</menu>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:textSize="@dimen/optionTextSize"
+	android:padding="5dip" />

@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2021 Sebastian Göls
+ * Copyright (C) 2021-2022 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package pl.edu.pjwstk.s999844.shoppinglist.recyclerviewadapters
+package pl.edu.pjwstk.s999844.shoppinglist.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -36,7 +36,6 @@ import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 import java.util.function.BiConsumer
 
 class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredItem, Int>) : RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
-
 	private var items: List<RequiredItem> = listOf()
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

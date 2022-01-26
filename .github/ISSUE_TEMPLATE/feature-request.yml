@@ -44,7 +44,7 @@ body:
   - type: textarea
     id: sufficiency
     attributes:
-      label: Why are the currently avialable solutions not sufficient?
+      label: Why are the currently available solutions not sufficient?
       description: Evaluate the existing solutions in regards to your requirements.
       placeholder: |
         If something you are suggesting is already possible, then explain to us why the currently available solutions are not sufficient.

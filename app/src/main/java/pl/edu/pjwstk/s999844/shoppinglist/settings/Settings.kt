@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2021  Sebastian Göls
+ * Copyright (C) 2021-2022 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,11 +29,14 @@ package pl.edu.pjwstk.s999844.shoppinglist.settings
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import pl.edu.pjwstk.s999844.shoppinglist.R
 
 class Settings(context: Context) {
 	companion object {
 		private const val IS_DARK_THEME_NAME = "darkTheme"
 		private const val IS_DARK_THEME_DEFAULT = true
+		private const val ORDER_NAME = "listOrder"
+		private val ORDER_DEFAULT: Int = Order.Unordered.descriptionResourceId
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
@@ -43,4 +46,21 @@ class Settings(context: Context) {
 	var darkThemeActive: Boolean
 		get() = sharedPreferences.getBoolean(IS_DARK_THEME_NAME, IS_DARK_THEME_DEFAULT)
 		set(value) = edit().putBoolean(IS_DARK_THEME_NAME, value).apply()
+
+	var order: Order
+		get() {
+			val value: Int = sharedPreferences.getInt(ORDER_NAME, ORDER_DEFAULT)
+			return Order.values().first {
+				it.descriptionResourceId == value
+			}
+		}
+		set(value) = edit().putInt(ORDER_NAME, value.descriptionResourceId).apply()
+
+
+	enum class Order(val descriptionResourceId: Int) {
+		Unordered(R.string.optionsUnorderedOrdering),
+		Alphabetical(R.string.optionsAlphabeticalOrdering),
+		AmountAscending(R.string.optionsAmountAscendingOrdering),
+		AmountDescending(R.string.optionsAmountDecendingOrdering)
+	}
 }

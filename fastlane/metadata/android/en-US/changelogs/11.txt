@@ -1,0 +1,3 @@
+* The list can now be ordered alphabetically or by amount required (ascending and descending)
+* Fixed a bug where long item names would overlap with the amount and/or plus/minus buttons
+* The usual amount of miscellaneous code improvements and optimizations
