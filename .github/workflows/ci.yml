@@ -28,7 +28,7 @@ jobs:
       - id: build
         run: ./gradlew build
       - id: upload-artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: artifacts.zip
           path: app/build/outputs/apk/release/app-release.apk
