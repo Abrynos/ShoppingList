@@ -39,7 +39,7 @@ android {
 
 	defaultConfig {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
-		minSdkVersion 24
+		minSdkVersion 25
 		targetSdkVersion 32
 		versionCode 13
 		versionName "v1.12.0"
@@ -54,7 +54,7 @@ android {
 	}
 	signingConfigs {
 		release {
-			if(keystorePropertiesFile.exists()) {
+			if (keystorePropertiesFile.exists()) {
 				def keystoreProperties = new Properties()
 				keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 

@@ -16,9 +16,13 @@
   -->
 
 <resources>
-	<color name="primary">#303F9F</color>
+	<color name="blue">#303F9F</color>
+	<color name="red">#A92616</color>
+	<color name="orange">#ED980D</color>
+	<color name="teal">#359392</color>
+	<color name="purple">#504D8E</color>
+	<color name="green">#00A65A</color>
 	<color name="black">#000000</color>
 	<color name="darkGrey">#161618</color>
 	<color name="white">#FFFFFF</color>
-	<color name="onPrimary">@color/white</color>
 </resources>
