@@ -18,16 +18,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
 	<style name="Theme.ShoppingList.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-		<item name="colorPrimary">@color/primary</item>
-		<item name="colorPrimaryVariant">@color/primary</item>
+		<item name="colorPrimary">?attr/primary</item>
+		<item name="colorPrimaryVariant">?attr/primary</item>
+		<item name="colorSecondary">?attr/primary</item>
+		<item name="colorSecondaryVariant">?attr/primary</item>
+		<item name="colorOnPrimary">?attr/secondary</item>
+		<item name="colorOnSecondary">?attr/secondary</item>
 
-		<item name="colorSecondary">@color/primary</item>
-		<item name="colorSecondaryVariant">@color/primary</item>
-
-		<item name="colorOnPrimary">@color/onPrimary</item>
-		<item name="colorOnSecondary">@color/onPrimary</item>
-
-		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+		<item name="android:statusBarColor" tools:targetApi="l">?attr/primary</item>
 
 		<item name="actionBarStyle">@style/Theme.ShoppingList.Base.ActionBar</item>
 		<!--
@@ -37,16 +35,8 @@
 	</style>
 
 	<style name="Theme.ShoppingList.Base.ActionBar" parent="Widget.MaterialComponents.Light.ActionBar.Solid">
-		<item name="colorPrimary">@color/primary</item>
-	</style>
-
-	<style name="Theme.ShoppingList.Base.MainActivity" parent="Theme.ShoppingList">
-		<item name="actionBarStyle">@style/Theme.ShoppingList.Base.MainActivity.ActionBar</item>
-	</style>
-
-	<style name="Theme.ShoppingList.Base.MainActivity.ActionBar" parent="Theme.ShoppingList.Base.ActionBar">
 		<item name="logo">@drawable/ic_shopping_cart</item>
-		<item name="displayOptions">useLogo|showHome|showTitle</item>
+		<item name="displayOptions">showTitle</item>
 	</style>
 
 	<style name="Theme.ShoppingList.EditText" parent="Widget.AppCompat.EditText">
@@ -81,6 +71,36 @@
 		<item name="android:layout_width">@dimen/imageButtonDefaultSize</item>
 		<item name="android:layout_height">@dimen/imageButtonDefaultSize</item>
 		<item name="android:layout_margin">@dimen/imageButtonDefaultMargin</item>
+	</style>
+
+	<style name="Theme.ShoppingList.AccentBlue">
+		<item name="primary">@color/blue</item>
+		<item name="secondary">@color/white</item>
+	</style>
+
+	<style name="Theme.ShoppingList.AccentRed">
+		<item name="primary">@color/red</item>
+		<item name="secondary">@color/white</item>
+	</style>
+
+	<style name="Theme.ShoppingList.AccentOrange">
+		<item name="primary">@color/orange</item>
+		<item name="secondary">@color/white</item>
+	</style>
+
+	<style name="Theme.ShoppingList.AccentTeal">
+		<item name="primary">@color/teal</item>
+		<item name="secondary">@color/white</item>
+	</style>
+
+	<style name="Theme.ShoppingList.AccentPurple">
+		<item name="primary">@color/purple</item>
+		<item name="secondary">@color/white</item>
+	</style>
+
+	<style name="Theme.ShoppingList.AccentGreen">
+		<item name="primary">@color/green</item>
+		<item name="secondary">@color/white</item>
 	</style>
 
 </resources>

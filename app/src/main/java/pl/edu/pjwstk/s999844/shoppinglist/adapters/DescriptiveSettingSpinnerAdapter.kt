@@ -35,7 +35,7 @@ import android.widget.TextView
 import pl.edu.pjwstk.s999844.shoppinglist.R
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
-class OrderSpinnerAdapter(context: Context) : ArrayAdapter<Settings.Order>(context, R.layout.spinner_item, Settings.Order.values()) {
+class DescriptiveSettingSpinnerAdapter<T>(context: Context, values: Array<T>) : ArrayAdapter<T>(context, R.layout.spinner_item, values) where T : Settings.DescriptiveSetting {
 	override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 		val text: TextView = (convertView ?: LayoutInflater.from(context).inflate(R.layout.spinner_item, parent, false)) as TextView
 
@@ -46,4 +46,3 @@ class OrderSpinnerAdapter(context: Context) : ArrayAdapter<Settings.Order>(conte
 
 	override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View = getView(position, convertView, parent)
 }
-

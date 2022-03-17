@@ -21,8 +21,6 @@
 	<application
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/appName"
-		android:logo="@mipmap/ic_launcher"
-		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/Theme.ShoppingList">
 		<activity
@@ -47,8 +45,7 @@
 			android:parentActivityName=".MainActivity" />
 		<activity
 			android:name=".MainActivity"
-			android:exported="true"
-			android:theme="@style/Theme.ShoppingList.MainActivity">
+			android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 

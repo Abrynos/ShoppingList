@@ -1,1 +1,2 @@
+* Added option to select the accent color used in the user interface. This currently supports blue, red, orange, teal, purple and green.
 * The usual amount of miscellaneous code improvements and optimizations
