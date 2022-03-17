@@ -25,6 +25,13 @@
 	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">Alphabetisch</string>
 	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">Menge aufsteigend</string>
 	<string name="optionsAmountDecendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">Menge absteigend</string>
+	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">Farbe</string>
+	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">Blau</string>
+	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">Rot</string>
+	<string name="optionsAccentOrange" comment="This text will be shown in the options menus accent color menu; represents the orange theme">Orange</string>
+	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Türkis</string>
+	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Violett</string>
+	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Grün</string>
 	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Optionen</string>
 	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Keine Einträge vorhanden</string>
 	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Vermindert die Anzahl des Dings um eins</string>
@@ -40,5 +47,5 @@
 	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Die Anzahl muss höher als 0 sein</string>
 	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Ein Ding mit diesem Namen ist bereits auf der Einkaufsliste</string>
 	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Verschicken</string>
-	<string name="addShareText" formatted="true" comment="This text will be sent to your contact when sharing a new item with them">Füge bitte folgendes zu deiner Einkaufsliste hinzu: %1$s</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Füge bitte folgendes zu deiner Einkaufsliste hinzu: %1$s</string>
 </resources>
