@@ -35,13 +35,26 @@ class Settings(context: Context) {
 	companion object {
 		private const val IS_DARK_THEME_NAME = "darkTheme"
 		private const val IS_DARK_THEME_DEFAULT = true
+
 		private const val ORDER_NAME = "listOrder"
 		private val ORDER_DEFAULT: Order = Order.Unordered
+
+		private const val ACCENT_NAME = "accentColor"
+		private val ACCENT_DEFAULT: AccentColor = AccentColor.Blue
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
 
 	private fun edit(): SharedPreferences.Editor = sharedPreferences.edit()
+
+	var accentColor: AccentColor
+		get() {
+			val value: Int = sharedPreferences.getInt(ACCENT_NAME, ACCENT_DEFAULT.value)
+			return AccentColor.values().firstOrNull {
+				it.value == value
+			} ?: ACCENT_DEFAULT
+		}
+		set(value) = edit().putInt(ACCENT_NAME, value.value).apply()
 
 	var darkThemeActive: Boolean
 		get() = sharedPreferences.getBoolean(IS_DARK_THEME_NAME, IS_DARK_THEME_DEFAULT)
@@ -52,15 +65,33 @@ class Settings(context: Context) {
 			val value: Int = sharedPreferences.getInt(ORDER_NAME, ORDER_DEFAULT.value)
 			return Order.values().firstOrNull {
 				it.value == value
-			}?: ORDER_DEFAULT
+			} ?: ORDER_DEFAULT
 		}
 		set(value) = edit().putInt(ORDER_NAME, value.value).apply()
 
+	interface DescriptiveSetting {
+		val descriptionResourceId: Int
+	}
 
-	enum class Order(val value: Int, val descriptionResourceId: Int) {
+	enum class AccentColor(val value: Int, val styleResourceId: Int, private val description: Int) : DescriptiveSetting {
+		Blue(0, R.style.Theme_ShoppingList_AccentBlue, R.string.optionsAccentBlue),
+		Red(1, R.style.Theme_ShoppingList_AccentRed, R.string.optionsAccentRed),
+		Orange(2, R.style.Theme_ShoppingList_AccentOrange, R.string.optionsAccentOrange),
+		Teal(3, R.style.Theme_ShoppingList_AccentTeal, R.string.optionsAccentTeal),
+		Purple(4, R.style.Theme_ShoppingList_AccentPurple, R.string.optionsAccentPurple),
+		Green(5, R.style.Theme_ShoppingList_AccentGreen, R.string.optionsAccentGreen);
+
+		override val descriptionResourceId: Int
+			get() = description
+	}
+
+	enum class Order(val value: Int, private val description: Int) : DescriptiveSetting {
 		Unordered(0, R.string.optionsUnorderedOrdering),
 		Alphabetical(1, R.string.optionsAlphabeticalOrdering),
 		AmountAscending(2, R.string.optionsAmountAscendingOrdering),
-		AmountDescending(3, R.string.optionsAmountDecendingOrdering)
+		AmountDescending(3, R.string.optionsAmountDecendingOrdering);
+
+		override val descriptionResourceId: Int
+			get() = description
 	}
 }

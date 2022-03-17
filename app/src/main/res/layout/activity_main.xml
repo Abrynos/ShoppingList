@@ -34,11 +34,11 @@
 		android:layout_height="wrap_content"
 		android:layout_marginEnd="@dimen/mainActionButtonMargin"
 		android:layout_marginBottom="@dimen/mainActionButtonMargin"
+		android:contentDescription="@string/mainFloatingAddButtonDescription"
 		android:onClick="onClickFloatingButton"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:srcCompat="@drawable/ic_plus"
-		android:contentDescription="@string/mainFloatingAddButtonDescription" />
+		app:srcCompat="@drawable/ic_plus" />
 
 	<TextView
 		android:id="@+id/mainEmptyTextView"

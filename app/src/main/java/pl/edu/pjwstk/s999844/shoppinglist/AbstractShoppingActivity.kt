@@ -26,15 +26,25 @@
 
 package pl.edu.pjwstk.s999844.shoppinglist
 
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
 abstract class AbstractShoppingActivity : AppCompatActivity() {
 	protected val settings: Settings by lazy { Settings(this) }
 
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+
+		setTheme(settings.accentColor.styleResourceId)
+	}
+
 	override fun onStart() {
 		super.onStart()
 
-		ThemeManager.setDark(settings.darkThemeActive)
+		setDark(settings.darkThemeActive)
 	}
+
+	protected fun setDark(dark: Boolean) = AppCompatDelegate.setDefaultNightMode(if (dark) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO)
 }

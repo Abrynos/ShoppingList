@@ -22,6 +22,4 @@
 		<item name="android:textColor">@color/black</item>
 	</style>
 
-	<style name="Theme.ShoppingList.MainActivity" parent="Theme.ShoppingList.Base.MainActivity" />
-
 </resources>

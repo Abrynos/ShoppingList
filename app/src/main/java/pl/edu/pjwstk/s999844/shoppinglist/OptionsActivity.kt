@@ -30,9 +30,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
 import android.widget.Spinner
-import pl.edu.pjwstk.s999844.shoppinglist.adapters.OrderSpinnerAdapter
+import pl.edu.pjwstk.s999844.shoppinglist.adapters.DescriptiveSettingSpinnerAdapter
+import pl.edu.pjwstk.s999844.shoppinglist.adapters.SpinnerItemSelectedListener
 import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityOptionsBinding
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
@@ -47,21 +47,29 @@ class OptionsActivity : AbstractShoppingActivity() {
 		private val LATEST_RELEASE_URI: Uri = Uri.parse(LATEST_RELEASE_LINK)
 	}
 
-	internal val binding by viewBinding(ActivityOptionsBinding::inflate)
+	private val binding by viewBinding(ActivityOptionsBinding::inflate)
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(binding.root)
 
-		binding.listOrderDropdown.adapter = OrderSpinnerAdapter(this)
-		binding.listOrderDropdown.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-			override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
-				settings.order = binding.listOrderDropdown.getItemAtPosition(position) as Settings.Order
+		binding.listOrderDropdown.adapter = DescriptiveSettingSpinnerAdapter(this, Settings.Order.values())
+		binding.listOrderDropdown.onItemSelectedListener = SpinnerItemSelectedListener<Settings.Order>(binding.listOrderDropdown) {
+			if (settings.order == it) {
+				return@SpinnerItemSelectedListener
 			}
 
-			override fun onNothingSelected(p0: AdapterView<*>?) {
-				throw IllegalStateException()
+			settings.order = it
+		}
+
+		binding.accentColorDropdown.adapter = DescriptiveSettingSpinnerAdapter(this, Settings.AccentColor.values())
+		binding.accentColorDropdown.onItemSelectedListener = SpinnerItemSelectedListener<Settings.AccentColor>(binding.accentColorDropdown) {
+			if (settings.accentColor == it) {
+				return@SpinnerItemSelectedListener
 			}
+
+			settings.accentColor = it
+			recreate()
 		}
 	}
 
@@ -70,6 +78,7 @@ class OptionsActivity : AbstractShoppingActivity() {
 
 		binding.optionsThemeSwitch.isChecked = settings.darkThemeActive
 		binding.listOrderDropdown.setSelection(getIndex(binding.listOrderDropdown, settings.order))
+		binding.accentColorDropdown.setSelection(getIndex(binding.accentColorDropdown, settings.accentColor))
 
 		title = getString(R.string.optionsTitleBarText)
 	}
@@ -78,7 +87,7 @@ class OptionsActivity : AbstractShoppingActivity() {
 	fun onClickThemeSwitch(view: View) {
 		val isDark = binding.optionsThemeSwitch.isChecked
 		settings.darkThemeActive = isDark
-		ThemeManager.setDark(isDark)
+		setDark(isDark)
 	}
 
 	@Suppress("UNUSED_PARAMETER")
@@ -89,9 +98,10 @@ class OptionsActivity : AbstractShoppingActivity() {
 
 	private fun openUriInBrowser(uri: Uri) = startActivity(Intent(Intent.ACTION_VIEW, uri))
 
-	private fun getIndex(spinner: Spinner, order: Settings.Order): Int {
+	private fun <T> getIndex(spinner: Spinner, order: T): Int {
 		for (i in 0..spinner.count) {
-			val valueAtPosition: Settings.Order = spinner.getItemAtPosition(i) as Settings.Order
+			@Suppress("UNCHECKED_CAST")
+			val valueAtPosition: T = spinner.getItemAtPosition(i) as T
 			if (valueAtPosition == order) {
 				return i
 			}

@@ -24,10 +24,21 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package pl.edu.pjwstk.s999844.shoppinglist
+package pl.edu.pjwstk.s999844.shoppinglist.adapters
 
-import androidx.appcompat.app.AppCompatDelegate
+import android.view.View
+import android.widget.AdapterView
+import android.widget.Spinner
 
-object ThemeManager {
-	fun setDark(dark: Boolean) = AppCompatDelegate.setDefaultNightMode(if (dark) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO)
+
+class SpinnerItemSelectedListener<T>(private val spinner: Spinner, private val callback: ((t: T) -> Unit)) : AdapterView.OnItemSelectedListener {
+	override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+		@Suppress("UNCHECKED_CAST")
+		callback(spinner.getItemAtPosition(position) as T)
+	}
+
+	override fun onNothingSelected(p0: AdapterView<*>?) {
+		throw IllegalStateException()
+	}
 }
+
