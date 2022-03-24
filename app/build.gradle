@@ -41,8 +41,8 @@ android {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
 		minSdkVersion 25
 		targetSdkVersion 32
-		versionCode 14
-		versionName "v1.12.1"
+		versionCode 15
+		versionName "v1.13.0"
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
