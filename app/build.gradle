@@ -87,7 +87,7 @@ android {
 	buildFeatures {
 		viewBinding true
 	}
-	lintOptions {
+	lint {
 		abortOnError true
 		warningsAsErrors true
 		checkAllWarnings true
