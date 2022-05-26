@@ -25,7 +25,7 @@
 		<item name="colorOnPrimary">?attr/secondary</item>
 		<item name="colorOnSecondary">?attr/secondary</item>
 
-		<item name="android:statusBarColor" tools:targetApi="l">?attr/primary</item>
+		<item name="android:statusBarColor">?attr/primary</item>
 
 		<item name="actionBarStyle">@style/Theme.ShoppingList.Base.ActionBar</item>
 		<!--
