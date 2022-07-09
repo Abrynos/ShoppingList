@@ -34,13 +34,13 @@ plugins {
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 
 android {
-	compileSdkVersion 32
-	buildToolsVersion "32.0.0"
+	compileSdkVersion 33
+	buildToolsVersion "33.0.0"
 
 	defaultConfig {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
 		minSdkVersion 25
-		targetSdkVersion 32
+		targetSdkVersion 33
 		versionCode 15
 		versionName "v1.13.0"
 
