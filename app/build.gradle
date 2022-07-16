@@ -33,13 +33,13 @@ plugins {
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 
 android {
-	compileSdkVersion 32
-	buildToolsVersion "32.0.0"
+	compileSdkVersion 33
+	buildToolsVersion "33.0.0"
 
 	defaultConfig {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
 		minSdkVersion 25
-		targetSdkVersion 32
+		targetSdkVersion 33
 		versionCode 15
 		versionName "v1.13.0"
 
@@ -86,7 +86,7 @@ android {
 	buildFeatures {
 		viewBinding true
 	}
-	lintOptions {
+	lint {
 		abortOnError true
 		warningsAsErrors true
 		checkAllWarnings true
@@ -105,9 +105,9 @@ android {
 }
 
 dependencies {
-	implementation "androidx.lifecycle:lifecycle-process:2.4.1"
+	implementation "androidx.lifecycle:lifecycle-process:2.5.0"
 
-	def androidx_navigation_version = "2.4.2"
+	def androidx_navigation_version = "2.5.0"
 	implementation "androidx.navigation:navigation-fragment-ktx:$androidx_navigation_version"
 	implementation "androidx.navigation:navigation-ui-ktx:$androidx_navigation_version"
 
@@ -117,9 +117,9 @@ dependencies {
 	implementation fileTree(include: ["*.jar"], dir: "libs")
 
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-	implementation "androidx.core:core-ktx:1.7.0"
-	implementation "androidx.appcompat:appcompat:1.4.1"
-	implementation "com.google.android.material:material:1.6.0"
+	implementation "androidx.core:core-ktx:1.8.0"
+	implementation "androidx.appcompat:appcompat:1.4.2"
+	implementation "com.google.android.material:material:1.6.1"
 	implementation "androidx.constraintlayout:constraintlayout:2.1.4"
 
 	testImplementation "junit:junit:4.13.2"
