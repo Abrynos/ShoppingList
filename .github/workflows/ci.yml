@@ -14,11 +14,6 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 13
-      - id: prepare-secrets
-        if: github.event_name != 'pull_request'
-        run: |
-          echo "${{ secrets.KEYSTORE }}" > keystore.jks
-          echo "${{ secrets.KEYSTORE_PROPERTIES }}" > keystore.properties
       - id: prepare-build
         run: chmod +x ./gradlew
       - id: build
