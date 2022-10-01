@@ -16,7 +16,7 @@
   -->
 
 <resources>
-	<string name="shareHost" translatable="false">a.sl</string>
+	<string name="shareHost" translatable="false">shopping.sgo.contact</string>
 	<string name="sharePath" translatable="false">/add</string>
 	<string name="shareScheme" translatable="false">https</string>
 
