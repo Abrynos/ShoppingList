@@ -36,6 +36,7 @@ def keystorePropertiesFile = rootProject.file("keystore.properties")
 android {
 	compileSdkVersion 33
 	buildToolsVersion "33.0.0"
+	namespace "pl.edu.pjwstk.s999844.shoppinglist"
 
 	defaultConfig {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
@@ -52,31 +53,13 @@ android {
 			}
 		}
 	}
-	signingConfigs {
-		release {
-			if (keystorePropertiesFile.exists()) {
-				def keystoreProperties = new Properties()
-				keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-
-				storeFile file(keystoreProperties.getProperty("storeFile"))
-				storePassword keystoreProperties.getProperty("storePassword")
-				keyAlias keystoreProperties.getProperty("keyAlias")
-				keyPassword keystoreProperties.getProperty("keyPassword")
-				v2SigningEnabled true
-			}
-		}
-	}
 	applicationVariants.all {
 		variant -> variant.resValue "string", "versionName", variant.versionName
 	}
 	buildTypes {
 		release {
 			minifyEnabled true
-			signingConfig keystorePropertiesFile.exists() ? signingConfigs.release : null
 			proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-		}
-		debug {
-			signingConfig keystorePropertiesFile.exists() ? signingConfigs.release : null
 		}
 	}
 	compileOptions {
