@@ -12,7 +12,7 @@ jobs:
       - id: setup-gradle
         uses: gradle/gradle-build-action@v2
       - id: build
-        run: ./gradlew build
+        run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode-keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }}
       - id: upload-artifact
         uses: actions/upload-artifact@v3
         with:
