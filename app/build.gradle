@@ -33,6 +33,7 @@ plugins {
 android {
 	compileSdkVersion 33
 	buildToolsVersion "33.0.0"
+	namespace "pl.edu.pjwstk.s999844.shoppinglist"
 
 	defaultConfig {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
