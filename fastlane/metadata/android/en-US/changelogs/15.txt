@@ -1,1 +1,2 @@
-* The usual amount of miscellaneous code improvements and optimizations
+* Added support for automatic URL verification, which is part of newer Android versions
+* An extraordinary amount of miscellaneous code improvements and optimizations
