@@ -17,12 +17,8 @@ jobs:
       - id: prepare-secrets
         if: github.event_name != 'pull_request'
         run: |
-          echo "${{ secrets.KEYSTORE }}" > keystore.jks.asc
-          gpg -d --passphrase "${{ secrets.KEYSTORE_PASSPHRASE }}" --batch keystore.jks.asc > app/keystore.jks
-          echo "${{ secrets.KEYSTORE_PROPERTIES }}" > keystore.properties.asc
-          gpg -d --passphrase "${{ secrets.KEYSTORE_PROPERTIES_PASSPHRASE }}" --batch keystore.properties.asc > keystore.properties
-          rm keystore.jks.asc
-          rm keystore.properties.asc
+          echo "${{ secrets.KEYSTORE }}" > keystore.jks
+          echo "${{ secrets.KEYSTORE_PROPERTIES }}" > keystore.properties
       - id: prepare-build
         run: chmod +x ./gradlew
       - id: build
