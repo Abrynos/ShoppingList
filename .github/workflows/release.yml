@@ -26,8 +26,13 @@ jobs:
           java-version: 13
       - id: prepare-build
         run: chmod +x ./gradlew
+      - id: decode-keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: "keystore.jks"
+          encodedString: ${{ secrets.KEYSTORE }}
       - id: build
-        run: ./gradlew build
+        run: ./gradlew assembleRelease -Pandroid.injected.signing.store.file=${{ steps.decode-keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }}
       - id: prepare-changelog
         run: |
           echo "# Changes" > "${{ env.CHANGELOG_FILE }}"
@@ -37,7 +42,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: app/build/outputs/apk/release/app-release.apk
+          files: app/build/outputs/apk/release/*.apk
           body_path: "${{ env.CHANGELOG_FILE }}"
           tag_name: ${{ env.RELEASE_VERSION }}
 

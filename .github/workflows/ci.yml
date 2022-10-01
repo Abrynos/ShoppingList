@@ -17,10 +17,10 @@ jobs:
       - id: prepare-build
         run: chmod +x ./gradlew
       - id: build
-        run: ./gradlew build
+        run: ./gradlew assembleRelease
       - id: upload-artifact
         uses: actions/upload-artifact@v3
         with:
           name: artifacts.zip
-          path: app/build/outputs/apk/release/app-release.apk
+          path: app/build/outputs/apk/release/*.apk
 
