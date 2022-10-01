@@ -31,8 +31,6 @@ plugins {
 	id "kotlin-kapt"
 }
 
-def keystorePropertiesFile = rootProject.file("keystore.properties")
-
 android {
 	compileSdkVersion 33
 	buildToolsVersion "33.0.0"
