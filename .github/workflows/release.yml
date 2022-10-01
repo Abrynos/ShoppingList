@@ -19,20 +19,15 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ env.RELEASE_VERSION }}
-      - id: setup-jdk
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: 13
-      - id: prepare-build
-        run: chmod +x ./gradlew
-      - id: decode-keystore
+      - id: setup-gradle
+        uses: gradle/gradle-build-action@v2
+      - id: decode_keystore
         uses: timheuer/base64-to-file@v1
         with:
-          fileName: "keystore.jks"
+          fileName: keystore.jks
           encodedString: ${{ secrets.KEYSTORE }}
       - id: build
-        run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode-keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }}
+        run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }}
       - id: prepare-changelog
         run: |
           echo "# Changes" > "${{ env.CHANGELOG_FILE }}"
