@@ -75,6 +75,9 @@ android {
 			signingConfig keystorePropertiesFile.exists() ? signingConfigs.release : null
 			proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
 		}
+		release {
+			signingConfig keystorePropertiesFile.exists() ? signingConfigs.release : null
+		}
 	}
 	compileOptions {
 		sourceCompatibility JavaVersion.VERSION_1_8
