@@ -17,7 +17,7 @@ jobs:
       - id: prepare-build
         run: chmod +x ./gradlew
       - id: build
-        run: ./gradlew assembleRelease
+        run: ./gradlew build
       - id: upload-artifact
         uses: actions/upload-artifact@v3
         with:
