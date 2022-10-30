@@ -1,3 +1,3 @@
 <component name="DependencyValidationManager">
-  <scope name="xml" pattern="file:src/*.xml&amp;&amp;!src[ShoppingList.app]:drawable.*||src[ShoppingList.app]:drawable.ic_launcher*" />
+  <scope name="xml" pattern="file:*.xml&amp;&amp;!src[ShoppingList.app.main]:drawable.*||src[ShoppingList.app.main]:drawable.ic_launcher*" />
 </component>
