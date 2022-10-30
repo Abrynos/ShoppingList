@@ -26,7 +26,6 @@
 
 package pl.edu.pjwstk.s999844.shoppinglist
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -63,7 +62,6 @@ class MainActivity : AbstractShoppingActivity() {
 		supportActionBar?.setDisplayUseLogoEnabled(true)
 	}
 
-
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
 		menuInflater.inflate(R.menu.menu_main, menu)
 		return true
@@ -72,7 +70,9 @@ class MainActivity : AbstractShoppingActivity() {
 	override fun onOptionsItemSelected(item: MenuItem): Boolean {
 		when (item.itemId) {
 			R.id.actionBarMenuOptionsEntry -> {
-				openActivity(OptionsActivity::class.java)
+				activityLauncher.launch(Intent(baseContext, OptionsActivity::class.java)) {
+					recreate()
+				}
 				return true
 			}
 		}
@@ -80,9 +80,7 @@ class MainActivity : AbstractShoppingActivity() {
 	}
 
 	@Suppress("UNUSED_PARAMETER")
-	fun onClickFloatingButton(view: View) = openActivity(AddItemActivity::class.java)
-
-	private fun <T : Activity> openActivity(clazz: Class<T>) = startActivity(Intent(baseContext, clazz))
+	fun onClickFloatingButton(view: View) = startActivity(Intent(baseContext, AddItemActivity::class.java))
 
 	private fun changeItemCallback(item: RequiredItem, change: Int) {
 		val dbItem: RequiredItem = shoppingListDao.findById(item.id)
