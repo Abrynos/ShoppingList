@@ -24,7 +24,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package pl.edu.pjwstk.s999844.shoppinglist
+package pl.edu.pjwstk.s999844.shoppinglist.activities
 
 import android.content.Intent
 import android.net.Uri
@@ -32,6 +32,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Spinner
 import kotlinx.android.synthetic.main.activity_options.*
+import pl.edu.pjwstk.s999844.shoppinglist.BuildConfig
+import pl.edu.pjwstk.s999844.shoppinglist.R
 import pl.edu.pjwstk.s999844.shoppinglist.adapters.DescriptiveSettingSpinnerAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.adapters.SpinnerItemSelectedListener
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
