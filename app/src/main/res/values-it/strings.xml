@@ -16,20 +16,36 @@
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
 <resources>
-	<string name="appName">Lista della spesa</string>
-	<string name="optionsUseDarkThemeText">Usa il tema scuro</string>
-	<string name="optionsTitleBarText">Opzioni</string>
-	<string name="optionsLatestReleaseText">ultima release</string>
-	<string name="mainMenuOptionsLinkText">Opzioni</string>
-	<string name="mainListIsEmptyText">La lista è vuota</string>
-	<string name="addSaveButtonText">Salva</string>
-	<string name="addNameHint">Articolo</string>
-	<string name="addAmountHint">Importo (opzionale)</string>
-	<string name="addTitleBarText">Aggiungi oggetto</string>
-	<string name="addNameIsEmptyMessage">Il nome non deve essere vuoto</string>
-	<string name="addAmountNotANumberMessage">L\'importo deve essere un numero valido</string>
-	<string name="addAmountTooSmallMessage">L\'importo deve essere superiore a 0</string>
-	<string name="addItemAlreadyExistsMessage">Un elemento con questo nome esiste già</string>
-	<string name="addShareButtonText">Invia</string>
-	<string name="addShareText" formatted="true">Aggiungi un articolo alla tua lista: %1$s</string>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Lista della spesa</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Usa il tema scuro</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Opzioni</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">ultima versione</string>
+	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">Ordine</string>
+	<string name="optionsUnorderedOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents no ordering">Non ordinato</string>
+	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">Alfabetico</string>
+	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">Quantità crescente</string>
+	<string name="optionsAmountDecendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">Quantità decresente</string>
+	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">Colore</string>
+	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">Blu</string>
+	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">Rosso</string>
+	<string name="optionsAccentOrange" comment="This text will be shown in the options menus accent color menu; represents the orange theme">Arancione</string>
+	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Verde acqua</string>
+	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Viola</string>
+	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Verde</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Opzioni</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">La lista è vuota</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Riduce di uno la quantità dell\'oggetto</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Aumenta di uno la quantità dell\'oggetto</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Elimina l\'oggetto dalla lista della spesa</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Aggiunge un nuovo oggetto alla lista della spesa</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Salva</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Oggetto</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Quantità (opzionale)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Aggiungi oggetto</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">Il nome non deve essere vuoto</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">La quantità deve essere un numero valido</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">La quantità deve essere superiore a 0</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Un oggetto con questo nome esiste già</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Invia</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Aggiungi un oggetto alla tua lista della spesa: %1$s</string>
 </resources>
