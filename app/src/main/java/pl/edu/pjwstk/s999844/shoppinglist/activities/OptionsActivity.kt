@@ -40,10 +40,10 @@ import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
 
 class OptionsActivity : AbstractShoppingActivity() {
 	companion object {
-		private const val RELEASES_PAGE_LINK = "https://github.com/Abrynos/ShoppingList/releases/"
+		private const val RELEASES_PAGE_LINK = "https://github.com/Abrynos/ShoppingList/releases"
 
-		private const val CURRENT_RELEASE_LINK = RELEASES_PAGE_LINK + "tag/" + BuildConfig.VERSION_NAME
-		private const val LATEST_RELEASE_LINK = RELEASES_PAGE_LINK + "latest"
+		private const val CURRENT_RELEASE_LINK = "$RELEASES_PAGE_LINK/tag/${BuildConfig.VERSION_NAME}"
+		private const val LATEST_RELEASE_LINK = "$RELEASES_PAGE_LINK/latest"
 
 		private val CURRENT_RELEASE_URI: Uri = Uri.parse(CURRENT_RELEASE_LINK)
 		private val LATEST_RELEASE_URI: Uri = Uri.parse(LATEST_RELEASE_LINK)
