@@ -33,8 +33,7 @@
 		android:layout_marginBottom="@dimen/listItemTopBottomMargin"
 		android:layout_toStartOf="@id/buttonLayout"
 		android:textIsSelectable="false"
-		android:textSize="@dimen/listItemTextSize"
-		tools:ignore="UnusedIds" />
+		android:textSize="@dimen/listItemTextSize" />
 
 	<LinearLayout
 		android:id="@+id/buttonLayout"
@@ -42,7 +41,7 @@
 		android:layout_height="wrap_content"
 		android:layout_alignParentEnd="true"
 		android:layout_centerVertical="true"
-		tools:ignore="RelativeOverlap,UnusedIds">
+		tools:ignore="RelativeOverlap">
 
 		<TextView
 			android:id="@+id/amountTextView"

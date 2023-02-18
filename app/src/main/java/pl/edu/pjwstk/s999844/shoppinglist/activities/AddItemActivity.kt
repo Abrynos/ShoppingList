@@ -35,11 +35,12 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_add_item.*
 import pl.edu.pjwstk.s999844.shoppinglist.R
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
+import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityAddItemBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
+import pl.edu.pjwstk.s999844.shoppinglist.viewBinding
 import java.util.*
 
 class AddItemActivity : AbstractShoppingActivity() {
@@ -48,6 +49,8 @@ class AddItemActivity : AbstractShoppingActivity() {
 		const val AmountParameterName = "amount"
 	}
 
+	private val binding by viewBinding(ActivityAddItemBinding::inflate)
+
 	private val inputMethodManager: InputMethodManager by lazy { getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
 
 	private val currentLocale: Locale
@@ -55,7 +58,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_add_item)
+		setContentView(binding.root)
 	}
 
 
@@ -64,9 +67,9 @@ class AddItemActivity : AbstractShoppingActivity() {
 
 		// german-speaking people capitalize nouns - as a shopping list usually contains nouns we capitalize the first letter automatically. They can still use lowercase manually if they need a pronoun
 		when (currentLocale.language) {
-			Locale.GERMAN.language -> addItemNameInput.inputType = InputType.TYPE_TEXT_FLAG_CAP_SENTENCES or addItemNameInput.inputType
+			Locale.GERMAN.language -> binding.addItemNameInput.inputType = InputType.TYPE_TEXT_FLAG_CAP_SENTENCES or binding.addItemNameInput.inputType
 		}
-		addItemNameInput.requestFocus()
+		binding.addItemNameInput.requestFocus()
 
 		title = getString(R.string.addTitleBarText)
 
@@ -79,7 +82,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 			return
 		}
 
-		addItemNameInput.setText(nameParameter, TextView.BufferType.EDITABLE)
+		binding.addItemNameInput.setText(nameParameter, TextView.BufferType.EDITABLE)
 
 		val amountParameter = data.getQueryParameter(AmountParameterName) ?: return
 		if (amountParameter.isEmpty() || amountParameter.isBlank()) {
@@ -93,7 +96,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 		}
 
 		if (amount > 1) {
-			addItemAmountInput.setText(amount.toString(), TextView.BufferType.EDITABLE)
+			binding.addItemAmountInput.setText(amount.toString(), TextView.BufferType.EDITABLE)
 		}
 	}
 
@@ -106,13 +109,13 @@ class AddItemActivity : AbstractShoppingActivity() {
 	}
 
 	private fun createAndValidateItem(): RequiredItem? {
-		val name: String = addItemNameInput.text.toString().trim()
+		val name: String = binding.addItemNameInput.text.toString().trim()
 		if (name.isEmpty()) {
 			warnError(getString(R.string.addNameIsEmptyMessage))
 			return null
 		}
 
-		val amountString = addItemAmountInput.text.toString().trim()
+		val amountString = binding.addItemAmountInput.text.toString().trim()
 		val amount: Int = if (amountString.isEmpty() || amountString.isBlank()) {
 			1
 		} else {
@@ -148,7 +151,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 
 	@Suppress("UNUSED_PARAMETER")
 	fun addItem(view: View) {
-		inputMethodManager.hideSoftInputFromWindow(addItemNameInput.windowToken, 0)
+		inputMethodManager.hideSoftInputFromWindow(binding.addItemNameInput.windowToken, 0)
 
 		val item = createAndValidateItem() ?: return
 
@@ -164,5 +167,5 @@ class AddItemActivity : AbstractShoppingActivity() {
 		finish()
 	}
 
-	private fun warnError(message: String) = Snackbar.make(saveButton, message, Snackbar.LENGTH_SHORT).show()
+	private fun warnError(message: String) = Snackbar.make(binding.saveButton, message, Snackbar.LENGTH_SHORT).show()
 }

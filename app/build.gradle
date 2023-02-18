@@ -27,7 +27,6 @@
 plugins {
 	id "com.android.application"
 	id "kotlin-android"
-	id "kotlin-android-extensions"
 	id "kotlin-kapt"
 }
 
@@ -47,7 +46,10 @@ android {
 
 		javaCompileOptions {
 			annotationProcessorOptions {
-				arguments["room.incremental"] = "true"
+				arguments += [
+						"room.schemaLocation": "$projectDir/schemas",
+						"room.incremental"   : "true"
+				]
 			}
 		}
 		signingConfig signingConfigs.debug
@@ -62,11 +64,14 @@ android {
 		}
 	}
 	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_1_8
-		targetCompatibility JavaVersion.VERSION_1_8
+		sourceCompatibility JavaVersion.VERSION_11
+		targetCompatibility JavaVersion.VERSION_11
 	}
-	kotlinOptions {
-		jvmTarget = "1.8"
+	kotlin {
+		jvmToolchain {
+			languageVersion.set(JavaLanguageVersion.of(11))
+		}
+		jvmToolchain(11)
 	}
 	buildFeatures {
 		viewBinding true
@@ -98,6 +103,7 @@ dependencies {
 
 	def room_version = "2.5.0"
 	implementation "androidx.room:room-runtime:$room_version"
+	annotationProcessor "androidx.room:room-compiler:$room_version"
 	kapt "androidx.room:room-compiler:$room_version"
 	implementation fileTree(include: ["*.jar"], dir: "libs")
 

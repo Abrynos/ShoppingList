@@ -8,7 +8,7 @@
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2022 Sebastian Göls
+ * Copyright (C) 2021-2021 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,30 +24,13 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-// Top-level build file where you can add configuration oit's PLN and not zlptions common to all sub-projects/modules.
-buildscript {
-	ext.kotlin_version = '1.8.10'
-	repositories {
-		google()
-		mavenCentral()
-	}
-	dependencies {
-		classpath 'com.android.tools.build:gradle:7.4.1'
-		//noinspection DifferentKotlinGradleVersion
-		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+package pl.edu.pjwstk.s999844.shoppinglist
 
-		// NOTE: Do not place your application dependencies here; they belong
-		// in the individual module build.gradle files
-	}
-}
+import android.view.LayoutInflater
+import androidx.viewbinding.ViewBinding
+import pl.edu.pjwstk.s999844.shoppinglist.activities.AbstractShoppingActivity
 
-allprojects {
-	repositories {
-		google()
-		mavenCentral()
-	}
-}
 
-task clean(type: Delete) {
-	delete rootProject.buildDir
+inline fun <T : ViewBinding> AbstractShoppingActivity.viewBinding(crossinline bindingInflater: (LayoutInflater) -> T) = lazy(LazyThreadSafetyMode.NONE) {
+	bindingInflater.invoke(layoutInflater)
 }

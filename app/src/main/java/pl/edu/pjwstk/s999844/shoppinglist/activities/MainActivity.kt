@@ -34,26 +34,28 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_main.*
 import pl.edu.pjwstk.s999844.shoppinglist.R
 import pl.edu.pjwstk.s999844.shoppinglist.adapters.ShoppingListAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
+import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityMainBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
-import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
+import pl.edu.pjwstk.s999844.shoppinglist.viewBinding
 
 class MainActivity : AbstractShoppingActivity() {
+	private val binding by viewBinding(ActivityMainBinding::inflate)
+
 	private val shoppingListDao: ShoppingListDao by lazy { ShoppingListDatabase.getInstance(applicationContext).getShoppingListDao() }
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_main)
+		setContentView(binding.root)
 
-		mainListRecyclerView.layoutManager = LinearLayoutManager(this)
-		mainListRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+		binding.mainListRecyclerView.layoutManager = LinearLayoutManager(this)
+		binding.mainListRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
 		shoppingListDao.findAllItems().observe(this, this::observeDatabaseChange)
-		mainListRecyclerView.adapter = ShoppingListAdapter(this::changeItemCallback)
+		binding.mainListRecyclerView.adapter = ShoppingListAdapter(this::changeItemCallback)
 	}
 
 	override fun onStart() {
@@ -97,14 +99,9 @@ class MainActivity : AbstractShoppingActivity() {
 	}
 
 	private fun observeDatabaseChange(items: List<RequiredItem>) {
-		val orderedItems = when (settings.order) {
-			Settings.Order.Alphabetical -> items.sortedBy { it.name.lowercase() }
-			Settings.Order.AmountAscending -> items.sortedBy { it.amount }
-			Settings.Order.AmountDescending -> items.sortedByDescending { it.amount }
-			else -> items
-		}
-		(mainListRecyclerView.adapter as ShoppingListAdapter).setItems(orderedItems)
-		mainEmptyTextView.isVisible = items.isEmpty()
-		mainListRecyclerView.isVisible = items.isNotEmpty()
+		(binding.mainListRecyclerView.adapter as ShoppingListAdapter).setItems(items)
+
+		binding.mainEmptyTextView.isVisible = items.isEmpty()
+		binding.mainListRecyclerView.isVisible = items.isNotEmpty()
 	}
 }
