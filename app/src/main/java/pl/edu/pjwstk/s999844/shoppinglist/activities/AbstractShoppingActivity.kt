@@ -24,12 +24,16 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package pl.edu.pjwstk.s999844.shoppinglist
+package pl.edu.pjwstk.s999844.shoppinglist.activities
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.ActivityResult
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import pl.edu.pjwstk.s999844.shoppinglist.BetterActivityResult
 import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings
+
 
 abstract class AbstractShoppingActivity : AppCompatActivity() {
 	protected val settings: Settings by lazy { Settings(this) }
@@ -47,4 +51,6 @@ abstract class AbstractShoppingActivity : AppCompatActivity() {
 	}
 
 	protected fun setDark(dark: Boolean) = AppCompatDelegate.setDefaultNightMode(if (dark) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO)
+
+	protected val activityLauncher: BetterActivityResult<Intent, ActivityResult> = BetterActivityResult.registerActivityForResult(this)
 }

@@ -20,7 +20,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".OptionsActivity">
+	tools:context=".activities.OptionsActivity">
 
 	<!-- we are ignoring the MissingConstraints warning, because the used styles set default values -->
 

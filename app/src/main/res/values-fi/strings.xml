@@ -16,20 +16,36 @@
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
 <resources>
-	<string name="appName">Ostoslista</string>
-	<string name="optionsUseDarkThemeText">Käytä tummaa teemaa</string>
-	<string name="optionsTitleBarText">Asetukset</string>
-	<string name="optionsLatestReleaseText">uusin versio</string>
-	<string name="mainMenuOptionsLinkText">Asetukset</string>
-	<string name="mainListIsEmptyText">Lista on tyhjä</string>
-	<string name="addSaveButtonText">Tallenna</string>
-	<string name="addNameHint">Tuote</string>
-	<string name="addAmountHint">Määrä (valinnainen)</string>
-	<string name="addTitleBarText">Lisää tuote</string>
-	<string name="addNameIsEmptyMessage">Anna tuotteelle nimi</string>
-	<string name="addAmountNotANumberMessage">Määrän on oltava kelvollinen luku</string>
-	<string name="addAmountTooSmallMessage">Määrän on oltava suurempi kuin 0</string>
-	<string name="addItemAlreadyExistsMessage">Samanniminen tuote on lisätty aiemmin</string>
-	<string name="addShareButtonText">Lähetä</string>
-	<string name="addShareText" formatted="true">Lisää ostoslistaasi tuote: %1$s</string>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Ostoslista</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Käytä tummaa teemaa</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Asetukset</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">uusin versio</string>
+	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">Järjestä</string>
+	<string name="optionsUnorderedOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents no ordering">Vapaa järjestys</string>
+	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">Aakkosjärjestys</string>
+	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">Pienin määrä ensin</string>
+	<string name="optionsAmountDecendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">Suurin määrä ensin</string>
+	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">Väri</string>
+	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">Sininen</string>
+	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">Punainen</string>
+	<string name="optionsAccentOrange" comment="This text will be shown in the options menus accent color menu; represents the orange theme">Oranssi</string>
+	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Sinivihreä</string>
+	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Violetti</string>
+	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Vihreä</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Asetukset</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Lista on tyhjä</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Pienentää tuotteen määrää yhdellä</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Suurentaa tuotteen määrää yhdellä</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Poistaa tuotteen ostoslistasta</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Lisää uuden tuotteen ostoslistaan</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Tallenna</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Tuote</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Määrä (valinnainen)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Lisää tuote</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">Anna tuotteelle nimi</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">Määrän on oltava kelvollinen luku</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Määrän on oltava suurempi kuin 0</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Samanniminen tuote on lisätty aiemmin</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Lähetä</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Lisää ostoslistaasi tuote: %1$s</string>
 </resources>

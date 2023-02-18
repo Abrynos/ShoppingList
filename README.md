@@ -1,5 +1,5 @@
 # Shopping list
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Abrynos/ShoppingList/CI/main?label=Build&logo=github)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/Abrynos/ShoppingList/ci.yml?branch=main&label=Build&logo=github)
 ![GitHub release version](https://img.shields.io/github/v/release/Abrynos/ShoppingList?label=Stable&logo=github)
 [![F-Droid release version](https://img.shields.io/f-droid/v/pl.edu.pjwstk.s999844.shoppinglist?label=F-Droid&logo=fdroid)](https://f-droid.org/packages/pl.edu.pjwstk.s999844.shoppinglist/)
 [![Localization](https://badges.crowdin.net/abrynosshoppinglist/localized.svg)](https://crowdin.com/project/abrynosshoppinglist)

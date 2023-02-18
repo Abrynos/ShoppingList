@@ -4,6 +4,8 @@
       <element module="xml" copyright="xml" />
       <element module="default_copyright_scope" copyright="Default" />
     </module2copyright>
-    <LanguageOptions name="XML" />
+    <LanguageOptions name="XML">
+      <option name="fileTypeOverride" value="3" />
+    </LanguageOptions>
   </settings>
 </component>

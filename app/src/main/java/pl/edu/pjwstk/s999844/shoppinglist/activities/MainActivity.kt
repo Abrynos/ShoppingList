@@ -24,9 +24,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package pl.edu.pjwstk.s999844.shoppinglist
+package pl.edu.pjwstk.s999844.shoppinglist.activities
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -35,11 +34,13 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import pl.edu.pjwstk.s999844.shoppinglist.R
 import pl.edu.pjwstk.s999844.shoppinglist.adapters.ShoppingListAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityMainBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
+import pl.edu.pjwstk.s999844.shoppinglist.viewBinding
 
 class MainActivity : AbstractShoppingActivity() {
 	private val binding by viewBinding(ActivityMainBinding::inflate)
@@ -64,7 +65,6 @@ class MainActivity : AbstractShoppingActivity() {
 		supportActionBar?.setDisplayUseLogoEnabled(true)
 	}
 
-
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
 		menuInflater.inflate(R.menu.menu_main, menu)
 		return true
@@ -73,7 +73,9 @@ class MainActivity : AbstractShoppingActivity() {
 	override fun onOptionsItemSelected(item: MenuItem): Boolean {
 		when (item.itemId) {
 			R.id.actionBarMenuOptionsEntry -> {
-				openActivity(OptionsActivity::class.java)
+				activityLauncher.launch(Intent(baseContext, OptionsActivity::class.java)) {
+					recreate()
+				}
 				return true
 			}
 		}
@@ -81,9 +83,7 @@ class MainActivity : AbstractShoppingActivity() {
 	}
 
 	@Suppress("UNUSED_PARAMETER")
-	fun onClickFloatingButton(view: View) = openActivity(AddItemActivity::class.java)
-
-	private fun <T : Activity> openActivity(clazz: Class<T>) = startActivity(Intent(baseContext, clazz))
+	fun onClickFloatingButton(view: View) = startActivity(Intent(baseContext, AddItemActivity::class.java))
 
 	private fun changeItemCallback(item: RequiredItem, change: Int) {
 		val dbItem: RequiredItem = shoppingListDao.findById(item.id)

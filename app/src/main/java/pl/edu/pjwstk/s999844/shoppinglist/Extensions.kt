@@ -28,6 +28,7 @@ package pl.edu.pjwstk.s999844.shoppinglist
 
 import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
+import pl.edu.pjwstk.s999844.shoppinglist.activities.AbstractShoppingActivity
 
 
 inline fun <T : ViewBinding> AbstractShoppingActivity.viewBinding(crossinline bindingInflater: (LayoutInflater) -> T) = lazy(LazyThreadSafetyMode.NONE) {

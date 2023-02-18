@@ -33,14 +33,14 @@ import pl.edu.pjwstk.s999844.shoppinglist.R
 
 class Settings(context: Context) {
 	companion object {
+		private const val ACCENT_NAME = "accentColor"
+		private val ACCENT_DEFAULT: AccentColor = AccentColor.Blue
+
 		private const val IS_DARK_THEME_NAME = "darkTheme"
 		private const val IS_DARK_THEME_DEFAULT = true
 
 		private const val ORDER_NAME = "listOrder"
 		private val ORDER_DEFAULT: Order = Order.Unordered
-
-		private const val ACCENT_NAME = "accentColor"
-		private val ACCENT_DEFAULT: AccentColor = AccentColor.Blue
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
