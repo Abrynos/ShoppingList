@@ -46,7 +46,10 @@ android {
 
 		javaCompileOptions {
 			annotationProcessorOptions {
-				arguments["room.incremental"] = "true"
+				arguments += [
+						"room.schemaLocation": "$projectDir/schemas",
+						"room.incremental"   : "true"
+				]
 			}
 		}
 		signingConfig signingConfigs.debug
@@ -61,17 +64,14 @@ android {
 		}
 	}
 	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_1_8
-		targetCompatibility JavaVersion.VERSION_1_8
+		sourceCompatibility JavaVersion.VERSION_11
+		targetCompatibility JavaVersion.VERSION_11
 	}
 	kotlin {
 		jvmToolchain {
-			languageVersion.set(JavaLanguageVersion.of(18))
+			languageVersion.set(JavaLanguageVersion.of(11))
 		}
-		// Or shorter:
-		jvmToolchain(18)
-		// For example:
-		jvmToolchain(8)
+		jvmToolchain(11)
 	}
 	buildFeatures {
 		viewBinding true
@@ -103,6 +103,7 @@ dependencies {
 
 	def room_version = "2.5.0"
 	implementation "androidx.room:room-runtime:$room_version"
+	annotationProcessor "androidx.room:room-compiler:$room_version"
 	kapt "androidx.room:room-compiler:$room_version"
 	implementation fileTree(include: ["*.jar"], dir: "libs")
 
