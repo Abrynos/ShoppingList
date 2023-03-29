@@ -27,7 +27,7 @@ jobs:
           fileName: keystore.jks
           encodedString: ${{ secrets.KEYSTORE }}
       - id: build
-        run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }}
+        run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true
       - id: prepare-changelog
         run: |
           echo "# Changes" > "${{ env.CHANGELOG_FILE }}"
