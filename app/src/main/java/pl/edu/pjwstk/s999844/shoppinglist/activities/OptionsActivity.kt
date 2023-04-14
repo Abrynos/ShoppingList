@@ -31,7 +31,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Spinner
-import pl.edu.pjwstk.s999844.shoppinglist.BuildConfig
 import pl.edu.pjwstk.s999844.shoppinglist.R
 import pl.edu.pjwstk.s999844.shoppinglist.adapters.DescriptiveSettingSpinnerAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.adapters.SpinnerItemSelectedListener
@@ -43,7 +42,7 @@ class OptionsActivity : AbstractShoppingActivity() {
 	companion object {
 		private const val RELEASES_PAGE_LINK = "https://github.com/Abrynos/ShoppingList/releases"
 
-		private const val CURRENT_RELEASE_LINK = "$RELEASES_PAGE_LINK/tag/${BuildConfig.VERSION_NAME}"
+		private val CURRENT_RELEASE_LINK by lazy { "$RELEASES_PAGE_LINK/tag/${R.string.versionName}" }
 		private const val LATEST_RELEASE_LINK = "$RELEASES_PAGE_LINK/latest"
 
 		private val CURRENT_RELEASE_URI: Uri = Uri.parse(CURRENT_RELEASE_LINK)
