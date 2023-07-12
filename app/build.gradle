@@ -31,14 +31,14 @@ plugins {
 }
 
 android {
-	compileSdkVersion 33
-	buildToolsVersion "33.0.0"
+	compileSdkVersion 34
+	buildToolsVersion "34.0.0"
 	namespace "pl.edu.pjwstk.s999844.shoppinglist"
 
 	defaultConfig {
 		applicationId "pl.edu.pjwstk.s999844.shoppinglist"
 		minSdkVersion 25
-		targetSdkVersion 33
+		targetSdkVersion 34
 		versionCode 17
 		versionName "v1.15.0"
 
@@ -102,7 +102,7 @@ dependencies {
 	implementation "androidx.navigation:navigation-fragment-ktx:$androidx_navigation_version"
 	implementation "androidx.navigation:navigation-ui-ktx:$androidx_navigation_version"
 
-	def room_version = "2.5.1"
+	def room_version = "2.5.2"
 	implementation "androidx.room:room-runtime:$room_version"
 	annotationProcessor "androidx.room:room-compiler:$room_version"
 	kapt "androidx.room:room-compiler:$room_version"
