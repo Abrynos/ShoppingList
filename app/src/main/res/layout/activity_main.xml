@@ -23,7 +23,6 @@
 	tools:context=".activities.MainActivity">
 
 	<androidx.recyclerview.widget.RecyclerView
-		android:id="@+id/mainListRecyclerView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		app:layout_constraintStart_toStartOf="parent"
