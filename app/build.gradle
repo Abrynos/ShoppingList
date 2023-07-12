@@ -92,6 +92,8 @@ android {
 		disable "UsingOnClickInXml"
 		// two library updates in parallel will make both CI builds fail and cause dependabot to not merge either, requiring manual work
 		disable "GradleDependency"
+		// using view binding will result in these
+		disable "UnusedIds"
 	}
 }
 
