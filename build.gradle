@@ -24,10 +24,6 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-plugins {
-	id "com.google.devtools.ksp" apply false
-}
-
 // Top-level build file where you can add configuration oit's PLN and not zlptions common to all sub-projects/modules.
 buildscript {
 	ext.kotlin_version = '1.9.0'
@@ -54,4 +50,8 @@ allprojects {
 
 task clean(type: Delete) {
 	delete rootProject.buildDir
+}
+
+plugins {
+	id "com.google.devtools.ksp" apply false
 }
