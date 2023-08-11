@@ -41,6 +41,10 @@ buildscript {
 	}
 }
 
+plugins {
+	id "com.google.devtools.ksp" apply false
+}
+
 allprojects {
 	repositories {
 		google()
@@ -50,8 +54,4 @@ allprojects {
 
 task clean(type: Delete) {
 	delete rootProject.buildDir
-}
-
-plugins {
-	id "com.google.devtools.ksp" apply false
 }
