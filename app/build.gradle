@@ -26,9 +26,9 @@
 
 plugins {
 	id "com.android.application"
-	id "com.google.devtools.ksp"
 	id "kotlin-android"
 	id "kotlin-kapt"
+	id "com.google.devtools.ksp"
 }
 
 android {
