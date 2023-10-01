@@ -31,7 +31,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Spinner
-import pl.edu.pjwstk.s999844.shoppinglist.BuildConfig
 import pl.edu.pjwstk.s999844.shoppinglist.R
 import pl.edu.pjwstk.s999844.shoppinglist.adapters.DescriptiveSettingSpinnerAdapter
 import pl.edu.pjwstk.s999844.shoppinglist.adapters.SpinnerItemSelectedListener
@@ -43,12 +42,12 @@ class OptionsActivity : AbstractShoppingActivity() {
 	companion object {
 		private const val RELEASES_PAGE_LINK = "https://github.com/Abrynos/ShoppingList/releases"
 
-		private const val CURRENT_RELEASE_LINK = "$RELEASES_PAGE_LINK/tag/${BuildConfig.VERSION_NAME}"
 		private const val LATEST_RELEASE_LINK = "$RELEASES_PAGE_LINK/latest"
-
-		private val CURRENT_RELEASE_URI: Uri = Uri.parse(CURRENT_RELEASE_LINK)
 		private val LATEST_RELEASE_URI: Uri = Uri.parse(LATEST_RELEASE_LINK)
 	}
+
+	private val currentReleaseLink: String by lazy { "$RELEASES_PAGE_LINK/tag/${getString(R.string.versionName)}" }
+	private val currentReleaseUri: Uri by lazy { Uri.parse(currentReleaseLink) }
 
 	private val binding by viewBinding(ActivityOptionsBinding::inflate)
 
@@ -94,7 +93,7 @@ class OptionsActivity : AbstractShoppingActivity() {
 	}
 
 	@Suppress("UNUSED_PARAMETER")
-	fun onClickCurrentVersion(view: View) = openUriInBrowser(CURRENT_RELEASE_URI)
+	fun onClickCurrentVersion(view: View) = openUriInBrowser(currentReleaseUri)
 
 	@Suppress("UNUSED_PARAMETER")
 	fun onClickLatestRelease(view: View) = openUriInBrowser(LATEST_RELEASE_URI)
