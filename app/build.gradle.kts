@@ -31,6 +31,10 @@ plugins {
 	id("com.google.devtools.ksp")
 }
 
+kotlin {
+	jvmToolchain(17)
+}
+
 android {
 	namespace = "pl.edu.pjwstk.s999844.shoppinglist"
 	compileSdk = 34
@@ -97,6 +101,8 @@ android {
 		disable.add("GradleDependency")
 		// using view binding will result in these
 		disable.add("UnusedIds")
+		// I'm not a french person so I have no idea what is correct here - let the translators take care of this
+		disable.add("TypographyQuotes")
 	}
 }
 
