@@ -27,7 +27,6 @@
 plugins {
 	id("com.android.application")
 	id("org.jetbrains.kotlin.android")
-	id("kotlin-kapt")
 	id("com.google.devtools.ksp")
 }
 
@@ -72,12 +71,11 @@ android {
 	buildFeatures {
 		compose = true
 		viewBinding = true
-		dataBinding = true
 	}
 	dataBinding.enable = true
 	viewBinding.enable = true
 	composeOptions {
-		kotlinCompilerExtensionVersion = "1.4.3"
+		kotlinCompilerExtensionVersion = "1.5.3"
 	}
 	lint {
 		abortOnError = true
