@@ -20,6 +20,13 @@
 	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Tmavý režim</string>
 	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Nastavení</string>
 	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">nejnovější verze</string>
+	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">Barva</string>
+	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">Modrý</string>
+	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">Červené</string>
+	<string name="optionsAccentOrange" comment="This text will be shown in the options menus accent color menu; represents the orange theme">Oranžový</string>
+	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Modrozelená</string>
+	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Nachový</string>
+	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Zelená</string>
 	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Nastavení</string>
 	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Seznam je prázdný</string>
 	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Sníží počet položek o 1</string>
@@ -35,5 +42,5 @@
 	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Počet musí být větší než 0</string>
 	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Položka s tímto jménem již existuje</string>
 	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Sdílet</string>
-	<string name="addShareText" formatted="true" comment="This text will be sent to your contact when sharing a new item with them">Přidejte si položku do nákupniho seznamu: %1$s</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Přidejte si položku do nákupniho seznamu: %1$s</string>
 </resources>
