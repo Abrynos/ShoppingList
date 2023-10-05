@@ -16,20 +16,20 @@
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
 <resources>
-	<string name="appName">Pirkinių sąrašas</string>
-	<string name="optionsUseDarkThemeText">Naudoti tamsią temą</string>
-	<string name="optionsTitleBarText">Funkcijos</string>
-	<string name="optionsLatestReleaseText">Paskutinė versija</string>
-	<string name="mainMenuOptionsLinkText">Funkcijos</string>
-	<string name="mainListIsEmptyText">Sąrašas tuščias</string>
-	<string name="addSaveButtonText">Išsaugoti</string>
-	<string name="addNameHint">Элемент</string>
-	<string name="addAmountHint">Suma (neprivaloma)</string>
-	<string name="addTitleBarText">Įtraukti prekę</string>
-	<string name="addNameIsEmptyMessage">Vardas ne turi būti tuščias</string>
-	<string name="addAmountNotANumberMessage">Suma turi būti realusiu skaičiu</string>
-	<string name="addAmountTooSmallMessage">Suma turi būti didesnė, nei 0</string>
-	<string name="addItemAlreadyExistsMessage">Elementas su šiuo pavadinimu jau yra</string>
-	<string name="addShareButtonText">Siųsti</string>
-	<string name="addShareText" formatted="true">Prašome įtraukti prekę į pirkinių sąrašą: %1$s</string>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Pirkinių sąrašas</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Naudoti tamsią temą</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Funkcijos</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">Paskutinė versija</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Funkcijos</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Sąrašas tuščias</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Išsaugoti</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Элемент</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Suma (neprivaloma)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Įtraukti prekę</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">Vardas ne turi būti tuščias</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">Suma turi būti realusiu skaičiu</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Suma turi būti didesnė, nei 0</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Elementas su šiuo pavadinimu jau yra</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Siųsti</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Prašome įtraukti prekę į pirkinių sąrašą: %1$s</string>
 </resources>
