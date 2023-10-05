@@ -16,20 +16,27 @@
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
 <resources>
-	<string name="appName">Liste d\'achats</string>
-	<string name="optionsUseDarkThemeText">Utiliser un thème sombre</string>
-	<string name="optionsTitleBarText">Option</string>
-	<string name="optionsLatestReleaseText">dernière version</string>
-	<string name="mainMenuOptionsLinkText">Option</string>
-	<string name="mainListIsEmptyText">La liste est vide</string>
-	<string name="addSaveButtonText">Sauver</string>
-	<string name="addNameHint">Article</string>
-	<string name="addAmountHint">Montant (optionnel)</string>
-	<string name="addTitleBarText">Ajouter un article</string>
-	<string name="addNameIsEmptyMessage">Le nom ne doit pas être vide</string>
-	<string name="addAmountNotANumberMessage">Le montant doit être un nombre valide</string>
-	<string name="addAmountTooSmallMessage">Le montant doit être supérieur à 0</string>
-	<string name="addItemAlreadyExistsMessage">Un élément portant ce nom existe déjà</string>
-	<string name="addShareButtonText">Envoyer</string>
-	<string name="addShareText" formatted="true">Veuillez ajouter un article à votre liste de courses: %1$s</string>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Liste d\'achats</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Utiliser un thème sombre</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Option</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">dernière version</string>
+	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">Couleur</string>
+	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">Bleu</string>
+	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">Rouge</string>
+	<string name="optionsAccentOrange" comment="This text will be shown in the options menus accent color menu; represents the orange theme">Orange</string>
+	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Turquoise</string>
+	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Violette</string>
+	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Vert</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Option</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">La liste est vide</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Sauver</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Article</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Montant (optionnel)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Ajouter un article</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">Le nom ne doit pas être vide</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">Le montant doit être un nombre valide</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Le montant doit être supérieur à 0</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Un élément portant ce nom existe déjà</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Envoyer</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Veuillez ajouter un article à votre liste de courses: %1$s</string>
 </resources>
