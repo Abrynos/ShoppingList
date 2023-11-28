@@ -20,6 +20,11 @@
 	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Utiliser un thème sombre</string>
 	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Option</string>
 	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">dernière version</string>
+	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">Trier via</string>
+	<string name="optionsUnorderedOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents no ordering">Aucun</string>
+	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">Ordre alphabétique</string>
+	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">Montant croissant</string>
+	<string name="optionsAmountDecendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">Montant décroissant</string>
 	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">Couleur</string>
 	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">Bleu</string>
 	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">Rouge</string>
@@ -29,6 +34,10 @@
 	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Vert</string>
 	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Option</string>
 	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">La liste est vide</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Diminue d\'un le nombre d\'articles</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Augmente d\'un le nombre d\'articles</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Supprime l\'article de la liste de courses</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Ajoute un nouvel article à la liste de courses</string>
 	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Sauver</string>
 	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Article</string>
 	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Montant (optionnel)</string>
