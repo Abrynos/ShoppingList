@@ -75,7 +75,7 @@ android {
 	dataBinding.enable = true
 	viewBinding.enable = true
 	composeOptions {
-		kotlinCompilerExtensionVersion = "1.5.4"
+		kotlinCompilerExtensionVersion = "1.5.5"
 	}
 	lint {
 		abortOnError = true
