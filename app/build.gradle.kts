@@ -102,7 +102,7 @@ android {
 dependencies {
 	implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
 
-	val androidxNavigationVersion = "2.7.5"
+	val androidxNavigationVersion = "2.7.6"
 	implementation("androidx.navigation:navigation-fragment-ktx:$androidxNavigationVersion")
 	implementation("androidx.navigation:navigation-ui-ktx:$androidxNavigationVersion")
 
