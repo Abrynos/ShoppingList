@@ -24,7 +24,7 @@ jobs:
       - id: build
         run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true
       - id: upload-artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artifacts.zip
           path: app/build/outputs/apk/release/*.apk
