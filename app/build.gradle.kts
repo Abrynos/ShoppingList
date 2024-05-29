@@ -112,7 +112,7 @@ dependencies {
 	ksp("androidx.room:room-compiler:$roomVersion")
 
 	implementation("androidx.core:core-ktx:1.13.1")
-	implementation("androidx.appcompat:appcompat:1.6.1")
+	implementation("androidx.appcompat:appcompat:1.7.0")
 	implementation("androidx.compose.material3:material3:1.2.1")
 	implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
