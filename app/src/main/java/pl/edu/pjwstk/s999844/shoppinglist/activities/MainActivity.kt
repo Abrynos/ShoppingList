@@ -85,12 +85,18 @@ class MainActivity : AbstractShoppingActivity() {
 	@Suppress("UNUSED_PARAMETER")
 	fun onClickFloatingButton(view: View) = startActivity(Intent(baseContext, AddItemActivity::class.java))
 
-	private fun changeItemCallback(item: RequiredItem, change: Int) {
+	/**
+	 * Update item's amount.
+	 *
+	 * @param[item] what to change amount of
+	 * @param[change] how much it should change, `null` for deleting it
+	 */
+	private fun changeItemCallback(item: RequiredItem, change: Int?) {
 		val dbItem: RequiredItem = shoppingListDao.findById(item.id)
 			?: return
 
-		val newAmount: Int = dbItem.amount + change
-		if (newAmount <= 0) {
+		val newAmount = change?.plus(dbItem.amount)
+		if (newAmount == null || newAmount <= 0) {
 			shoppingListDao.delete(dbItem)
 		} else {
 			dbItem.amount = newAmount
