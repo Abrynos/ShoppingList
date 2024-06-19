@@ -35,7 +35,7 @@ import pl.edu.pjwstk.s999844.shoppinglist.databinding.ShoppingListItemBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 import java.util.function.BiConsumer
 
-class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredItem, Int>) : RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
+class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredItem, Int?>) : RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
 	private var items: List<RequiredItem> = listOf()
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -60,7 +60,7 @@ class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredI
 			changeAmountCallback.accept(item, -1)
 		}
 		binding.deleteButton.setOnClickListener {
-			changeAmountCallback.accept(item, -item.amount)
+			changeAmountCallback.accept(item, null)
 		}
 	}
 
