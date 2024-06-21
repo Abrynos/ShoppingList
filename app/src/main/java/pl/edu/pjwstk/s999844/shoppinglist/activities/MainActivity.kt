@@ -96,7 +96,7 @@ class MainActivity : AbstractShoppingActivity() {
 			?: return
 
 		val newAmount = change?.plus(dbItem.amount)
-		if (newAmount == null || newAmount <= 0) {
+		if (newAmount == null || (!this.settings.crossoutActive && newAmount <= 0)) {
 			shoppingListDao.delete(dbItem)
 		} else {
 			dbItem.amount = newAmount

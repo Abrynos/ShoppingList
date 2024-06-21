@@ -41,6 +41,9 @@ class Settings(context: Context) {
 
 		private const val ORDER_NAME = "listOrder"
 		private val ORDER_DEFAULT: Order = Order.Unordered
+
+		private const val CROSSOUT_NAME = "crossout"
+		private val CROSSOUT_DEFAULT = true
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
@@ -72,6 +75,10 @@ class Settings(context: Context) {
 	interface DescriptiveSetting {
 		val descriptionResourceId: Int
 	}
+
+	var crossoutActive: Boolean
+		get() = sharedPreferences.getBoolean(CROSSOUT_NAME, CROSSOUT_DEFAULT)
+		set(value) = edit().putBoolean(CROSSOUT_NAME, value).apply()
 
 	enum class AccentColor(val value: Int, val styleResourceId: Int, private val description: Int) : DescriptiveSetting {
 		Blue(0, R.style.Theme_ShoppingList_AccentBlue, R.string.optionsAccentBlue),
