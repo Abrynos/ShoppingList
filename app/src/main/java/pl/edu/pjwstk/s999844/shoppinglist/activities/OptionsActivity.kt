@@ -81,6 +81,7 @@ class OptionsActivity : AbstractShoppingActivity() {
 		binding.optionsThemeSwitch.isChecked = settings.darkThemeActive
 		binding.listOrderDropdown.setSelection(getIndex(binding.listOrderDropdown, settings.order))
 		binding.accentColorDropdown.setSelection(getIndex(binding.accentColorDropdown, settings.accentColor))
+		binding.optionsCrossoutSwitch.isChecked = settings.crossoutActive
 
 		title = getString(R.string.optionsTitleBarText)
 	}
@@ -90,6 +91,11 @@ class OptionsActivity : AbstractShoppingActivity() {
 		val isDark = binding.optionsThemeSwitch.isChecked
 		settings.darkThemeActive = isDark
 		setDark(isDark)
+	}
+
+	@Suppress("UNUSED_PARAMETER")
+	fun onClickCrossoutSwitch(view: View) {
+		settings.crossoutActive = binding.optionsCrossoutSwitch.isChecked
 	}
 
 	@Suppress("UNUSED_PARAMETER")
