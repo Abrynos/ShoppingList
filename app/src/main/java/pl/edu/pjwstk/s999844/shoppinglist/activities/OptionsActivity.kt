@@ -81,6 +81,7 @@ class OptionsActivity : AbstractShoppingActivity() {
 		binding.optionsThemeSwitch.isChecked = settings.darkThemeActive
 		binding.listOrderDropdown.setSelection(getIndex(binding.listOrderDropdown, settings.order))
 		binding.accentColorDropdown.setSelection(getIndex(binding.accentColorDropdown, settings.accentColor))
+		binding.optionsOrderZeroItemsLastSwitch.isChecked = settings.orderZeroItemsLast
 
 		title = getString(R.string.optionsTitleBarText)
 	}
@@ -90,6 +91,11 @@ class OptionsActivity : AbstractShoppingActivity() {
 		val isDark = binding.optionsThemeSwitch.isChecked
 		settings.darkThemeActive = isDark
 		setDark(isDark)
+	}
+
+	@Suppress("UNUSED_PARAMETER")
+	fun onClickOrderZeroItemsLastSwitch(view: View) {
+		settings.orderZeroItemsLast = binding.optionsOrderZeroItemsLastSwitch.isChecked
 	}
 
 	@Suppress("UNUSED_PARAMETER")

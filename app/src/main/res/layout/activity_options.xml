@@ -60,6 +60,7 @@
 	</LinearLayout>
 
 	<LinearLayout
+		android:id="@+id/optionsOrderDropdown"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="@dimen/formDefaultMargin"
@@ -83,6 +84,15 @@
 			android:layout_weight="2" />
 	</LinearLayout>
 
+	<androidx.appcompat.widget.SwitchCompat
+		android:id="@+id/optionsOrderZeroItemsLastSwitch"
+		style="@style/Theme.ShoppingList.SwitchCompat"
+		android:onClick="onClickOrderZeroItemsLastSwitch"
+		android:text="@string/optionsOrderZeroItemsLastText"
+		android:textSize="@dimen/optionTextSize"
+		app:layout_constraintTop_toBottomOf="@id/optionsOrderDropdown"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
 
 	<LinearLayout
 		android:layout_width="wrap_content"

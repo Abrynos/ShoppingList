@@ -105,11 +105,18 @@ class MainActivity : AbstractShoppingActivity() {
 	}
 
 	private fun observeDatabaseChange(items: List<RequiredItem>) {
-		val comparator = when (settings.order) {
+		var comparator = when (settings.order) {
 			Order.Unordered -> Comparator<RequiredItem> { _, _ -> 0 }
 			Order.Alphabetical -> compareBy { it.name }
 			Order.AmountAscending -> compareBy { it.amount }
 			Order.AmountDescending -> compareByDescending { it.amount }
+		}
+		if (settings.orderZeroItemsLast) {
+			comparator = Comparator<RequiredItem> { a, b ->
+				if (a.amount > 0 && b.amount == 0) -1
+				else if (a.amount == 0 && b.amount > 0) 1
+				else 0
+			}.then(comparator)
 		}
 
 		val sorted = items.sortedWith(comparator)

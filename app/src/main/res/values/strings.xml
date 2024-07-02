@@ -23,6 +23,7 @@
 	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">ShoppingList</string>
 
 	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Use dark theme</string>
+	<string name="optionsOrderZeroItemsLastText" comment="This text will be shown in the options menu as description for the switch for sorting zero-count items last">Order zero-count items last</string>
 	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Options</string>
 	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">latest release</string>
 	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">Order</string>
