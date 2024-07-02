@@ -40,6 +40,7 @@ import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityMainBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
+import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings.Order
 import pl.edu.pjwstk.s999844.shoppinglist.viewBinding
 
 class MainActivity : AbstractShoppingActivity() {
@@ -104,7 +105,15 @@ class MainActivity : AbstractShoppingActivity() {
 	}
 
 	private fun observeDatabaseChange(items: List<RequiredItem>) {
-		(binding.mainListRecyclerView.adapter as ShoppingListAdapter).setItems(items)
+		val comparator = when (settings.order) {
+			Order.Unordered -> Comparator<RequiredItem> { _, _ -> 0 }
+			Order.Alphabetical -> compareBy { it.name }
+			Order.AmountAscending -> compareBy { it.amount }
+			Order.AmountDescending -> compareByDescending { it.amount }
+		}
+
+		val sorted = items.sortedWith(comparator)
+		(binding.mainListRecyclerView.adapter as ShoppingListAdapter).setItems(sorted)
 
 		binding.mainEmptyTextView.isVisible = items.isEmpty()
 		binding.mainListRecyclerView.isVisible = items.isNotEmpty()
