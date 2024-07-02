@@ -36,6 +36,10 @@ import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
 import java.util.function.BiConsumer
 
 class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredItem, Int?>) : RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
+	companion object {
+		private const val ZERO_ITEMS_OPACITY = 0.3f
+	}
+
 	private var items: List<RequiredItem> = listOf()
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -52,10 +56,12 @@ class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredI
 		binding.amountTextView.isVisible = item.amount > 1
 
 		binding.nameTextView.text = item.name
+		binding.nameTextView.alpha = if (item.amount > 0) 1f else ZERO_ITEMS_OPACITY
 
 		binding.addButton.setOnClickListener {
 			changeAmountCallback.accept(item, 1)
 		}
+		binding.subtractButton.alpha = if (item.amount > 0) 1f else ZERO_ITEMS_OPACITY
 		binding.subtractButton.setOnClickListener {
 			changeAmountCallback.accept(item, -1)
 		}

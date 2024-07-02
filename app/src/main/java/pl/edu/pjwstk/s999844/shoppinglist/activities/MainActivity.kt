@@ -95,11 +95,10 @@ class MainActivity : AbstractShoppingActivity() {
 		val dbItem: RequiredItem = shoppingListDao.findById(item.id)
 			?: return
 
-		val newAmount = change?.plus(dbItem.amount)
-		if (newAmount == null || newAmount <= 0) {
+		if (change == null) {
 			shoppingListDao.delete(dbItem)
 		} else {
-			dbItem.amount = newAmount
+			dbItem.amount = change.plus(dbItem.amount).coerceAtLeast(0)
 			shoppingListDao.update(dbItem)
 		}
 	}
