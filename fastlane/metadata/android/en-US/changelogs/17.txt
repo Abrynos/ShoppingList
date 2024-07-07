@@ -1,1 +1,2 @@
-* The usual amount of miscellaneous code improvements and optimizations
+* Updated translations
+* An extraordinary amount of miscellaneous code improvements and optimizations
