@@ -1,3 +1,5 @@
+import com.android.sdklib.AndroidVersion.VersionCodes
+
 /*
  *  _____ _                       _             _     _     _
  * /  ___| |                     (_)           | |   (_)   | |
@@ -37,12 +39,12 @@ kotlin {
 
 android {
 	namespace = "pl.edu.pjwstk.s999844.shoppinglist"
-	compileSdk = 34
+	compileSdk = VersionCodes.UPSIDE_DOWN_CAKE
 
 	defaultConfig {
 		applicationId = "pl.edu.pjwstk.s999844.shoppinglist"
-		minSdk = 25
-		targetSdk = 34
+		minSdk = VersionCodes.N_MR1
+		targetSdk = VersionCodes.UPSIDE_DOWN_CAKE
 		versionCode = 17
 		versionName = "v1.15.0"
 
@@ -92,6 +94,8 @@ android {
 		disable.add("UnusedIds")
 		// I'm not a french person so I have no idea what is correct here - let the translators take care of this
 		disable.add("TypographyQuotes")
+		// SDK 35 is not stable yet - August 2024
+		disable.add("OldTargetApi")
 	}
 }
 
