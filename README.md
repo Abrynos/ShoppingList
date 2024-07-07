@@ -30,3 +30,5 @@ I am open to translating the app to any known language. There is several ways of
 - The easiest way is [crowdin](https://crowdin.com/project/abrynosshoppinglist). You can just input the strings into a graphical user interface and I will do the rest. Please open an issue if your preferred language is not available as an option.
 - The second possibility is to open a merge request adding the translated strings in source code directly
 
+#Collaboration
+If you would like to contribute but do not have a specific idea yet, feel free to look at the list of [previously suggested ideas](https://github.com/Abrynos/ShoppingList/issues?q=label%3A%22%F0%9F%91%8D+merge+request+okay%22). If you already have a specific idea but you are unable to find it in the list of previous suggestions you can either open an issue with your feature request or open a merge request directly.
