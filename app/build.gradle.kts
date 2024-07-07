@@ -25,9 +25,10 @@
  */
 
 plugins {
-	id("com.android.application")
-	id("org.jetbrains.kotlin.android")
-	id("com.google.devtools.ksp")
+	alias(libs.plugins.android.application)
+	alias(libs.plugins.jetbrains.kotlin.android)
+	alias(libs.plugins.ksp)
+	alias(libs.plugins.compose)
 }
 
 kotlin {
@@ -44,8 +45,6 @@ android {
 		targetSdk = 34
 		versionCode = 17
 		versionName = "v1.15.0"
-
-		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
 		vectorDrawables {
 			useSupportLibrary = true
@@ -74,15 +73,12 @@ android {
 	}
 	dataBinding.enable = true
 	viewBinding.enable = true
-	composeOptions {
-		kotlinCompilerExtensionVersion = "1.5.14"
-	}
 	lint {
 		abortOnError = true
 		warningsAsErrors = true
 		checkAllWarnings = true
 		showAll = true
-		// sometimes we use the same string for similuar but non-equal purposes
+		// sometimes we use the same string for similar but non-equal purposes
 		disable.add("DuplicateStrings")
 		// This is an open source project and we don't have a person of each language sitting around translating stuff for us
 		disable.add("MissingTranslation")
@@ -100,25 +96,17 @@ android {
 }
 
 dependencies {
-	implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.2")
+	implementation(libs.androidx.lifecycle.runtime)
 
-	val androidxNavigationVersion = "2.7.7"
-	implementation("androidx.navigation:navigation-fragment-ktx:$androidxNavigationVersion")
-	implementation("androidx.navigation:navigation-ui-ktx:$androidxNavigationVersion")
+	implementation(libs.androidx.navigation.fragment)
+	implementation(libs.androidx.navigation.ui)
 
-	val roomVersion = "2.6.1"
-	implementation("androidx.room:room-runtime:$roomVersion")
-	annotationProcessor("androidx.room:room-compiler:$roomVersion")
-	ksp("androidx.room:room-compiler:$roomVersion")
+	implementation(libs.room.runtime)
+	annotationProcessor(libs.room.compiler)
+	ksp(libs.room.compiler)
 
-	implementation("androidx.core:core-ktx:1.13.1")
-	implementation("androidx.appcompat:appcompat:1.7.0")
-	implementation("androidx.compose.material3:material3:1.2.1")
-	implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-
-	testImplementation("junit:junit:4.13.2")
-	androidTestImplementation("androidx.test.ext:junit:1.1.5")
-	androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-	androidTestImplementation(platform("androidx.compose:compose-bom:2024.06.00"))
-	androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+	implementation(libs.androidx.core)
+	implementation(libs.androidx.appcompat)
+	implementation(libs.androidx.material3)
+	implementation(libs.androidx.constraintlayout)
 }

@@ -1,0 +1,32 @@
+[versions]
+android = "8.5.0"
+devtools = "2.0.0-1.0.22"
+kotlin = "2.0.0"
+
+lifecycleRuntime = "2.8.2"
+androidxNavigation = "2.7.7"
+roomVersion = "2.6.1"
+appcompat = "1.7.0"
+constraintlayout = "2.1.4"
+androidxcore = "1.13.1"
+material3 = "1.2.1"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "devtools" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+[libraries]
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntime" }
+
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidxNavigation" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidxNavigation" }
+
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidxcore" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
