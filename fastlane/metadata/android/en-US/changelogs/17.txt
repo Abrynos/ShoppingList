@@ -1,2 +1,3 @@
+* Fade out of zero-count items, implement sorting. Thanks to GitHub/tharvik
 * Updated translations
 * An extraordinary amount of miscellaneous code improvements and optimizations
