@@ -1,3 +1,5 @@
-* Fade out of zero-count items, implement sorting. Thanks to GitHub/tharvik
+* Items with an amount of 0 are now faded out (@tharvik)
+* Fixed list sorting not working correctly (@tharvik)
+* Added option to order items with amount of 0 at the end of the list
 * Updated translations
 * An extraordinary amount of miscellaneous code improvements and optimizations
