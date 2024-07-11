@@ -40,6 +40,7 @@ import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDao
 import pl.edu.pjwstk.s999844.shoppinglist.dal.ShoppingListDatabase
 import pl.edu.pjwstk.s999844.shoppinglist.databinding.ActivityMainBinding
 import pl.edu.pjwstk.s999844.shoppinglist.models.RequiredItem
+import pl.edu.pjwstk.s999844.shoppinglist.settings.Settings.Order
 import pl.edu.pjwstk.s999844.shoppinglist.viewBinding
 
 class MainActivity : AbstractShoppingActivity() {
@@ -85,21 +86,41 @@ class MainActivity : AbstractShoppingActivity() {
 	@Suppress("UNUSED_PARAMETER")
 	fun onClickFloatingButton(view: View) = startActivity(Intent(baseContext, AddItemActivity::class.java))
 
-	private fun changeItemCallback(item: RequiredItem, change: Int) {
+	/**
+	 * Update item's amount.
+	 *
+	 * @param[item] what to change amount of
+	 * @param[change] how much it should change, `null` for deleting it
+	 */
+	private fun changeItemCallback(item: RequiredItem, change: Int?) {
 		val dbItem: RequiredItem = shoppingListDao.findById(item.id)
 			?: return
 
-		val newAmount: Int = dbItem.amount + change
-		if (newAmount <= 0) {
+		if (change == null) {
 			shoppingListDao.delete(dbItem)
 		} else {
-			dbItem.amount = newAmount
+			dbItem.amount = change.plus(dbItem.amount).coerceAtLeast(0)
 			shoppingListDao.update(dbItem)
 		}
 	}
 
 	private fun observeDatabaseChange(items: List<RequiredItem>) {
-		(binding.mainListRecyclerView.adapter as ShoppingListAdapter).setItems(items)
+		var comparator = when (settings.order) {
+			Order.Unordered -> Comparator<RequiredItem> { _, _ -> 0 }
+			Order.Alphabetical -> compareBy { it.name }
+			Order.AmountAscending -> compareBy { it.amount }
+			Order.AmountDescending -> compareByDescending { it.amount }
+		}
+		if (settings.orderZeroItemsLast) {
+			comparator = Comparator<RequiredItem> { a, b ->
+				if (a.amount > 0 && b.amount == 0) -1
+				else if (a.amount == 0 && b.amount > 0) 1
+				else 0
+			}.then(comparator)
+		}
+
+		val sorted = items.sortedWith(comparator)
+		(binding.mainListRecyclerView.adapter as ShoppingListAdapter).setItems(sorted)
 
 		binding.mainEmptyTextView.isVisible = items.isEmpty()
 		binding.mainListRecyclerView.isVisible = items.isNotEmpty()

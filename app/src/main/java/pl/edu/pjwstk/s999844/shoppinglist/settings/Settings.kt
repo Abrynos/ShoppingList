@@ -41,6 +41,9 @@ class Settings(context: Context) {
 
 		private const val ORDER_NAME = "listOrder"
 		private val ORDER_DEFAULT: Order = Order.Unordered
+
+		private const val ORDER_ZERO_ITEMS_LAST_NAME = "orderZeroItemsLast"
+		private const val ORDER_ZERO_ITEMS_LAST_DEFAULT = true
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
@@ -68,6 +71,10 @@ class Settings(context: Context) {
 			} ?: ORDER_DEFAULT
 		}
 		set(value) = edit().putInt(ORDER_NAME, value.value).apply()
+
+	var orderZeroItemsLast: Boolean
+		get() = sharedPreferences.getBoolean(ORDER_ZERO_ITEMS_LAST_NAME, ORDER_ZERO_ITEMS_LAST_DEFAULT)
+		set(value) = edit().putBoolean(ORDER_ZERO_ITEMS_LAST_NAME, value).apply()
 
 	interface DescriptiveSetting {
 		val descriptionResourceId: Int
