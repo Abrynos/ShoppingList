@@ -19,6 +19,7 @@
 
 	<style name="Theme.ShoppingList" parent="Theme.ShoppingList.Base">
 		<item name="android:windowBackground">@color/darkGrey</item>
+		<item name="android:navigationBarColor">@color/darkGrey</item>
 		<item name="android:textColor">@color/white</item>
 	</style>
 
