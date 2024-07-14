@@ -18,6 +18,7 @@
 <resources>
 	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Einkaufsliste</string>
 	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Dunkles Design verwenden</string>
+	<string name="optionsOrderZeroItemsLastText" comment="This text will be shown in the options menu as description for the switch for sorting zero-count items last">Null-Stückzahlen unten anordnen</string>
 	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Optionen</string>
 	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">aktuelle Version</string>
 	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">Reihenfolge</string>
