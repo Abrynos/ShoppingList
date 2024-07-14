@@ -45,8 +45,8 @@ import java.util.*
 
 class AddItemActivity : AbstractShoppingActivity() {
 	companion object {
-		const val NameParameterName = "name"
-		const val AmountParameterName = "amount"
+		const val NAME_PARAMETER_NAME = "name"
+		const val AMOUNT_PARAMETER_NAME = "amount"
 	}
 
 	private val binding by viewBinding(ActivityAddItemBinding::inflate)
@@ -76,7 +76,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 		val data: Uri = intent?.data
 			?: return
 
-		val nameParameter = data.getQueryParameter(NameParameterName)
+		val nameParameter = data.getQueryParameter(NAME_PARAMETER_NAME)
 			?: return
 		if (nameParameter.isEmpty() || nameParameter.isBlank()) {
 			return
@@ -84,7 +84,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 
 		binding.addItemNameInput.setText(nameParameter, TextView.BufferType.EDITABLE)
 
-		val amountParameter = data.getQueryParameter(AmountParameterName) ?: return
+		val amountParameter = data.getQueryParameter(AMOUNT_PARAMETER_NAME) ?: return
 		if (amountParameter.isEmpty() || amountParameter.isBlank()) {
 			return
 		}
@@ -101,9 +101,9 @@ class AddItemActivity : AbstractShoppingActivity() {
 	}
 
 	private fun createShareUri(item: RequiredItem): String {
-		var uriBuilder = Uri.Builder().scheme(getString(R.string.shareScheme)).authority(getString(R.string.shareHost)).path(getString(R.string.sharePath)).appendQueryParameter(NameParameterName, item.name)
+		var uriBuilder = Uri.Builder().scheme(getString(R.string.shareScheme)).authority(getString(R.string.shareHost)).path(getString(R.string.sharePath)).appendQueryParameter(NAME_PARAMETER_NAME, item.name)
 		if (item.amount > 1) {
-			uriBuilder = uriBuilder.appendQueryParameter(AmountParameterName, item.amount.toString())
+			uriBuilder = uriBuilder.appendQueryParameter(AMOUNT_PARAMETER_NAME, item.amount.toString())
 		}
 		return uriBuilder.toString()
 	}
