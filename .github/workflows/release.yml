@@ -36,7 +36,7 @@ jobs:
       - id: prepare-changelog
         run: |
           echo "# Changes" > "${{ env.CHANGELOG_FILE }}"
-          sed "s/^* /- /g" "fastlane/metadata/android/en-US/changelogs/$(grep versionCode app/build.gradle | grep -E '[0-9]+' --only-matching).txt" >> "${{ env.CHANGELOG_FILE }}"
+          sed "s/^* /- /g" "fastlane/metadata/android/en-US/changelogs/$(grep versionCode app/build.gradle.kts | grep -E '[0-9]+' --only-matching).txt" >> "${{ env.CHANGELOG_FILE }}"
       - id: create-release
         uses: softprops/action-gh-release@v2
         env:
