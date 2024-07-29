@@ -15,4 +15,38 @@
   ~ with this program; if not, write to the Free Software Foundation, Inc.,
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
-<resources></resources>
+<resources>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">საყიდლების სია</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">მუქი თემა</string>
+	<string name="optionsOrderZeroItemsLastText" comment="This text will be shown in the options menu as description for the switch for sorting zero-count items last">Order zero-count items last</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">პარამეტრები</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">ბოლო ვერსია</string>
+	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">დალაგება</string>
+	<string name="optionsUnorderedOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents no ordering">დალაგების გარეშე</string>
+	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">ანბანის მიხედვით</string>
+	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">რაოდენობის ზრდადობის მიხედვით</string>
+	<string name="optionsAmountDecendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">რაოდენობის კლებადობის მიხედვით</string>
+	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">ფერი</string>
+	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">ლურჯი</string>
+	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">წითელი</string>
+	<string name="optionsAccentOrange" comment="This text will be shown in the options menus accent color menu; represents the orange theme">ნარინჯისფერი</string>
+	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">ფირუზისფერი</string>
+	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">იასამნისფერი</string>
+	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">მწვანე</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">პარამეტრები</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">სია ცარიელია</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">ამცირებს პროდუქტის რაოდენობას ერთით</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">ზრდის პროდუქტის რაოდენობას ერთით</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">შლის პროდუქტს საყიდლების სიიდან</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">ამატებს ახალ პროდუქტს საყიდლების სიაში</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">შენახვა</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">პროდუქტი</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">რაოდენობა (სურვილის მიხედვით)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">პროდუქტის დამატება</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">სახელი არ უნდა იყოს ცარიელი</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">რაოდენობა უნდა იყოს ვალიდური ციფრი</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">რაოდენობა უნდა იყოს 0-ზე მეტი</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">ამ სახელით პროდუქტი უკვე არსებობს</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">გაგზავნა</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">გთხოვთ, დაამატოთ პროდუქტი თქვენს საყიდლების სიაში: %1$s</string>
+</resources>
