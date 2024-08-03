@@ -1,0 +1,2 @@
+* Added translations for Azerbaijani, Georgian and Turkish
+* The usual amount of miscellaneous code improvements and optimizations
