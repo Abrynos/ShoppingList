@@ -9,15 +9,19 @@ This is the a simple Android application serving the purpose of a shopping list.
 * No ads
 
 <b>Languages:</b>
-* English
-* German
-* Finnish
+* Azerbaijani
 * Czech
+* English
+* Finnish
 * French
+* Georgian
+* German
+* Hebrew
 * Italian
 * Lithuanian
 * Norwegian Bokmal
 * Polish
 * Portuguese
 * Russian
+* Turkish
 * Ukrainian
