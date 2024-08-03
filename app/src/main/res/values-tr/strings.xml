@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021-2023 Sebastian Göls
+  ~
+  ~ This program is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; version 2 of the License only
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along
+  ~ with this program; if not, write to the Free Software Foundation, Inc.,
+  ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  -->
+<resources>
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Alışveriş listesi</string>
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Koyu tema</string>
+	<string name="optionsOrderZeroItemsLastText" comment="This text will be shown in the options menu as description for the switch for sorting zero-count items last">Order zero-count items last</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Seçenekler</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">son sürüm</string>
+	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">Sıralama</string>
+	<string name="optionsUnorderedOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents no ordering">Sırasız</string>
+	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">Alfabetik</string>
+	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">Artan miktara göre</string>
+	<string name="optionsAmountDecendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">Azalan miktara göre</string>
+	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">Renk</string>
+	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">Mavi</string>
+	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">Kırmızı</string>
+	<string name="optionsAccentOrange" comment="This text will be shown in the options menus accent color menu; represents the orange theme">Turuncu</string>
+	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Deniz mavisi</string>
+	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Mor</string>
+	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Yeşil</string>
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Seçenekler</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Liste boş</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Ürün miktarını bir oranında azaltır</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Ürün miktarını bir oranında arttırır</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Ürünü alışveriş listesinden siler</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Alışveriş listesine yeni bir ürün ekler</string>
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Kaydet</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Ürün</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Miktar (isteğe bağlı)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">Ürün ekle</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">Ad boş olmamalıdır</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">Ürün miktarı geçerli sayı olmalıdır</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">Miktar 0\'dan yüksek olmalıdır</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Bu isimde bir ürün zaten mevcut</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Gönder</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Lütfen, alışveriş listenize bir ürün ekleyin: %1$s</string>
+</resources>
