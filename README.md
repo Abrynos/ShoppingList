@@ -12,7 +12,7 @@ This is the a simple Android application serving the purpose of a shopping list.
 - Simple and intuitive to use
 - Dark and Light user interface
 - Six choosable color schemes
-- Localized in eleven languages
+- Localized in more than 15 languages
 - No permissions required
 - No tracking or sharing any data
 - No ads
