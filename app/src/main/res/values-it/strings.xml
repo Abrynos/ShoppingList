@@ -17,7 +17,9 @@
   -->
 <resources>
 	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Lista della spesa</string>
+	
 	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Usa il tema scuro</string>
+	<string name="optionsOrderZeroItemsLastText" comment="This text will be shown in the options menu as description for the switch for sorting zero-count items last">Metti in fondo gli oggetti a zero</string>
 	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Opzioni</string>
 	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">ultima versione</string>
 	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">Ordine</string>
@@ -32,12 +34,14 @@
 	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Verde acqua</string>
 	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Viola</string>
 	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Verde</string>
+	
 	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Opzioni</string>
 	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">La lista è vuota</string>
 	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Riduce di uno la quantità dell\'oggetto</string>
 	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Aumenta di uno la quantità dell\'oggetto</string>
 	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">Elimina l\'oggetto dalla lista della spesa</string>
 	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">Aggiunge un nuovo oggetto alla lista della spesa</string>
+	
 	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">Salva</string>
 	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">Oggetto</string>
 	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">Quantità (opzionale)</string>
