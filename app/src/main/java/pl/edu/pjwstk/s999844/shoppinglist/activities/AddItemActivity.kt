@@ -96,7 +96,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 		}
 
 		if (amount > 1) {
-			binding.addItemAmountInput.setText(amount.toString(), TextView.BufferType.EDITABLE)
+			binding.addItemAmountInput.setText("$amount", TextView.BufferType.EDITABLE)
 		}
 	}
 

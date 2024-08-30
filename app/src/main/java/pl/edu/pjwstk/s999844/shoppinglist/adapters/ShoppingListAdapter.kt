@@ -52,7 +52,7 @@ class ShoppingListAdapter(private val changeAmountCallback: BiConsumer<RequiredI
 		val item: RequiredItem = items[position]
 
 		val binding = holder.binding
-		binding.amountTextView.text = item.amount.toString()
+		binding.amountTextView.text = "${item.amount}"
 		binding.amountTextView.isVisible = item.amount > 1
 
 		binding.nameTextView.text = item.name
