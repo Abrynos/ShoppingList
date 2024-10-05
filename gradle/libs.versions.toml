@@ -18,15 +18,15 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 [libraries]
-androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntime" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntime" }
 
-androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidxNavigation" }
-androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidxNavigation" }
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidxNavigation" }
+androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidxNavigation" }
 
-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
 
-androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidxcore" }
-androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidxcore" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
