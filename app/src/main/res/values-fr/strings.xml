@@ -24,7 +24,7 @@
 	<string name="optionsUnorderedOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents no ordering">Aucun</string>
 	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">Ordre alphabétique</string>
 	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">Montant croissant</string>
-	<string name="optionsAmountDecendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">Montant décroissant</string>
+	<string name="optionsAmountDescendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">Montant décroissant</string>
 	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">Couleur</string>
 	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">Bleu</string>
 	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">Rouge</string>

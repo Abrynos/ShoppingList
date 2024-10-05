@@ -96,7 +96,7 @@ class Settings(context: Context) {
 		Unordered(0, R.string.optionsUnorderedOrdering),
 		Alphabetical(1, R.string.optionsAlphabeticalOrdering),
 		AmountAscending(2, R.string.optionsAmountAscendingOrdering),
-		AmountDescending(3, R.string.optionsAmountDecendingOrdering);
+		AmountDescending(3, R.string.optionsAmountDescendingOrdering);
 
 		override val descriptionResourceId: Int
 			get() = description

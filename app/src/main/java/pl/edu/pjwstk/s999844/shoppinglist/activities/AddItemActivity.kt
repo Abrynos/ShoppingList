@@ -44,11 +44,6 @@ import pl.edu.pjwstk.s999844.shoppinglist.viewBinding
 import java.util.*
 
 class AddItemActivity : AbstractShoppingActivity() {
-	companion object {
-		const val NAME_PARAMETER_NAME = "name"
-		const val AMOUNT_PARAMETER_NAME = "amount"
-	}
-
 	private val binding by viewBinding(ActivityAddItemBinding::inflate)
 
 	private val inputMethodManager: InputMethodManager by lazy { getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
@@ -60,7 +55,6 @@ class AddItemActivity : AbstractShoppingActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(binding.root)
 	}
-
 
 	override fun onStart() {
 		super.onStart()
@@ -76,7 +70,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 		val data: Uri = intent?.data
 			?: return
 
-		val nameParameter = data.getQueryParameter(NAME_PARAMETER_NAME)
+		val nameParameter = data.getQueryParameter(getString(R.string.shareNameParameter))
 			?: return
 		if (nameParameter.isEmpty() || nameParameter.isBlank()) {
 			return
@@ -84,7 +78,7 @@ class AddItemActivity : AbstractShoppingActivity() {
 
 		binding.addItemNameInput.setText(nameParameter, TextView.BufferType.EDITABLE)
 
-		val amountParameter = data.getQueryParameter(AMOUNT_PARAMETER_NAME) ?: return
+		val amountParameter = data.getQueryParameter(getString(R.string.shareAmountParameter)) ?: return
 		if (amountParameter.isEmpty() || amountParameter.isBlank()) {
 			return
 		}
@@ -101,9 +95,13 @@ class AddItemActivity : AbstractShoppingActivity() {
 	}
 
 	private fun createShareUri(item: RequiredItem): String {
-		var uriBuilder = Uri.Builder().scheme(getString(R.string.shareScheme)).authority(getString(R.string.shareHost)).path(getString(R.string.sharePath)).appendQueryParameter(NAME_PARAMETER_NAME, item.name)
+		var uriBuilder = Uri.Builder()
+			.scheme(getString(R.string.shareScheme))
+			.authority(getString(R.string.shareHost))
+			.path(getString(R.string.sharePath))
+			.appendQueryParameter(getString(R.string.shareNameParameter), item.name)
 		if (item.amount > 1) {
-			uriBuilder = uriBuilder.appendQueryParameter(AMOUNT_PARAMETER_NAME, item.amount.toString())
+			uriBuilder = uriBuilder.appendQueryParameter(getString(R.string.shareAmountParameter), item.amount.toString())
 		}
 		return uriBuilder.toString()
 	}
