@@ -1,5 +1,3 @@
-import com.android.sdklib.AndroidVersion.VersionCodes
-
 /*
  *  _____ _                       _             _     _     _
  * /  ___| |                     (_)           | |   (_)   | |
@@ -10,7 +8,7 @@ import com.android.sdklib.AndroidVersion.VersionCodes
  *                   | |   | |             __/ |
  *                   |_|   |_|            |___/
  *
- * Copyright (C) 2021-2023 Sebastian Göls
+ * Copyright (C) 2021-2024 Sebastian Göls
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,6 +23,8 @@ import com.android.sdklib.AndroidVersion.VersionCodes
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
+
+import com.android.sdklib.AndroidVersion.VersionCodes
 
 plugins {
 	alias(libs.plugins.android.application)
