@@ -16,11 +16,6 @@
   -->
 
 <resources>
-	<string name="shareHost" translatable="false">shopping.sgo.contact</string>
-	<string name="sharePath" translatable="false">/add</string>
-	<string name="shareScheme" translatable="false">https</string>
-	<string name="shareNameParameter" translatable="false">name</string>
-	<string name="shareAmountParameter" translatable="false">amount</string>
 
 	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">শপিংলিস্ট</string>
 
