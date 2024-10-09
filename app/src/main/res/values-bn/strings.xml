@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2021-2024 Sebastian Göls
   ~
   ~ This program is free software; you can redistribute it and/or modify
@@ -15,4 +14,43 @@
   ~ with this program; if not, write to the Free Software Foundation, Inc.,
   ~ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   -->
-<resources></resources>
+
+<resources>
+
+	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">শপিংলিস্ট</string>
+
+	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">ডার্ক থিম ব্যবহার করুন</string>
+	<string name="optionsOrderZeroItemsLastText" comment="This text will be shown in the options menu as description for the switch for sorting zero-count items last">শেষ পর্যন্ত জিরো-কাউন্ট আইটেম অর্ডার করুন</string>
+	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">অপশন</string>
+	<string name="optionsLatestReleaseText" comment="This text will be shown in the options menu as the link to the lastest release">সর্বশেষ রিলিজ</string>
+	<string name="optionsListOrderText" comment="This text will be shown in the options menu as description of the dropdown for sorting the shopping list">ক্রম</string>
+	<string name="optionsUnorderedOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents no ordering">ক্রমহীন</string>
+	<string name="optionsAlphabeticalOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents alphabetical ordering">বর্ণানুক্রমিক</string>
+	<string name="optionsAmountAscendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents ascending ordering by amount">পরিমাণ ঊর্ধ্বগামী</string>
+	<string name="optionsAmountDescendingOrdering" comment="This text will be shown in the options menus ordering dropdown menu; represents descending ordering by amount">পরিমাণ নিম্নগামী</string>
+	<string name="optionsAccentText" comment="This text will be shown in the options menu as description of the dropdown for the accent color of the app">রং</string>
+	<string name="optionsAccentBlue" comment="This text will be shown in the options menus accent color menu; represents the blue theme">নীল</string>
+	<string name="optionsAccentRed" comment="This text will be shown in the options menus accent color menu; represents the red theme">লাল</string>
+	<string name="optionsAccentOrange" comment="This text will be shown in the options menus accent color menu; represents the orange theme">কমলা</string>
+	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">টিল</string>
+	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">বেগুনি</string>
+	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">সবুজ</string>
+
+	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">অপশন</string>
+	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">তালিকাটি ফাঁকা</string>
+	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">আইটেম পরিমাণ এক দ্বারা হ্রাস করে</string>
+	<string name="mainAddButtonDescription" comment="This text describes the plus button for an item of the shopping list; It is used for accessability (e.g. blind people)">আইটেম পরিমাণ এক দ্বারা বৃদ্ধি করে</string>
+	<string name="mainDeleteButtonDescription" comment="This text describes the trash can button for an item of the shopping list; It is used for accessability (e.g. blind people)">কেনাকাটার তালিকা থেকে আইটেম ডিলিট করে</string>
+	<string name="mainFloatingAddButtonDescription" comment="This text describes the floating plus button that adds a new item to the shopping list. It is used for accessability (e.g. blind people)">কেনাকাটার তালিকায় একটি নতুন আইটেম যোগ করে</string>
+
+	<string name="addSaveButtonText" comment="This text will be shown on top of the save-button when adding a new item">সেভ</string>
+	<string name="addNameHint" comment="This text will be shown as a placeholder for the items name when adding a new one">আইটেম</string>
+	<string name="addAmountHint" comment="This text will be shown as a placeholder for the items amount when adding a new one">পরিমাণ (অপশনাল)</string>
+	<string name="addTitleBarText" comment="This text will be shown in the titlebar when adding a new item">আইটেম যোগ করুন</string>
+	<string name="addNameIsEmptyMessage" comment="This text will be shown if a user enters an empty item name for a new item">নাম ফাঁকা হওয়া উচিত নয়</string>
+	<string name="addAmountNotANumberMessage" comment="This text will be shown if a user manages to enter a non-numeric text for the amount of a new item">পরিমাণ অবশ্যই একটি বৈধ সংখ্যা হতে হবে</string>
+	<string name="addAmountTooSmallMessage" comment="This text will be shown if a user enters a negative amount when adding an item">পরিমাণ অবশ্যই 0-এর বেশি হতে হবে</string>
+	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">এই নামের একটি আইটেম ইতিমধ্যেই বিদ্যমান৷</string>
+	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">সেন্ড</string>
+	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">আপনার কেনাকাটার তালিকায় একটি আইটেম যোগ করুন: %1$s</string>
+</resources>

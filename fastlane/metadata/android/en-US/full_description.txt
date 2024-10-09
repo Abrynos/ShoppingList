@@ -10,6 +10,7 @@ This is the a simple Android application serving the purpose of a shopping list.
 
 <b>Languages:</b>
 * Azerbaijani
+* Bengali
 * Czech
 * English
 * Finnish
