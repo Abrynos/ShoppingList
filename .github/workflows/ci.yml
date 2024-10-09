@@ -22,9 +22,12 @@ jobs:
       - id: decode_keystore
         name: 'Decode keystore'
         uses: timheuer/base64-to-file@v1
+        env:
+          keystore_string: ${{ secrets.KEYSTORE }}
+        if: ${{ env.keystore_string != '' }}
         with:
           fileName: keystore.jks
-          encodedString: ${{ secrets.KEYSTORE }}
+          encodedString: ${{ env.keystore_string }}
       - id: build
         name: 'Build'
         run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true
