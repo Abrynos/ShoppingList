@@ -8,22 +8,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: checkout
+        name: 'Check out sources'
         uses: actions/checkout@v4
       - id: setup-java
+        name: 'Set up Java'
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: 17
       - id: setup-gradle
+        name: 'Set up Gradle'
         uses: gradle/actions/setup-gradle@v4
       - id: decode_keystore
+        name: 'Decode keystore'
         uses: timheuer/base64-to-file@v1
+        env:
+          keystore_string: ${{ secrets.KEYSTORE }}
+        if: ${{ env.keystore_string != '' }}
         with:
           fileName: keystore.jks
-          encodedString: ${{ secrets.KEYSTORE }}
+          encodedString: ${{ env.keystore_string }}
       - id: build
-        run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true
+        name: 'Build'
+        env:
+          keystore: ${{ secrets.KEYSTORE }}
+          password: ${{ secrets.PASSWORD }}
+          alias: ${{ secrets.ALIAS }}
+        run: ./gradlew build ${{ (steps.decode_keystore.outputs.filePath != '' && env.keystore != '' && env.password != '' && env.alias != '') && format('-Pandroid.injected.signing.store.file={0} -Pandroid.injected.signing.store.password={1} -Pandroid.injected.signing.key.alias={2} -Pandroid.injected.signing.key.password={1} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true', steps.decode_keystore.outputs.filePath, env.password, env.alias) || '' }}
       - id: upload-artifact
+        name: 'Upload artifacts'
         uses: actions/upload-artifact@v4
         with:
           name: artifacts.zip
