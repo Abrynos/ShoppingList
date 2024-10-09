@@ -8,22 +8,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: checkout
+        name: 'Check out sources'
         uses: actions/checkout@v4
       - id: setup-java
+        name: 'Set up Java'
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: 17
       - id: setup-gradle
+        name: 'Set up Gradle'
         uses: gradle/actions/setup-gradle@v4
       - id: decode_keystore
+        name: 'Decode keystore'
         uses: timheuer/base64-to-file@v1
         with:
           fileName: keystore.jks
           encodedString: ${{ secrets.KEYSTORE }}
       - id: build
+        name: 'Build'
         run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true
       - id: upload-artifact
+        name: 'Upload artifacts'
         uses: actions/upload-artifact@v4
         with:
           name: artifacts.zip
