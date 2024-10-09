@@ -30,7 +30,9 @@ jobs:
           encodedString: ${{ env.keystore_string }}
       - id: build
         name: 'Build'
-        run: ./gradlew build -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true
+        env:
+          signing_args: ${{ (secrets.KEYSTORE != '' && secrets.PASSWORD != '' && secrets.ALIAS != '') && '-Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.PASSWORD }} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true' || '' }}
+        run: ./gradlew build ${{ env.signing_args }}
       - id: upload-artifact
         name: 'Upload artifacts'
         uses: actions/upload-artifact@v4
