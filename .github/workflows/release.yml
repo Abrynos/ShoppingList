@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: 17
+          java-version: 21
       - id: setup-gradle
         uses: gradle/actions/setup-gradle@v4
       - id: decode_keystore
