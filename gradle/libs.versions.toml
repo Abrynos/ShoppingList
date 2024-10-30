@@ -7,7 +7,7 @@ lifecycleRuntime = "2.8.6"
 androidxNavigation = "2.8.0"
 roomVersion = "2.6.1"
 appcompat = "1.7.0"
-constraintlayout = "2.1.4"
+constraintlayout = "2.2.0"
 androidxcore = "1.13.1"
 material3 = "1.3.0"
 
