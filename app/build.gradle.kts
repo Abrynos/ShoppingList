@@ -80,17 +80,19 @@ android {
 		warningsAsErrors = true
 		checkAllWarnings = true
 		showAll = true
-		// sometimes we use the same string for similar but non-equal purposes
+		// Sometimes we use the same string for similar but non-equal purposes
 		disable.add("DuplicateStrings")
 		// This is an open source project and we don't have a person of each language sitting around translating stuff for us
 		disable.add("MissingTranslation")
-		// the launcher icons are the only ones affected by this and they have transparency in them - no point in converting
+		// The launcher icons are the only ones affected by this and they have transparency in them - no point in converting
 		disable.add("ConvertToWebp")
-		// easier to read if in xml and not in a bunch of lambdas within the setup method for the activity
+		// Easier to read if in xml and not in a bunch of lambdas within the setup method for the activity
 		disable.add("UsingOnClickInXml")
-		// two library updates in parallel will make both CI builds fail and cause dependabot to not merge either, requiring manual work
+		// Two library updates in parallel will make both CI builds fail and cause dependabot to not merge either, requiring manual work
 		disable.add("GradleDependency")
-		// using view binding will result in these
+		// This one is the same as the one above
+		disable.add("AndroidGradlePluginVersion")
+		// Using view binding will result in these
 		disable.add("UnusedIds")
 		// I'm not a french person so I have no idea what is correct here - let the translators take care of this
 		disable.add("TypographyQuotes")
