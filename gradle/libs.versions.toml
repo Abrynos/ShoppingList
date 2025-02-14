@@ -1,6 +1,6 @@
 [versions]
 android = "8.8.1"
-devtools = "2.1.10-1.0.29"
+devtools = "2.1.10-1.0.30"
 kotlin = "2.1.10"
 
 lifecycleRuntime = "2.8.7"
