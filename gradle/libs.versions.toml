@@ -1,5 +1,5 @@
 [versions]
-android = "8.8.1"
+android = "8.8.2"
 devtools = "2.1.10-1.0.30"
 kotlin = "2.1.10"
 
