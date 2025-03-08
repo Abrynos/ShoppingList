@@ -9,6 +9,7 @@ This is the a simple Android application serving the purpose of a shopping list.
 * No ads
 
 <b>Languages:</b>
+
 * Azerbaijani
 * Bengali
 * Czech
