@@ -4,7 +4,7 @@ devtools = "2.2.0-2.0.2"
 kotlin = "2.2.0"
 
 lifecycleRuntime = "2.9.1"
-androidxNavigation = "2.9.0"
+androidxNavigation = "2.9.1"
 roomVersion = "2.7.2"
 appcompat = "1.7.1"
 constraintlayout = "2.2.1"
