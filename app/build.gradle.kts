@@ -39,12 +39,12 @@ kotlin {
 
 android {
 	namespace = "pl.edu.pjwstk.s999844.shoppinglist"
-	compileSdk = VersionCodes.VANILLA_ICE_CREAM
+	compileSdk = VersionCodes.BAKLAVA
 
 	defaultConfig {
 		applicationId = "pl.edu.pjwstk.s999844.shoppinglist"
 		minSdk = VersionCodes.N_MR1
-		targetSdk = VersionCodes.VANILLA_ICE_CREAM
+		targetSdk = android.compileSdk
 		versionCode = 21
 		versionName = "v1.19.0"
 
