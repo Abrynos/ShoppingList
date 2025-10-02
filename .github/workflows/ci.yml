@@ -18,7 +18,7 @@ jobs:
           java-version: 21
       - id: setup-gradle
         name: 'Set up Gradle'
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v5
       - id: decode_keystore
         name: 'Decode keystore'
         uses: timheuer/base64-to-file@v1
