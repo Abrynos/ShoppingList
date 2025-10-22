@@ -105,7 +105,7 @@ class MainActivity : AbstractShoppingActivity() {
 	}
 
 	private fun observeDatabaseChange(items: List<RequiredItem>) {
-		var comparator = when (settings.order) {
+		var comparator: Comparator<RequiredItem> = when (settings.order) {
 			Order.Unordered -> Comparator<RequiredItem> { _, _ -> 0 }
 			Order.Alphabetical -> compareBy(String.CASE_INSENSITIVE_ORDER) { it.name }
 			Order.AmountAscending -> compareBy { it.amount }
