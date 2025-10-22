@@ -1,1 +1,2 @@
+* Made alphabetical ordering case-insensitive (@tobiashein)
 * The usual amount of miscellaneous code improvements and optimizations
