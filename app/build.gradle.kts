@@ -45,8 +45,8 @@ android {
 		applicationId = "pl.edu.pjwstk.s999844.shoppinglist"
 		minSdk = VersionCodes.N_MR1
 		targetSdk = android.compileSdk
-		versionCode = 22
-		versionName = "v1.20.0"
+		versionCode = 23
+		versionName = "v1.21.0"
 
 		vectorDrawables {
 			useSupportLibrary = true
