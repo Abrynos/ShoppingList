@@ -3,7 +3,7 @@ android = "8.13.1"
 devtools = "2.3.2"
 kotlin = "2.2.21"
 
-lifecycleRuntime = "2.9.4"
+lifecycleRuntime = "2.10.0"
 androidxNavigation = "2.9.6"
 roomVersion = "2.8.3"
 appcompat = "1.7.1"
