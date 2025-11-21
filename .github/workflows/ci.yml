@@ -9,7 +9,7 @@ jobs:
     steps:
       - id: checkout
         name: 'Check out sources'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - id: setup-java
         name: 'Set up Java'
         uses: actions/setup-java@v5
