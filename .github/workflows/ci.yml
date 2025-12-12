@@ -37,7 +37,7 @@ jobs:
         run: ./gradlew build ${{ (steps.decode_keystore.outputs.filePath != '' && env.keystore != '' && env.password != '' && env.alias != '') && format('-Pandroid.injected.signing.store.file={0} -Pandroid.injected.signing.store.password={1} -Pandroid.injected.signing.key.alias={2} -Pandroid.injected.signing.key.password={1} -Pandroid.injected.signing.v1-enabled=true -Pandroid.injected.signing.v2-enabled=true', steps.decode_keystore.outputs.filePath, env.password, env.alias) || '' }}
       - id: upload-artifact
         name: 'Upload artifacts'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: artifacts.zip
           path: app/build/outputs/apk/release/*.apk
