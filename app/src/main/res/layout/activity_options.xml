@@ -104,10 +104,10 @@
 		app:layout_constraintStart_toStartOf="parent">
 
 		<TextView
+			android:id="@+id/optionsCurrentVersionTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:onClick="onClickCurrentVersion"
-			android:text="@string/versionName" />
+			android:onClick="onClickCurrentVersion" />
 
 		<TextView
 			android:layout_width="wrap_content"

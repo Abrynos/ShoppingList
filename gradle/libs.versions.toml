@@ -1,5 +1,5 @@
 [versions]
-android = "8.13.2"
+android = "9.0.0"
 devtools = "2.3.4"
 kotlin = "2.3.0"
 
@@ -14,7 +14,6 @@ material3 = "1.4.0"
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "devtools" }
-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 [libraries]

@@ -47,7 +47,8 @@ class OptionsActivity : AbstractShoppingActivity() {
 		private val LATEST_RELEASE_URI: Uri = LATEST_RELEASE_LINK.toUri()
 	}
 
-	private val currentReleaseLink: String by lazy { "$RELEASES_PAGE_LINK/tag/${getString(R.string.versionName)}" }
+	private val versionName: String by lazy { packageManager.getPackageInfo(packageName, 0).versionName ?: "" }
+	private val currentReleaseLink: String by lazy { "$RELEASES_PAGE_LINK/tag/${versionName}" }
 	private val currentReleaseUri: Uri by lazy { currentReleaseLink.toUri() }
 
 	private val binding by viewBinding(ActivityOptionsBinding::inflate)
@@ -78,6 +79,8 @@ class OptionsActivity : AbstractShoppingActivity() {
 
 	override fun onStart() {
 		super.onStart()
+
+		binding.optionsCurrentVersionTextView.text = versionName
 
 		binding.optionsThemeSwitch.isChecked = settings.darkThemeActive
 		binding.listOrderDropdown.setSelection(getIndex(binding.listOrderDropdown, settings.order))
