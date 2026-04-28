@@ -21,7 +21,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
       - id: decode_keystore
         name: 'Decode keystore'
-        uses: timheuer/base64-to-file@v1
+        uses: timheuer/base64-to-file@v2
         env:
           keystore_string: ${{ secrets.KEYSTORE }}
         if: ${{ env.keystore_string != '' }}
