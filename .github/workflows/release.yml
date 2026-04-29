@@ -27,7 +27,7 @@ jobs:
       - id: setup-gradle
         uses: gradle/actions/setup-gradle@v6
       - id: decode_keystore
-        uses: timheuer/base64-to-file@v1
+        uses: timheuer/base64-to-file@v2
         with:
           fileName: keystore.jks
           encodedString: ${{ secrets.KEYSTORE }}
