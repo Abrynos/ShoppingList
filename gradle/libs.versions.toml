@@ -1,7 +1,7 @@
 [versions]
 android = "9.2.1"
 devtools = "2.3.9"
-kotlin = "2.3.21"
+kotlin = "2.4.0"
 
 lifecycleRuntime = "2.10.0"
 androidxNavigation = "2.9.8"
