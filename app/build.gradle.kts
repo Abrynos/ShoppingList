@@ -42,7 +42,7 @@ kotlin {
 
 android {
 	namespace = "pl.edu.pjwstk.s999844.shoppinglist"
-	compileSdk = VersionCodes.BAKLAVA
+	compileSdk = VersionCodes.CINNAMON_BUN
 
 	defaultConfig {
 		applicationId = "pl.edu.pjwstk.s999844.shoppinglist"
