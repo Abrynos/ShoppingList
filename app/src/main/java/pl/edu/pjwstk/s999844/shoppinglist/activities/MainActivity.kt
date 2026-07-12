@@ -31,6 +31,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -97,7 +98,15 @@ class MainActivity : AbstractShoppingActivity() {
 			?: return
 
 		if (change == null) {
-			shoppingListDao.delete(dbItem)
+			AlertDialog.Builder(this).apply {
+				setTitle(R.string.deleteConfirmTitle)
+				setMessage(getString(R.string.deleteConfirmMessage, dbItem.name))
+				setPositiveButton(R.string.deleteConfirmYesButton) { _, _ ->
+					shoppingListDao.delete(dbItem)
+				}
+				setNegativeButton(R.string.deleteConfirmNoButton, null)
+				show()
+			}
 		} else {
 			dbItem.amount = change.plus(dbItem.amount).coerceAtLeast(0)
 			shoppingListDao.update(dbItem)

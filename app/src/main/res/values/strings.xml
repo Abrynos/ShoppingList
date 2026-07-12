@@ -58,4 +58,9 @@
 	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">An item with this name already exists</string>
 	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Send</string>
 	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Please add an item to your shopping list: %1$s</string>
+
+	<string name="deleteConfirmTitle" comment="This text will be shown as the title of the delete confirmation dialog">Delete item</string>
+	<string name="deleteConfirmMessage" comment="This text will be shown as the message of the delete confirmation dialog" formatted="true">Are you sure you want to delete %1$s?</string>
+	<string name="deleteConfirmYesButton" comment="This text will be shown on the confirm button of the delete confirmation dialog">Yes</string>
+	<string name="deleteConfirmNoButton" comment="This text will be shown on the cancel button of the delete confirmation dialog">No</string>
 </resources>
