@@ -63,4 +63,6 @@
 	<string name="deleteConfirmMessage" comment="This text will be shown as the message of the delete confirmation dialog" formatted="true">Are you sure you want to delete %1$s?</string>
 	<string name="deleteConfirmYesButton" comment="This text will be shown on the confirm button of the delete confirmation dialog">Yes</string>
 	<string name="deleteConfirmNoButton" comment="This text will be shown on the cancel button of the delete confirmation dialog">No</string>
+
+	<string name="optionsDeleteConfirmationText" comment="This text will be shown in the options menu as description for the delete confirmation switch">Ask before deleting items</string>
 </resources>

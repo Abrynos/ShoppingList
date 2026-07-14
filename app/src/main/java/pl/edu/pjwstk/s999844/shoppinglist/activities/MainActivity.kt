@@ -98,6 +98,7 @@ class MainActivity : AbstractShoppingActivity() {
 			?: return
 
 		if (change == null) {
+		if (settings.deleteConfirmationActive) {
 			AlertDialog.Builder(this).apply {
 				setTitle(R.string.deleteConfirmTitle)
 				setMessage(getString(R.string.deleteConfirmMessage, dbItem.name))
@@ -106,6 +107,9 @@ class MainActivity : AbstractShoppingActivity() {
 				}
 				setNegativeButton(R.string.deleteConfirmNoButton, null)
 				show()
+			}
+		} else {
+			shoppingListDao.delete(dbItem)
 			}
 		} else {
 			dbItem.amount = change.plus(dbItem.amount).coerceAtLeast(0)
