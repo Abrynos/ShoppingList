@@ -17,6 +17,8 @@
   -->
 <resources>
 	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">Einkaufsliste</string>
+	<string name="Yes" comment="This text will be shown on the confirm button of the delete confirmation dialog">Ja</string>
+	<string name="No" comment="This text will be shown on the cancel button of the delete confirmation dialog">Nein</string>
 	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Dunkles Design verwenden</string>
 	<string name="optionsOrderZeroItemsLastText" comment="This text will be shown in the options menu as description for the switch for sorting zero-count items last">Null-Stückzahlen unten anordnen</string>
 	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Optionen</string>
@@ -33,6 +35,7 @@
 	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Türkis</string>
 	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Violett</string>
 	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Grün</string>
+	<string name="optionsConfirmDeletionText" comment="This text will be shown in the options menu as description for the delete confirmation switch">Vor dem Löschen bestätigen</string>
 	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Optionen</string>
 	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">Keine Einträge vorhanden</string>
 	<string name="mainSubtractButtonDescription" comment="This text describes the minus button for an item of the shopping list; It is used for accessability (e.g. blind people)">Vermindert die Anzahl des Dings um eins</string>
@@ -49,4 +52,6 @@
 	<string name="addItemAlreadyExistsMessage" comment="This text will be shown if a user tries to add the same item multiple times">Ein Ding mit diesem Namen ist bereits auf der Einkaufsliste</string>
 	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Verschicken</string>
 	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Füge bitte folgendes zu deiner Einkaufsliste hinzu: %1$s</string>
+	<string name="confirmDeletionTitle" comment="This text will be shown as the title of the delete confirmation dialog">Ding löschen</string>
+	<string name="confirmDeletionMessage" comment="This text will be shown as the message of the delete confirmation dialog" formatted="true">Sicher, dass du %1$s löschen möchtest?</string>
 </resources>
