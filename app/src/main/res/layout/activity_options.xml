@@ -96,10 +96,10 @@
 		app:layout_constraintEnd_toEndOf="parent" />
 
 	<androidx.appcompat.widget.SwitchCompat
-		android:id="@+id/optionsDeleteConfirmationSwitch"
+		android:id="@+id/optionsConfirmDeletionSwitch"
 		style="@style/Theme.ShoppingList.SwitchCompat"
-		android:onClick="onClickDeleteConfirmationSwitch"
-		android:text="@string/optionsDeleteConfirmationText"
+		android:onClick="onClickConfirmDeletionSwitch"
+		android:text="@string/optionsConfirmDeletionText"
 		android:textSize="@dimen/optionTextSize"
 		app:layout_constraintTop_toBottomOf="@id/optionsOrderZeroItemsLastSwitch"
 		app:layout_constraintStart_toStartOf="parent"

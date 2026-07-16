@@ -36,6 +36,9 @@ class Settings(context: Context) {
 		private const val ACCENT_NAME = "accentColor"
 		private val ACCENT_DEFAULT: AccentColor = AccentColor.Blue
 
+		private const val CONFIRM_DELETION_NAME = "confirmDelete"
+		private const val CONFIRM_DELETION_DEFAULT = false
+
 		private const val IS_DARK_THEME_NAME = "darkTheme"
 		private const val IS_DARK_THEME_DEFAULT = true
 
@@ -44,9 +47,6 @@ class Settings(context: Context) {
 
 		private const val ORDER_ZERO_ITEMS_LAST_NAME = "orderZeroItemsLast"
 		private const val ORDER_ZERO_ITEMS_LAST_DEFAULT = true
-
-		private const val DELETE_CONFIRMATION_NAME = "deleteConfirmation"
-		private const val DELETE_CONFIRMATION_DEFAULT = false
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
@@ -61,6 +61,10 @@ class Settings(context: Context) {
 			} ?: ACCENT_DEFAULT
 		}
 		set(value) = edit().putInt(ACCENT_NAME, value.value).apply()
+
+	var confirmDeletion: Boolean
+		get() = sharedPreferences.getBoolean(CONFIRM_DELETION_NAME, CONFIRM_DELETION_DEFAULT)
+		set(value) = edit().putBoolean(CONFIRM_DELETION_NAME, value).apply()
 
 	var darkThemeActive: Boolean
 		get() = sharedPreferences.getBoolean(IS_DARK_THEME_NAME, IS_DARK_THEME_DEFAULT)
@@ -78,10 +82,6 @@ class Settings(context: Context) {
 	var orderZeroItemsLast: Boolean
 		get() = sharedPreferences.getBoolean(ORDER_ZERO_ITEMS_LAST_NAME, ORDER_ZERO_ITEMS_LAST_DEFAULT)
 		set(value) = edit().putBoolean(ORDER_ZERO_ITEMS_LAST_NAME, value).apply()
-
-	var deleteConfirmationActive: Boolean
-		get() = sharedPreferences.getBoolean(DELETE_CONFIRMATION_NAME, DELETE_CONFIRMATION_DEFAULT)
-		set(value) = edit().putBoolean(DELETE_CONFIRMATION_NAME, value).apply()
 
 	interface DescriptiveSetting {
 		val descriptionResourceId: Int

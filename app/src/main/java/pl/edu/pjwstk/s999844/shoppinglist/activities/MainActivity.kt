@@ -97,23 +97,25 @@ class MainActivity : AbstractShoppingActivity() {
 		val dbItem: RequiredItem = shoppingListDao.findById(item.id)
 			?: return
 
-		if (change == null) {
-		if (settings.deleteConfirmationActive) {
-			AlertDialog.Builder(this).apply {
-				setTitle(R.string.deleteConfirmTitle)
-				setMessage(getString(R.string.deleteConfirmMessage, dbItem.name))
-				setPositiveButton(R.string.deleteConfirmYesButton) { _, _ ->
-					shoppingListDao.delete(dbItem)
-				}
-				setNegativeButton(R.string.deleteConfirmNoButton, null)
-				show()
-			}
-		} else {
-			shoppingListDao.delete(dbItem)
-			}
-		} else {
+		if (change != null) {
 			dbItem.amount = change.plus(dbItem.amount).coerceAtLeast(0)
 			shoppingListDao.update(dbItem)
+			return;
+		}
+
+		if (!settings.confirmDeletion) {
+			shoppingListDao.delete(dbItem)
+			return;
+		}
+
+		AlertDialog.Builder(this).apply {
+			setTitle(R.string.confirmDeletionTitle)
+			setMessage(getString(R.string.confirmDeletionMessage, dbItem.name))
+			setNegativeButton(R.string.No, null)
+			setPositiveButton(R.string.Yes) { _, _ ->
+				shoppingListDao.delete(dbItem)
+			}
+			show()
 		}
 	}
 

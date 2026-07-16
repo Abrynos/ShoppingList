@@ -24,6 +24,9 @@
 
 	<string name="appName" comment="This text will be shown in the android devices app drawer as the apps name">ShoppingList</string>
 
+	<string name="Yes" comment="This text will be shown on the confirm button of the delete confirmation dialog">Yes</string>
+	<string name="No" comment="This text will be shown on the cancel button of the delete confirmation dialog">No</string>
+
 	<string name="optionsUseDarkThemeText" comment="This text will be shown in the options menu as description for the theme switch">Use dark theme</string>
 	<string name="optionsOrderZeroItemsLastText" comment="This text will be shown in the options menu as description for the switch for sorting zero-count items last">Order zero-count items last</string>
 	<string name="optionsTitleBarText" comment="This text will be shown in the options menus titlebar">Options</string>
@@ -40,6 +43,7 @@
 	<string name="optionsAccentTeal" comment="This text will be shown in the options menus accent color menu; represents the teal theme">Teal</string>
 	<string name="optionsAccentPurple" comment="This text will be shown in the options menus accent color menu; represents the pruple theme">Purple</string>
 	<string name="optionsAccentGreen" comment="This text will be shown in the options menus accent color menu; represents the green theme">Green</string>
+	<string name="optionsConfirmDeletionText" comment="This text will be shown in the options menu as description for the delete confirmation switch">Ask before deleting items</string>
 
 	<string name="mainMenuOptionsLinkText" comment="This text will be shown as the text to open the options menu; It is used for accessability (e.g. blind people)">Options</string>
 	<string name="mainListIsEmptyText" comment="This text will be shown in case the shopping list does not contain any elements">List is empty</string>
@@ -59,10 +63,6 @@
 	<string name="addShareButtonText" comment="This text will be shown on the share-button when adding a new item">Send</string>
 	<string name="addShareText" comment="This text will be sent to your contact when sharing a new item with them" formatted="true">Please add an item to your shopping list: %1$s</string>
 
-	<string name="deleteConfirmTitle" comment="This text will be shown as the title of the delete confirmation dialog">Delete item</string>
-	<string name="deleteConfirmMessage" comment="This text will be shown as the message of the delete confirmation dialog" formatted="true">Are you sure you want to delete %1$s?</string>
-	<string name="deleteConfirmYesButton" comment="This text will be shown on the confirm button of the delete confirmation dialog">Yes</string>
-	<string name="deleteConfirmNoButton" comment="This text will be shown on the cancel button of the delete confirmation dialog">No</string>
-
-	<string name="optionsDeleteConfirmationText" comment="This text will be shown in the options menu as description for the delete confirmation switch">Ask before deleting items</string>
+	<string name="confirmDeletionTitle" comment="This text will be shown as the title of the delete confirmation dialog">Delete item</string>
+	<string name="confirmDeletionMessage" comment="This text will be shown as the message of the delete confirmation dialog" formatted="true">Are you sure you want to delete %1$s?</string>
 </resources>
