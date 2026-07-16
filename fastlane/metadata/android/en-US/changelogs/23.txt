@@ -1,1 +1,2 @@
+* Added option to have a confirmation dialog when deleting items
 * The usual amount of miscellaneous code improvements and optimizations
