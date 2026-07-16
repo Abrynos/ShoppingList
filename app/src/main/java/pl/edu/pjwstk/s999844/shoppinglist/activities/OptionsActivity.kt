@@ -86,6 +86,7 @@ class OptionsActivity : AbstractShoppingActivity() {
 		binding.listOrderDropdown.setSelection(getIndex(binding.listOrderDropdown, settings.order))
 		binding.accentColorDropdown.setSelection(getIndex(binding.accentColorDropdown, settings.accentColor))
 		binding.optionsOrderZeroItemsLastSwitch.isChecked = settings.orderZeroItemsLast
+		binding.optionsDeleteConfirmationSwitch.isChecked = settings.deleteConfirmationActive
 
 		title = getString(R.string.optionsTitleBarText)
 	}
@@ -100,6 +101,11 @@ class OptionsActivity : AbstractShoppingActivity() {
 	@Suppress("UNUSED_PARAMETER")
 	fun onClickOrderZeroItemsLastSwitch(view: View) {
 		settings.orderZeroItemsLast = binding.optionsOrderZeroItemsLastSwitch.isChecked
+	}
+
+	@Suppress("UNUSED_PARAMETER")
+	fun onClickDeleteConfirmationSwitch(view: View) {
+		settings.deleteConfirmationActive = binding.optionsDeleteConfirmationSwitch.isChecked
 	}
 
 	@Suppress("UNUSED_PARAMETER")

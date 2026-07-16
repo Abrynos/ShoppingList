@@ -44,6 +44,9 @@ class Settings(context: Context) {
 
 		private const val ORDER_ZERO_ITEMS_LAST_NAME = "orderZeroItemsLast"
 		private const val ORDER_ZERO_ITEMS_LAST_DEFAULT = true
+
+		private const val DELETE_CONFIRMATION_NAME = "deleteConfirmation"
+		private const val DELETE_CONFIRMATION_DEFAULT = false
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
@@ -75,6 +78,10 @@ class Settings(context: Context) {
 	var orderZeroItemsLast: Boolean
 		get() = sharedPreferences.getBoolean(ORDER_ZERO_ITEMS_LAST_NAME, ORDER_ZERO_ITEMS_LAST_DEFAULT)
 		set(value) = edit().putBoolean(ORDER_ZERO_ITEMS_LAST_NAME, value).apply()
+
+	var deleteConfirmationActive: Boolean
+		get() = sharedPreferences.getBoolean(DELETE_CONFIRMATION_NAME, DELETE_CONFIRMATION_DEFAULT)
+		set(value) = edit().putBoolean(DELETE_CONFIRMATION_NAME, value).apply()
 
 	interface DescriptiveSetting {
 		val descriptionResourceId: Int
