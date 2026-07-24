@@ -34,6 +34,8 @@ class RequiredItem(var name: String, var amount: Int) {
 	@PrimaryKey(autoGenerate = true)
 	var id: Long = 0
 
+	var purchased: Boolean = false
+
 	override fun equals(other: Any?): Boolean {
 		if (this === other) return true
 		if (javaClass != other?.javaClass) return false

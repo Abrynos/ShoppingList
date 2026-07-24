@@ -57,7 +57,6 @@ class MainActivity : AbstractShoppingActivity() {
 		binding.mainListRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
 		shoppingListDao.findAllItems().observe(this, this::observeDatabaseChange)
-		binding.mainListRecyclerView.adapter = ShoppingListAdapter(this::changeItemCallback)
 	}
 
 	override fun onStart() {
@@ -86,6 +85,16 @@ class MainActivity : AbstractShoppingActivity() {
 
 	@Suppress("UNUSED_PARAMETER")
 	fun onClickFloatingButton(view: View) = startActivity(Intent(baseContext, AddItemActivity::class.java))
+
+	/**
+	 * Toggle the purchased state of an item.
+	 */
+	private fun togglePurchasedCallback(item: RequiredItem) {
+		val dbItem: RequiredItem = shoppingListDao.findById(item.id)
+			?: return
+		dbItem.purchased = !dbItem.purchased
+		shoppingListDao.update(dbItem)
+	}
 
 	/**
 	 * Update item's amount.
@@ -135,7 +144,9 @@ class MainActivity : AbstractShoppingActivity() {
 		}
 
 		val sorted = items.sortedWith(comparator)
-		(binding.mainListRecyclerView.adapter as ShoppingListAdapter).setItems(sorted)
+		val adapter = ShoppingListAdapter(this::changeItemCallback, this::togglePurchasedCallback, settings.strikethroughPurchased)
+		adapter.setItems(sorted)
+		binding.mainListRecyclerView.adapter = adapter
 
 		binding.mainEmptyTextView.isVisible = items.isEmpty()
 		binding.mainListRecyclerView.isVisible = items.isNotEmpty()
