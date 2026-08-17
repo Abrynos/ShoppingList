@@ -47,6 +47,9 @@ class Settings(context: Context) {
 
 		private const val ORDER_ZERO_ITEMS_LAST_NAME = "orderZeroItemsLast"
 		private const val ORDER_ZERO_ITEMS_LAST_DEFAULT = true
+
+		private const val STRIKETHROUGH_PURCHASED_NAME = "strikethroughPurchased"
+		private const val STRIKETHROUGH_PURCHASED_DEFAULT = false
 	}
 
 	private val sharedPreferences: SharedPreferences = context.getSharedPreferences("SETTINGS", MODE_PRIVATE)
@@ -82,6 +85,10 @@ class Settings(context: Context) {
 	var orderZeroItemsLast: Boolean
 		get() = sharedPreferences.getBoolean(ORDER_ZERO_ITEMS_LAST_NAME, ORDER_ZERO_ITEMS_LAST_DEFAULT)
 		set(value) = edit().putBoolean(ORDER_ZERO_ITEMS_LAST_NAME, value).apply()
+
+	var strikethroughPurchased: Boolean
+		get() = sharedPreferences.getBoolean(STRIKETHROUGH_PURCHASED_NAME, STRIKETHROUGH_PURCHASED_DEFAULT)
+		set(value) = edit().putBoolean(STRIKETHROUGH_PURCHASED_NAME, value).apply()
 
 	interface DescriptiveSetting {
 		val descriptionResourceId: Int
