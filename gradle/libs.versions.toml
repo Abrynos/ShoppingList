@@ -8,7 +8,7 @@ androidxNavigation = "2.10.2"
 roomVersion = "2.8.5"
 appcompat = "1.8.0"
 constraintlayout = "2.2.2"
-androidxcore = "1.19.0"
+androidxcore = "1.19.1"
 material3 = "1.4.0"
 
 [plugins]
